@@ -53,7 +53,7 @@
             </a>
         </div>
         <div class="option">
-            <a href="creacionPerfiles.php">
+            <a href="Perfiles/creacionPerfiles.php">
                 <img class="perfiles-img" src="../img/perfiles.svg" alt="perfiles">
                 <div class = "perfilEmpTexto"><span>Creacion de perfiles para empleados</span></div>
             </a>
