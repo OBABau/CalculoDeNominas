@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D0D4CA;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  
+}
+.menu{
+    background-color: #A7D397;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.icon{
+    max-width: 64px;
+    max-height: 64px;
+    width: 100%;
+}
+
+.options-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.option{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    max-width: 20%;
+    width: 20%;
+    background-color: #F5EEC8;
+}
+
+.option a{
+    text-decoration: none;
+    color: #333;
+}
+
+.grafica-img{
+    .graficasTexto{
+        position: absolute;
+    }
+    height: 90px;
+    width: 80px;
+}
+
+.nominaReciente-img{
+    .graficasTexto{
+        position: absolute;
+    }
+    width: 80px;
+    height: 80px;
+}
+
+.perfiles-img{
+    .perfilEmpTexto{
+        position: absolute;
+    }
+    width: 90px;
+    height: 90px;
+}
+
+.historialNominas-img{
+    .historialTxt{
+        position: absolute;
+    }
+    width: 90px;
+    height: 90px;
+}
+
+.infoEmpleado-img{
+    width: 80px;
+    height: 80px;
+}
+
+.config-img{
+    .configTxt{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+
+}
+
+.ayuda-img{
+    .ayudatxt{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+
+}
+.edicionEmpleados-img {
+    .empleadosTextop{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+   
+}
+.historialPagos-img {
+    .historialTexto{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+    
+}
+.infoEmpresa-img {
+    .infoTxt{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+
+}
+
+.listaEmpleados-img {
+    .listaEmpleadosTexto{
+        position: absolute;
+    }
+    width: 90px;
+    height: 80px;
+
+}
