@@ -29,6 +29,6 @@
         </nav>
     </header>
     <div class="textoInfo">
-        <h1>PAGINA PRINCIPAL</h1>
+        <h1>CHUPALA BRIAN</h1>
     </div>
 </html>
