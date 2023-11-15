@@ -1,5 +1,5 @@
 <?php
-include('../data/Empresa.php');
+include('../../data/Empresa.php');
 session_start();
 $empresa = new Empresa();
 
@@ -22,7 +22,7 @@ $datosEmpresa = $empresa->obtenerDatosEmpresa($_SESSION['start']);
         Panel de Empleados
         <a href="loginEmpresa.php" class="regresar-button">Regresar</a>
     </div>
-              <form action="../app/logout.php" method="post">
+              <form action="../../app/logout.php" method="post">
                 <button type="submit">Logout</button>
             </form>
              

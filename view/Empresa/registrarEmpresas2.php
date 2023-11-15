@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Empresas</title>
 
-    <link rel="stylesheet" href="../css/styleRegistro.css">
+    <link rel="stylesheet" href="../../css/styleRegistro.css">
 </head>
 <body>
     <?php
@@ -20,13 +20,13 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../../index.php">Inicio</a></li>
             </ul>
         </nav>
     </header>
     <div class="registro-container">
         <h2>Registro de Empresas</h2>
-        <form class="registro-form" method="post" action="../data/addEmpresa2.php">
+        <form class="registro-form" method="post" action="../../data/addEmpresa2.php">
             <label for="nombre">Nombre de la Empresa:</label>
             <input type="text" id="nombre" name="nombre" required>
 

@@ -12,5 +12,5 @@ $myWorker->setCurp($_POST ['curp']);
 $myWorker->setNumber($_POST ['phone']);
 $myWorker->setWorker();
 
-header('Location: ../view/crearEmpleado.php');
+header('Location: ../view/Empleado/crearEmpleado.php');
 ?>

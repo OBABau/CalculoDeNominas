@@ -1,5 +1,5 @@
 <?php
-include('../data/Empresa.php');
+include('../../data/Empresa.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();

@@ -1,5 +1,5 @@
 <?php
-include('../data/Empresa.php');
+include('../../data/Empresa.php');
 
 session_start();
 

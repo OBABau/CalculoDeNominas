@@ -1,8 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" href="../css/contrato.css" type = "text/css">
-        <link rel="stylesheet" href="../css/contrato2.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../../css/contrato.css" type = "text/css">
+        <link rel="stylesheet" href="../../css/contrato2.css">
+        <link rel="stylesheet" href="../../css/style.css">
     </head> 
     <header>
         
@@ -15,7 +15,7 @@
         <nav class="nav-bar">
             <ul>
                 <li>
-                    <a href = "../index.php">Inicio</a>
+                    <a href = "../../index.php">Inicio</a>
                 </li>
                 <li>
                     <a href = "registrarEmpresas.php">Registrarse</a>
@@ -34,7 +34,7 @@
     <div class = "container">
         <div class  = "card">
             <figure>
-                <img src="../img/paquete1.jpg">
+                <img src="../../img/paquete1.jpg">
             </figure>
             <div class = "contenido">
                 <h1>Plan 1</h1>
@@ -44,7 +44,7 @@
         </div>
         <div class  = "card">
             <figure>
-                <img src="../img/paquete2.jpg">
+                <img src="../../img/paquete2.jpg">
             </figure>
             <div class = "contenido">
                 <h1>Plan 2</h1>

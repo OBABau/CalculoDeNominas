@@ -40,7 +40,7 @@ include('app/sesion.php');
                         $consult = $myobject->execquery("select * from user where email ='".$_SESSION['start']."'");
                         $tupla = mysqli_fetch_assoc($consult);
                         if ($tupla['active'] == 1){
-                            echo '<li><a href="view/loginEmpresa.php">Panel de Empresa</a></li>';
+                            echo '<li><a href="view/Empresa/loginEmpresa.php">Panel de Empresa</a></li>';
                         }else{
                         echo '<li><a href="view/index2.php">Contratar Servicio</a></li>';
                         }
