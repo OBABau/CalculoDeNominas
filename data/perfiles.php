@@ -14,6 +14,7 @@ class Perfiles extends ConexionDB
         } 
     }
 
+    
     public function updateTo0($type, $profile)
     {
         $result =  $this->connect();
