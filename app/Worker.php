@@ -1,5 +1,5 @@
 <?php
-include('../data/conexionDB.php');
+include("../../data/conexionDB.php");
 
 
 class Worker extends ConexionDB{

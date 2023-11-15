@@ -1,5 +1,5 @@
 <?php
-include('../data/Empresa.php');
+include('../../data/Empresa.php');
 session_start();
 $empresa = new Empresa();
 
@@ -59,7 +59,7 @@ if ($datosEmpresa) {
             $mensajeCuenta = $_GET['mensajeCuenta'];
             if ($mensajeCuenta === "exito") {
                 echo '<p style="color: green;">Datos de cuenta actualizados correctamente.</p>';
-                echo '<a href="../app/logout.php">Logout</a>';
+                echo '<a href="../../app/logout.php">Logout</a>';
             } elseif ($mensajeCuenta === "error") {
                 echo '<p style="color: red;">Error al actualizar los datos de cuenta.</p>';
             }

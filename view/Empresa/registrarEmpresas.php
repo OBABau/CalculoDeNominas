@@ -17,8 +17,8 @@ if (isset($_GET['error']) && $_GET['error'] === 'email_en_uso') {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registro de Empresas</title>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/styleRegistro.css">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/styleRegistro.css">
     </head>
     <body>
         <header>
@@ -30,13 +30,13 @@ if (isset($_GET['error']) && $_GET['error'] === 'email_en_uso') {
             </div>
             <nav class="nav-bar">
                 <ul>
-                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="../../index.php">Inicio</a></li>
                 </ul>
             </nav>
         </header>
         <div class="registro-container">
             <h2>Registro de Empresas</h2>
-            <form class="registro-form" method="post" action="../data/addEmpresa.php">
+            <form class="registro-form" method="post" action="../../data/addEmpresa.php">
 
                 <label for="correo">Correo Electrónico:</label>
                 <input type="email" id="correo" name="correo" required>

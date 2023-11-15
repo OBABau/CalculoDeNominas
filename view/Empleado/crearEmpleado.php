@@ -1,5 +1,5 @@
 <?php
-include('../app/sesion.php');
+include('../../app/sesion.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ include('../app/sesion.php');
 </head>
 <body>
 <h2>Registrar Nuevo Empleado</h2>
-  <form action="../data/addEmpleado.php" method="post">
+  <form action="../../data/addEmpleado.php" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="name" required><br><br>
 
@@ -40,7 +40,7 @@ include('../app/sesion.php');
 
     <input type="submit" value="Registrar Usuario">
     <br><br>
-    <a href="listaEmpleados.php"> <img src="../img/back.svg" alt=""></a>
+    <a href="listaEmpleados.php"> <img src="../../img/back.svg" alt=""></a>
   </form>
     
 </body>
