@@ -13,6 +13,7 @@ if($consulta != 'error')
         $consulta2 = $myobject->getIncomes();
         echo "<table border = 1>";
         echo "<tr>";
+        echo "<td>".$tupla['code']."</td>";
         echo "<td>".$tupla['name']."</td>";
         echo "<td>".$tupla['description']."</td>";
         echo '</tr>';
