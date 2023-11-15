@@ -37,3 +37,32 @@ END;
 
 DELIMITER ;
 
+
+DELIMITER ;
+
+DELIMITER//
+CREATE TRIGGER trg_incomes_insert
+AFTER INSERT
+ON INCOMES
+FOR EACH ROW
+BEGIN
+    INSERT INTO PROFILE_INCOMES(incomes, profile, status)
+    SELECT NEW.code, P.code, NULL
+    FROM PROFILE P
+    WHERE P.enterprise = NEW.enterprise;
+END;
+//
+
+DELIMITER //
+CREATE TRIGGER trg_benefits_insert
+AFTER INSERT
+ON BENEFITS
+FOR EACH ROW
+BEGIN
+    INSERT INTO PROFILE_BENEFITS(benefits, profile, status)
+    SELECT NEW.code, P.code, NULL
+    FROM PROFILE P
+    WHERE P.enterprise = NEW.enterprise;
+END;
+
+//
