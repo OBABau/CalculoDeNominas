@@ -42,10 +42,10 @@ class ingresosYConsultas extends ConexionDB
         return $dataset;
     }
     //incomes
-    public function insertIncome()
+    public function insertIncome($amount, $operation)
     {
         $result = $this->connect();
-        $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.")";
+        $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`, `operation`, `amount`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.",'".$operation."', ".$amount.")";
         if ($result)
         {
             echo $query."<br><br>";

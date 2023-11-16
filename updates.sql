@@ -63,6 +63,16 @@ END;
 
 //
 
+alter table `incomes`
+add column operation varchar(5)
+
+alter table `incomes`
+add column amount float
+
+
+
+
+
 drop table `profile_benefits`
 drop table profile_incomes
 drop table `profile_deductions`

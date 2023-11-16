@@ -11,6 +11,14 @@ while ($tupla = mysqli_fetch_assoc($consulta))
 {
     $myobject->setenterprise($tupla['code']);
 }
-$myobject -> insertIncome();
-header("Location: ../view/Perfiles/income+.php");
+
+if ($_POST["operacion"] = "ninguna")
+{
+    $operacion = null;
+}else
+{
+    $operacion = $_POST["operacion"];
+}
+$myobject -> insertIncome($_POST['incomeAmount'], $operacion);
+//header("Location: ../view/Perfiles/income+.php");
 ?>

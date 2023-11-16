@@ -112,8 +112,6 @@ create table SALARY_DEDUCTIONS(
     foreign key(salary) references SALARY(code)
 )
 
-
-
 create table PROFILE_INCOMES(
     incomes int,
     profile int,
@@ -137,6 +135,13 @@ create table PROFILE_DEDUCTIONS(
     status bool not null,
     foreign key(deduction) references DEDUCTION(code),
     foreign key(profile) references PROFILE(code)
+)
+
+create table OPERATIONS
+(
+    code int primary key auto_increment,
+    name varchar(50) not null,
+    operation char(1) not null
 )
 
 select * from  
