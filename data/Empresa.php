@@ -163,11 +163,15 @@ public function actualizarDatosEmpresa($nombre, $direccion, $codigoPostal, $ciud
     return false;
 }
 
-
-
-
-
-
+public function pagoDeServicio()
+{
+    $result = $this->connect();
+    $query = "UPDATE user set active = 1 where email = '".$_SESSION['start']."';";
+    if($result)
+    {
+        $this->execquery($query);
+    }
+}
 
 public function checkCuenta(){
     $result = $this->connect();
