@@ -48,6 +48,7 @@ class ingresosYConsultas extends ConexionDB
         $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.")";
         if ($result)
         {
+            echo $query."<br><br>";
             $newid = $this->execinsert($query);
         }
     }
@@ -136,5 +137,25 @@ class ingresosYConsultas extends ConexionDB
         return $dataset;
     }
 
+    public function setCheckboxes($ingreso, $profile, $type)
+    {
+        $result = $this->connect();
+        if ($result)
+        {
+            $sql = "select status from profile_".$type." where ".$type." = ".$ingreso." and profile = ".$profile;
+            $dataset = $this->execquery("select status from profile_".$type." where ".$type." = ".$ingreso." and profile = ".$profile);
+            //echo $sql;
+            while ($tupla = mysqli_fetch_assoc($dataset))
+            {
+            if ($tupla['status'] == 1)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+        }
+    }
 }
 ?>

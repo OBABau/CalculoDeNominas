@@ -10,7 +10,7 @@
     </header>
     <div class="option"></div>
 
-    <form method="POST" action="../../app/addBenefits+.php">
+    <form method="POST" action="../../app/addBenefits.php">
         <label for="incomeName">Nombre:</label>
         <input type="text" name="benefitName" id="benefitName" maxlength="30">
         <br>

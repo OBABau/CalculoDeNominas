@@ -139,3 +139,8 @@ create table PROFILE_DEDUCTIONS(
     foreign key(profile) references PROFILE(code)
 )
 
+select * from  
+profile_incomes where profile in
+(select * from profile where enterprise in
+ (select * from enterprise where user in 
+  ( select * from user where email = "amazon@gmail.com")))

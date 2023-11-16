@@ -35,10 +35,6 @@ BEGIN
 END;
 //
 
-DELIMITER ;
-
-
-DELIMITER ;
 
 DELIMITER//
 CREATE TRIGGER trg_incomes_insert
@@ -66,3 +62,7 @@ BEGIN
 END;
 
 //
+
+drop table `profile_benefits`
+drop table profile_incomes
+drop table `profile_deductions`
