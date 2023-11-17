@@ -22,7 +22,7 @@ include('../app/sesion.php');
         <nav class="nav-bar">
             <ul>
                 <li>
-                    <a href = "../index.php">Inicio</a>
+                    <a href = "../iniciado.php">Inicio</a>
                 </li>
                 <li>
                     <a href = "index2.php">Contratar Servicio</a>
@@ -47,7 +47,9 @@ include('../app/sesion.php');
                 <h1>Plan 1</h1>
                 <p>PAQUETE EN DESAROLLO (ESTE PAQUETE HARA QUE TU CUENTA CUENTE CON UN CONTRATO POR 1 MES)</p>
                 <br><br><br><br>
-                <a href="../app/contratarServicio.php" class = "c"> Contratar Servicio</a>
+
+                <a href="../payment/form.php" class = "c"> Contratar Servicio</a>
+
             </div>
         </div>
         <div class  = "card">
