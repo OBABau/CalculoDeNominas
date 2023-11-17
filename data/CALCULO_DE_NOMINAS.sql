@@ -38,7 +38,7 @@ create table WORKER(
     number char(12) not null,
     entryDate date not null,
     enterprise int not null,
-    user int not null,
+    user int ,
     foreign key(enterprise) references ENTERPRISE(code),
     foreign key(user) references USER(code)
 )

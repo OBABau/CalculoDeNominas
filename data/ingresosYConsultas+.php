@@ -1,5 +1,5 @@
 <?php
-include ('conexionDB.php');
+include_once('conexionDB.php');
 
 class ingresosYConsultas extends ConexionDB
 {

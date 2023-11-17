@@ -35,6 +35,14 @@ if ($datasetEnterprise != 'Error' && mysqli_num_rows($datasetEnterprise) == 1) {
  
     $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 3; // 3 para empresa
+    include("../data/ingresosYConsultas+.php");
+    $myobjecto = new ingresosYConsultas();
+    $consulta = $myobjecto->getEnterprise();
+    while($tupla = mysqli_fetch_assoc($consulta))
+    {
+    $_SESSION['code'] = $tupla['code'];
+    }
+    echo $_SESSION['code'];
     header('Location: ../iniciado.php');
     exit();
 }

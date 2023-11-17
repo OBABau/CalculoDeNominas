@@ -1,5 +1,5 @@
 <?php
-include("../../data/conexionDB.php");
+include(__DIR__."/../data/conexionDB.php");
 
 
 class Worker extends ConexionDB{
@@ -12,8 +12,17 @@ class Worker extends ConexionDB{
     private $CURP;
     private $number;
     private $code;
+    private $correo;
+    private $contrasena;
 
     //metodos
+    public function setCorreo($correo) {
+        $this->correo = $correo;
+    }
+    public function setContrasena($contrasena) {
+        $this->contrasena = $contrasena;
+    }
+
     public function setName($name){
         $this->name = $name;
     }
@@ -43,7 +52,7 @@ class Worker extends ConexionDB{
     }
 
     public function setWorker(){
-        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW())";
+        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate, enterprise, user) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW(), ".$_SESSION['code'].", null)";
 
         $result = $this->connect();
          if($result){
@@ -54,8 +63,33 @@ class Worker extends ConexionDB{
             echo "algo anda mal.jpg";
             $newid = 0;
          }
+         return $newid;
     }
 
+    public function registrarCuenta($workerId) {
+        // Prepara la consulta SQL para insertar la cuenta del usuario
+        $query = "INSERT INTO user (email, password, creationDate, usertype, worker) VALUES ('".$this->correo."', '".$this->contrasena."', NOW(), '2', $workerId)";
+        // Conecta a la base de datos y ejecuta la consulta
+        $result = $this->connect();
+        if ($result) {
+            // Ejecuta la consulta para registrar la cuenta del usuario
+            $dataSet = $this->execquery($query);
+            
+            // Verifica si la consulta se ejecutó correctamente
+            if ($dataSet) {
+                // Obtén el ID del usuario recién registrado
+                $userId = mysqli_insert_id($this->getConnection());
+                
+                // Devuelve el ID del usuario
+                return $userId;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+        
+    }
 
     public function getAllWorker(){
         $result = $this->connect();
