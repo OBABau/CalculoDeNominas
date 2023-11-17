@@ -16,8 +16,10 @@ if (!$userID) {
 
 $query = "SELECT MONTH(payDate) as month, SUM(total) as totalIncome
           FROM SALARY
-          WHERE worker IN (SELECT code FROM WORKER WHERE user = $userID)
+          WHERE worker = ".$_SESSION['code']."
           GROUP BY MONTH(payDate)";
+          echo $query;
+          echo $_SESSION['code'];
 $conexionDB = new ConexionDB(); // Crear una instancia de la clase ConexionDB
 $conexion = $conexionDB->connect(); // Usa la instancia para conectarte a la base de datos
 $consulta = mysqli_query($conexion, $query);
