@@ -22,8 +22,18 @@ $datasetEmployee = $objeto->getEmployee();
 if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1) {
     $tupla = mysqli_fetch_assoc($datasetEmployee);
 
-    $_SESSION['start'] = $tupla['Mail']; // Guardar el correo electrónico en la sesión
+    $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 2; // 2 para empleado
+
+    include('../data/Empleado.php');;
+    $empleado = new Empleado();
+    $consulta = $empleado->getEmpleado();
+    while($tupla = mysqli_fetch_assoc($consulta))
+    {
+    $_SESSION['code'] = $tupla['code'];
+    }
+    echo $_SESSION['code'];
+
     header('Location: ../iniciado.php');
     exit();
 }
