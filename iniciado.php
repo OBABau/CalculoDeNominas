@@ -30,7 +30,7 @@ include('app/sesion.php');
                 if($userType == 1) {
                     echo '<li><a href="view/loginAdmin.php">Panel de Administrador</a></li>';
                 } elseif($userType == 2) {
-                    echo '<li><a href="view/loginEmpleado.php">Panel de Empleado</a></li>';
+                    echo '<li><a href="view/Empleado/loginEmpleado.php">Panel de Empleado</a></li>';
                 } elseif($userType == 3) {
                         include('data/conexionDB.php');
                         $myobject = new ConexionDB();

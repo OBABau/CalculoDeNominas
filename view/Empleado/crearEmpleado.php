@@ -43,7 +43,21 @@ include('../../app/sesion.php');
     <label for="nombre">Contrasena:</label>
     <input type="password" id="nombre" name="pass" required><br><br>
 
-
+    <label for = "perfiles">Perfiles</label>
+        <select name = "perfiles">
+            <?php
+              include ('../../data/perfiles.php');
+              $perfil = new perfiles();
+              $consulta = $perfil->showProfiles();
+              
+              while ($tupla = mysqli_fetch_assoc($consulta))
+              {
+              echo $tupla['name'];
+    
+              echo "<option name = '".$tupla['name']."' value  = ".$tupla['code']."> ".$tupla['name']."</option>";
+              }
+            ?>
+        </select>
     <input type="submit" value="Registrar Usuario">
     <br><br>
     <a href="listaEmpleados.php"> <img src="../../img/back.svg" alt=""></a>

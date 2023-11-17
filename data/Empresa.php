@@ -1,5 +1,5 @@
 <?php
-include('../data/conexionDB.php');
+include('conexionDB.php');
 
 class Empresa extends ConexionDB {
     private $nombre;
