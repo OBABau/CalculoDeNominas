@@ -35,7 +35,13 @@ include('../../app/sesion.php');
 
 
     <label for="nombre">Número de teléfono:</label>
-    <input type="text" id="nombre" name="phone" pattern="\d{12}" title="Debe ingresar exactamente 12 dígitos" required><br><br>
+    <input type="text" id="nombre" name="phone" pattern="\d{10}" title="Debe ingresar exactamente 12 dígitos" required><br><br>
+
+    <label for="nombre">Email:</label>
+    <input type="email" id="nombre" name="mail" required><br><br>
+
+    <label for="nombre">Contrasena:</label>
+    <input type="password" id="nombre" name="pass" required><br><br>
 
 
     <input type="submit" value="Registrar Usuario">
