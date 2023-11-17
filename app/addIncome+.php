@@ -20,5 +20,5 @@ if ($_POST["operacion"] = "ninguna")
     $operacion = $_POST["operacion"];
 }
 $myobject -> insertIncome($_POST['incomeAmount'], $operacion);
-//header("Location: ../view/Perfiles/income+.php");
+header("Location: ../view/Perfiles/income+.php");
 ?>

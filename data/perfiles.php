@@ -24,6 +24,19 @@ class Perfiles extends ConexionDB
         } 
     }
 
+    public function showProfiles()
+    {
+        $result =  $this->connect();
+        if($result)
+        {
+            $dataset = $this->execquery('Select * from profile where enterprise = '.$_SESSION['code']);
+        }else
+        {
+            $dataset = "algo salio mal";
+        }
+        return $dataset;
+    }
+    
     
     public function updateTo0($type, )
     {

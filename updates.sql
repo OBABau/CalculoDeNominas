@@ -116,6 +116,10 @@ BEGIN
 END;
 //
 
+alter table `worker`
+add column profile int,
+add foreign key (profile) references profile(code)
+
 
 
 

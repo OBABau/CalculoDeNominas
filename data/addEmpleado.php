@@ -10,6 +10,7 @@ $myWorker->setRFC($_POST ['rfc']);
 $myWorker->setNSS($_POST ['nss']);
 $myWorker->setCurp($_POST ['curp']);
 $myWorker->setNumber($_POST ['phone']);
+$myWorker->setProfile($_POST['perfiles']);
 $newid = $myWorker->setWorker();
 $myWorker->setCorreo($_POST['mail']);
 $myWorker->setContrasena($_POST['pass']);

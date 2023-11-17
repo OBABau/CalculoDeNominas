@@ -14,10 +14,15 @@ class Worker extends ConexionDB{
     private $code;
     private $correo;
     private $contrasena;
+    private $profile;
 
     //metodos
     public function setCorreo($correo) {
         $this->correo = $correo;
+    }
+
+    public function setProfile($profile) {
+        $this->profile = $profile;
     }
     public function setContrasena($contrasena) {
         $this->contrasena = $contrasena;
@@ -52,7 +57,7 @@ class Worker extends ConexionDB{
     }
 
     public function setWorker(){
-        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate, enterprise, user) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW(), ".$_SESSION['code'].", null)";
+        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate, enterprise, user, profile) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW(), ".$_SESSION['code'].", null, ".$this->profile.")";
 
         $result = $this->connect();
          if($result){
