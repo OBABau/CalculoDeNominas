@@ -28,7 +28,6 @@ if($consulta != 'error')
         while ($tupla2 = mysqli_fetch_assoc($consulta2))
         {
             $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "incomes");
-            
             if($checked)
             {
             echo '<label>
