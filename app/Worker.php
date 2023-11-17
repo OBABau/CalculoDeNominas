@@ -94,7 +94,7 @@ class Worker extends ConexionDB{
     public function getAllWorker(){
         $result = $this->connect();
         if ($result){
-            $dataset = $this->execquery('SELECT * FROM worker');
+            $dataset = $this->execquery('SELECT * FROM worker where enterprise  = '.$_SESSION['code'].'');
         }
         else{
             echo "algo salio mal";

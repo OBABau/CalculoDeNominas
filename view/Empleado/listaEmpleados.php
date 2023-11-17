@@ -17,6 +17,7 @@
     <table border="1">
       <?php
         include('../../app/worker.php');
+        session_start();
         $myconsulta = new Worker();
         $dataset = $myconsulta->getAllWorker();
         if ($dataset != "error"){
