@@ -12,5 +12,5 @@ while ($tupla = mysqli_fetch_assoc($consulta))
     $myobject->setEnterprise($tupla['code']);
 }
 $myobject -> insertProfile();
-header("Location: ../view/profile+.php");
+header("Location: ../view/Perfiles/profile+.php");
 ?>

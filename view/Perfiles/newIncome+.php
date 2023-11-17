@@ -16,6 +16,20 @@
         <br>
         <label for="incomeDescription">Descripción:</label>
         <input type="text" name="incomeDescription" id="incomeDescription" maxlength="100">
+        
+        <label for="incomeAmount">Cantidad:</label>
+        <input type="number" name="incomeAmount" id="incomeAmount" maxlength="100">
+        
+        <label for = "operacion">Operacion</label>
+        <select name = "operacion">
+            <option name = "null">Ninguna</option>
+            <option name = "addition">+</option>
+            <option name = "multiplication">*</option>
+            <option name = "division">/</option>
+            <option name = "substraction">-</option>
+        </select>
+        <br>
+        <br>
         <input type="submit" value="Enviar">
     </form>
 </body>

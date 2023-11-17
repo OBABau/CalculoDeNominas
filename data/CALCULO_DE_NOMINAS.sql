@@ -38,7 +38,7 @@ create table WORKER(
     number char(12) not null,
     entryDate date not null,
     enterprise int not null,
-    user int not null,
+    user int ,
     foreign key(enterprise) references ENTERPRISE(code),
     foreign key(user) references USER(code)
 )
@@ -112,8 +112,6 @@ create table SALARY_DEDUCTIONS(
     foreign key(salary) references SALARY(code)
 )
 
-
-
 create table PROFILE_INCOMES(
     incomes int,
     profile int,
@@ -139,3 +137,15 @@ create table PROFILE_DEDUCTIONS(
     foreign key(profile) references PROFILE(code)
 )
 
+create table OPERATIONS
+(
+    code int primary key auto_increment,
+    name varchar(50) not null,
+    operation char(1) not null
+)
+
+select * from  
+profile_incomes where profile in
+(select * from profile where enterprise in
+ (select * from enterprise where user in 
+  ( select * from user where email = "amazon@gmail.com")))

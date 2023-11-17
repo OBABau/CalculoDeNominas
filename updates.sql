@@ -35,10 +35,6 @@ BEGIN
 END;
 //
 
-DELIMITER ;
-
-
-DELIMITER ;
 
 DELIMITER//
 CREATE TRIGGER trg_incomes_insert
@@ -68,6 +64,7 @@ END;
 //
 
 
+
 CREATE TABLE Payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -91,6 +88,34 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+alter table `incomes`
+add column operation varchar(5)
+
+alter table `incomes`
+add column amount float
+
+alter table worker
+modify column user int
+
+alter table user
+add column worker int,
+add foreign key (`worker`) references `worker`(`code`)
+
+DELIMITER //
+CREATE TRIGGER trg_worker_insert
+AFTER INSERT
+ON user
+FOR EACH ROW
+BEGIN
+    IF NEW.worker IS NOT NULL THEN
+        UPDATE worker
+        SET user = NEW.code
+        WHERE code = NEW.worker;
+    END IF;
+END;
+//
+
 
 
 

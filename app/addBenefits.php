@@ -13,4 +13,3 @@ while ($tupla = mysqli_fetch_assoc($consulta))
 }
 $myobject -> insertBenefit();
 header("Location: ../view/Perfiles/benefits+.php");
-?

@@ -47,7 +47,9 @@ include('../app/sesion.php');
                 <h1>Plan 1</h1>
                 <p>PAQUETE EN DESAROLLO (ESTE PAQUETE HARA QUE TU CUENTA CUENTE CON UN CONTRATO POR 1 MES)</p>
                 <br><br><br><br>
+
                 <a href="../payment/form.php" class = "c"> Contratar Servicio</a>
+
             </div>
         </div>
         <div class  = "card">
