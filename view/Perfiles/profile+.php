@@ -4,9 +4,9 @@
 <?php
 include("../../data/ingresosYConsultas+.php");
 session_start();
-$myobject = new ingresosYConsultas;
+$myobject = new ingresosYConsultas();
 $consulta = $myobject->getProfiles();
-$perfil = new ingresosYConsultas;
+$perfil = new ingresosYConsultas();
 if($consulta != 'error')
 {       
     while($tupla = mysqli_fetch_assoc($consulta))

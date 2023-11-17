@@ -45,7 +45,6 @@ class ConexionDB{
 	public function execquery ($query) {
 	$this->dataset = mysqli_query($this->connection, $query);
 	if($this->dataset){
-		echo $query;
 		return $this->dataset;
 	}
 	else{
