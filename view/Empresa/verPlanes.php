@@ -21,7 +21,7 @@
                     <a href = "registrarEmpresas.php">Registrarse</a>
                 </li>
                 <li>
-                <a href="login.php">
+                <a href="../login.php">
                     Login
                 </a>
                     </li>

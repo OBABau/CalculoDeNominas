@@ -66,3 +66,31 @@ BEGIN
 END;
 
 //
+
+
+CREATE TABLE Payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    cardNumber VARCHAR(16) NOT NULL,
+    cvv varchar(3) NOT NULL,
+    expirationDate VARCHAR(5) NOT NULL
+);
+
+ALTER TABLE Payments
+ADD COLUMN user_id INT,
+ADD FOREIGN KEY (user_id) REFERENCES user(code);
+
+DELIMITER //
+CREATE TRIGGER after_insert_payment
+AFTER INSERT ON Payments
+FOR EACH ROW
+BEGIN
+    UPDATE user
+    SET active = 1
+    WHERE code = NEW.user_id;
+END;
+//
+DELIMITER ;
+
+
+

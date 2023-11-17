@@ -16,7 +16,7 @@
                     <a href = "index.php">Inicio</a>
                 </li>
                 <li>
-                    <a href = "view/verPlanes.php">Ver planes</a>
+                    <a href = "view/Empresa/verPlanes.php">Ver planes</a>
                 </li>
                 <li>
                 
