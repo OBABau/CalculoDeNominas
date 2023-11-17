@@ -89,6 +89,12 @@ END;
 //
 DELIMITER ;
 
+alter table `benefits`
+add column operation varchar(5)
+
+alter table `benefits`
+add column amount float
+
 alter table `incomes`
 add column operation varchar(5)
 

@@ -48,7 +48,6 @@ class ingresosYConsultas extends ConexionDB
         $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`, `operation`, `amount`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.",'".$operation."', ".$amount.")";
         if ($result)
         {
-            echo $query."<br><br>";
             $newid = $this->execinsert($query);
         }
     }
