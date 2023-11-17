@@ -17,8 +17,10 @@ class Perfiles extends ConexionDB
 
             $validate = $this->execquery("select * from benefits where name  = '".$value."' ");
             if(mysqli_num_rows($validate)>0){
-                $this->execquery('update profile_benefits set status = 1 where profile = '.$profile.' 
+                $query = $this->execquery('update profile_benefits set status = 1 where profile = '.$profile.' 
                 and benefits in (select code from benefits where name = "'.$value.'");');
+                echo "<br>";
+                echo $query;
             }
 
         } 

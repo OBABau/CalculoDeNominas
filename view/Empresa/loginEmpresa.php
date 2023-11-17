@@ -27,7 +27,7 @@
         <a href="../../iniciado.php">
             <button type="button">Inicio</button>
         </a>
-        <form action="..././app/logout.php" method="post">
+        <form action="../../app/logout.php" method="post">
                 <button type="submit">Logout</button>
             </form>
     </div>

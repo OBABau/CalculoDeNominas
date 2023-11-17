@@ -11,7 +11,7 @@ $objeto->setPassword($_POST['password']);
 $datasetAdmin = $objeto->getAdmin();
 if ($datasetAdmin != 'Error' && mysqli_num_rows($datasetAdmin) == 1) {
     $tupla = mysqli_fetch_assoc($datasetAdmin);
-    $_SESSION['start'] = $tupla['Mail']; // Guardar el correo electrónico en la sesión
+    $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 1; // 1 para administrador
     header('Location: ../iniciado.php');
     exit();
@@ -42,7 +42,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1) {
 $datasetEnterprise = $objeto->getEnterprise();
 if ($datasetEnterprise != 'Error' && mysqli_num_rows($datasetEnterprise) == 1) {
     $tupla = mysqli_fetch_assoc($datasetEnterprise);
- 
+    echo $_POST['Mail'];
     $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 3; // 3 para empresa
     include("../data/ingresosYConsultas+.php");
