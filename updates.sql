@@ -126,6 +126,39 @@ alter table `worker`
 add column profile int,
 add foreign key (profile) references profile(code)
 
+alter table `salary`
+add column finished boolean
+
+DELIMITER //
+CREATE TRIGGER trg_update_finished_status
+BEFORE UPDATE
+ON worker
+FOR EACH ROW
+BEGIN
+    IF NEW.hours >= '14:00:00' THEN
+        SET NEW.finished = TRUE;
+    END IF;
+END;
+//
+
+DELIMITER //
+CREATE EVENT update_salary_finished
+ON SCHEDULE EVERY 1 WEEK
+STARTS '2023-11-13 00:00:00'
+DO
+BEGIN
+    -- Actualizar el valor de finished en la tabla salary
+    UPDATE salary
+    SET finished = TRUE;
+
+    -- Insertar nuevos registros en la tabla salary
+    INSERT INTO salary (worker, enterprise, profile, finished)
+    SELECT code, enterprise, profile, FALSE
+    FROM worker;
+END;
+//
+
+SET GLOBAL event_scheduler = ON;
 
 
 
