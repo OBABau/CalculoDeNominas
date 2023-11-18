@@ -64,6 +64,12 @@
                 <div class = "historialTexto"><span>Historial De Pagos</span></div>
             </a>
         </div>
+        <div class="option">
+            <a href="../registroEntrada.php">
+                <img class="historialPagos-img" src="../../img/historialPagos.svg" alt="historialPagos">
+                <div class = "historialTexto"><span>Registrar entrada y salida</span></div>
+            </a>
+        </div>
     </div>
 </body>
 

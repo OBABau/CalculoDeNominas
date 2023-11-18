@@ -62,5 +62,58 @@ public function getEmpleado(){
     }
     return $dataset;
 }
+
+public function getEmpleadoEntry($email){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select code from worker where user in (select code from user where email = '".$email."')");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function getEmpleadoData($codeW){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select * from worker where code = ".$codeW."");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function entryInsert( $worker, $enterprise, $profile ){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("update salary 
+        set
+        days = days + 1,
+        worker = ".$worker.",
+        enterprise= ".$enterprise.",
+        profile=".$profile."
+        where 
+        worker = ".$worker." and finished = false
+        ");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
 }
 ?>
