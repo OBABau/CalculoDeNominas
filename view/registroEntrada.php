@@ -1,38 +1,77 @@
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../css/gwen.css">
+
+    <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
+    <title>Registrar E/S</title>
 </head>
 <header>
-    <div class= "logo">GESTION NOMINA</div>
-    <div class="bars">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
+    <nav class="nav-bar">
+        <ul>
+            <li>
+                <a href="../index.php">Inicio</a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<div class="sidebar">
+    <div class="headerSidebar">
+        <img class="logoImg" src="../img/img/logo.png" alt="Imagen Logo">
+        <div class="tituloSidebar">NÓMINAS</div>
+    </div>
+
+    <div class="userSidebar">
+    </div>
+
+    <div class="sidebarContent">
+        <a href="../index.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+        <a href="Empresa/loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
+        <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+    </div>
+</div>
+
 <body>
-    <div class="login-container">
-        <h2>Registrar entrada o salida</h2>
+    <div class="contenido">
+        <div class="login-container">
+            <div class="loginHeader">
+                <h2>Registrar Entrada o Salida</h2>
+            </div>
 
-        <?php
-        // Verificar si hay un error y mostrar el mensaje correspondiente
-        if (isset($_GET['error']) && $_GET['error'] == 1) {
-            echo '<p style="color: red;">Correo o contraseña incorrectos.</p>';
-        }
-        ?>
+            <div class="loginBody">
+                <!-- <?php
+                // Verificar si hay un error y mostrar el mensaje correspondiente
+                if (isset($_GET['error']) && $_GET['error'] == 1) {                    
+                    echo '<p class="error">Correo o Contraseña Incorrectos.</p>';
+                }
+                ?> -->                
+                
+                <form class="login-form" method='POST' action='../app/checkEntradaOSalida.php'>
+                    <div class="formRow">
+                        <label class="lblinput" for="Mail">Correo electrónico:</label>
+                        <i class="fa fa-envelope"></i>
+                        <input class="input" type="text" id="Mail" name="Mail" maxlength="50" placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="formRow">
+                        <label class="lblinput" for="password">Contraseña:</label>
+                        <i class="fa fa-key"></i>
+                        <input class="input" type="password" id="password" name="password" maxlength="16" placeholder="Ingrese su Contraseña">
+                    </div>                                                            
+                    <div class="formRow2">
+                        <button class="boton1" type="Submit" name="Iniciar Sesion">Registrar</button>
+                    </div>                    
+                </form>
+            </div>
 
-        <form class="login-form" method='POST' action='../app/checkEntradaOSalida.php'>
-            <label for="Mail">Correo electrónico:</label>
-            <input type="text" id="Mail" name="Mail">
+        </div>
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password">
-
-            <button type="Submit" name="Iniciar Sesion">Registrar</button>
-        </form>
     </div>
 </body>
+
 </html>

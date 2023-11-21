@@ -3,65 +3,133 @@ include('../../app/sesion.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreacionEmpleado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/gwen.css">
+
+    <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
+    
+    <title>Creacion de Empleado</title>
 </head>
+
 <body>
-<h2>Registrar Nuevo Empleado</h2>
-  <form action="../../data/addEmpleado.php" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="name" required><br><br>
 
+    <div class="sidebar">
+        <div class="headerSidebar">
+            <img class="logoImg" src="../../img/img/logo.png" alt="Imagen Logo">
+            <div class="tituloSidebar">NÓMINAS</div>
+        </div>
+        <div class="userSidebar">
+            <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?> 
+          
+        </div>
+        <div class="sidebarContent">
+            <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+            <a href="../Empleado/listaEmpleados.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
+            <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+        </div>
 
-    <label for="nombre">Apellido Paterno:</label>
-    <input type="text" id="nombre" name="apPat" required><br><br>
+        <form class="sidebarFooter" action="../../app/logout.php" method="post">
+            <button class="btnSalir" type="submit">Cerrar Sesion</button>
+        </form>
+    </div>
 
+    <div class="contenido">        
+        <div class="login-container2">
+            <div class="loginHeader">
+                <h2>Registrar Nuevo Empleado</h2>
+            </div>
 
-    <label for="nombre">Apellido Materno:</label>
-    <input type="text" id="nombre" name="apMat" required><br><br>
+            <div class="loginBody">                
+                <form class="login-form" method="POST" action="../../data/addEmpleado+.php">      
+                    
+                    <div class="formRow">
+                        <label class="lblinput" for="nombre">Nombre:</label>
+                        <input class="input" type="text" id="nombre" name="nombre" maxlength="50"
+                            placeholder="Ingrese el Nombre" required>
+                    </div>        
+                    <div class="formRow">
+                        <label class="lblinput" for="apPat">Apellido Paterno:</label>
+                        <input class="input" type="text" id="apPat" name="apPat" maxlength="30"
+                            placeholder="Ingrese Apellido Paterno" required>
+                    </div>                              
+            
+            <div class="formRow">
+                <label class="lblinput" for="apMat">Apellido Materno:</label>
+                <input class="input" type="text" id="apMat" name="apMat" maxlength="30"
+                    placeholder="Ingrese Apellido Materno" required>
+            </div>          
 
-    <label for="nombre">RFC:</label>
-    <input type="text" id="nombre" name="rfc" pattern="[A-Z0-9]{13}" title="Debe ingresar exactamente 13 caracteres alfanuméricos" required><br><br>
+                    <div class="formRow">                        
+                        <label class="lblinput" for="rfc">RFC:</label>                        
+                        <input class="input" type="text" name="rfc" id="rfc" pattern="[A-Z0-9]{13}"
+                        title="Debe ingresar exactamente 13 caracteres alfanuméricos" required>
+                    </div>
+                    
 
+                    <div class="formRow">
+                        <label class="lblinput" for="nss">NSS:</label>
+                        <input class="input" type="text" id="nss" name="nss"
+                         pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" required>
+                    </div>        
 
-    <label for="nombre">NSS:</label>
-    <input type="text" id="nombre" name="nss" pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" required><br><br>
+                    <div class="formRow">
+                        <label class="lblinput" for="curp">CURP:</label>
+                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{13}"
+                        title="Debe ingresar un CURP válido" required>
+                    </div>        
+                    
+                <div class="formRow">
+                    <label class="lblinput" for="phone">Número de Teléfono:</label>
+                    <input class="input" type="text" id="phone" name="phone"  pattern="\d{10}"
+                    title="Debe ingresar exactamente 12 dígitos" required>
+                </div>        
 
+        
+            <div class="formRow">
+                <label class="lblinput" for="mail">Email:</label>
+                <input class="input" type="email" id="mail" name="mail" placeholder="ejemplo@dominio.com" required>
+            </div>        
+            
+            <div class="formRow">
+                <label class="lblinput" for="pass">Contrasena:</label>
+                <input class="input" type="password" id="pass" name="pass" required>
+            </div>        
+  
+                    <div class="formRow">
+                        <label class="lblinput" for="perfiles">Perfiles</label>
+                        <select class="form-select" name="perfiles">
+                            <?php
+                          include ('../../data/perfiles.php');
+                          $perfil = new perfiles();
+                          $consulta = $perfil->showProfiles();
+                          
+                          while ($tupla = mysqli_fetch_assoc($consulta))
+                          {
+                          echo $tupla['name'];
+                
+                          echo "<option name = '".$tupla['name']."' value  = ".$tupla['code']."> ".$tupla['name']."</option>";
+                          }
+                        ?>
+                        </select>
+                    </div>                                           
+                    <div class="formRow">
+                        <button class="boton1" type="Submit" value="Enviar">Registrar</button>
+                    </div>                
+                </form>
+            </div>
 
-    <label for="nombre">CURP:</label>
-    <input type="text" id="nombre" name="curp" pattern="[A-Z0-9]{13}" title="Debe ingresar un CURP válido" required><br><br>
-
-
-    <label for="nombre">Número de teléfono:</label>
-    <input type="text" id="nombre" name="phone" pattern="\d{10}" title="Debe ingresar exactamente 12 dígitos" required><br><br>
-
-    <label for="nombre">Email:</label>
-    <input type="email" id="nombre" name="mail" required><br><br>
-
-    <label for="nombre">Contrasena:</label>
-    <input type="password" id="nombre" name="pass" required><br><br>
-
-    <label for = "perfiles">Perfiles</label>
-        <select name = "perfiles">
-            <?php
-              include ('../../data/perfiles.php');
-              $perfil = new perfiles();
-              $consulta = $perfil->showProfiles();
-              
-              while ($tupla = mysqli_fetch_assoc($consulta))
-              {
-              echo $tupla['name'];
-    
-              echo "<option name = '".$tupla['name']."' value  = ".$tupla['code']."> ".$tupla['name']."</option>";
-              }
-            ?>
-        </select>
-    <input type="submit" value="Registrar Usuario">
-    <br><br>
-    <a href="listaEmpleados.php"> <img src="../../img/back.svg" alt=""></a>
-  </form>
-    
+        </div>
+        </form>
+    </div>
 </body>
+
 </html>

@@ -1,69 +1,87 @@
-<?php
+<!-- <?php
 include('../app/sesion.php');
-?>
+?> -->
 <html>
-    <head>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/contrato.css" type = "text/css">
-        <link rel="stylesheet" href="../css/contrato2.css">
-        
-    </head>
-    <header>
-    <div class="login">
-            <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?> 
-           
-        </div>
-        <div class= "logo">GESTION NOMINA</div>
-        <div class="bars">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-        </div>
-        <nav class="nav-bar">
-            <ul>
-                <li>
-                    <a href = "../iniciado.php">Inicio</a>
-                </li>
-                <li>
-                    <a href = "index2.php">Contratar Servicio</a>
-                </li>
-                <li>
-              <form action="../app/logout.php" method="post">
-                <button type="submit">Logout</button>
-            </form>
-                </li>
-            </ul>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../css/gwen.css">
+
+    <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
+
+    <title>Index</title>
+</head>
+
+<body>
+    <header>        
+        <nav class="navbar">
+            <div class="navbarHeader">
+                <div class="navbarTitulo">GESTION DE NOMINA</div>
+
+                <div class="mensajeSesion"> 
+                  <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?> 
+                </div>
+            </div>
+            
+            <div class="navbarCuerpo">            
+                <a class="enlaceNavbar" href="../iniciado.php">Inicio &nbsp;<i class="fa fa-chevron-down"></i></a>
+                <a class="enlaceNavbar" href="index2.php">Contratar Servicio &nbsp;<i class="fa fa-chevron-down"></i></a>
+            </div>
+
+            <div class="navbarFooter">
+                <form class="formNavbar" action="../app/logout.php" method="post">
+                    <button class="btnNavbar" type="submit">Logout</button>
+                </form>
+            </div>
         </nav>
     </header>
-    <div class="textoInfo">
-        <h1>PAGINA DONDE SE MOSTRARAN LOS PLANES PARA CONTRATAR EL SERVICIO</h1>
-    </div>
-    <div class = "container">
-        <div class  = "card">
-            <figure>
-                <img src="../img/paquete1.jpg">
-            </figure>
-            <div class = "contenido">
-                <h1>Plan 1</h1>
-                <p>PAQUETE EN DESAROLLO (ESTE PAQUETE HARA QUE TU CUENTA CUENTE CON UN CONTRATO POR 1 MES)</p>
-                <br><br><br><br>
 
-                <a href="../payment/form.php" class = "c"> Contratar Servicio</a>
+    <div class="cuerpo">
+        <h1 style="text-align: center;">SERVICIOS</h1>
 
+        <div class="contenedorCartas">
+            <div class="carta">
+                <div class="carta-header">
+                    <img class="imagenCarta" src="../img/paquete1.jpg" alt="Imagen Paquete1">
+                </div>
+                <div class="carta-body">
+                    <div class="cartaTitulo">Plan 1</div>
+                    <p>Paquete por 1 mes</p>                    
+                </div>
+                <div class="carta-footer">
+                    <a class="abtnContratarServicio" href="../payment/form.php"> Contratar Servicio</a>
+                </div>
             </div>
+
+            <div class="carta">
+                <div class="carta-header">
+                    <img class="imagenCarta" src="../img/paquete2.jpg" alt="Imagen Paquete1">
+                </div>
+                <div class="carta-body">
+                    <div class="cartaTitulo">Plan 2</div>
+                    <p>Próximamente, paquete en desarrollo</p>
+                </div>
+                <div class="carta-footer">
+                    <a class="abtnContratarServicio" href="#">Proximamente</a>
+                </div>
+            </div>            
         </div>
-        <div class  = "card">
-            <figure>
-                <img src="../img/paquete2.jpg">
-            </figure>
-            <div class = "contenido">
-                <h1>Plan 2</h1>
-                <p>PROXIMAMENTE, PAQUETE EN DESAROLLO (AQUI PODRAS SELECCIONAR EL PLAN DEPENDIENDO, CADA PLAN TENDRA TIEMPOS DE CONTRATO DIFERENTES
-                    EN ESTE CASO EL PAQUETE 2 SERA POR 1 AÑO).</p>
-                <br>
-              
-            </div>
+    </div>    
+    
+    <div class="footer">
+        <div class="mensajeFooter">            
+            No nos hacemos responsables por el mal uso de la información aquí presentada.
+            <br>
+            2023 &copy; GESTION DE NOMINA            
         </div>
     </div>
+</body>
 </html>
-
