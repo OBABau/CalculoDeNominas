@@ -2,44 +2,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../css/gwen.css">
+
+    <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
+    <title>Iniciar Sesion</title>
 </head>
-<header>
-    <div class= "logo">GESTION NOMINA</div>
-    <div class="bars">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <nav class="nav-bar">
-        <ul>
-            <li>
-                <a href="../index.php">Inicio</a>
-            </li>
-        </ul>
+
+<body>    
+    <nav class="navbar">
+        <div class="navbarHeader">
+            <div class="navbarTitulo">GESTION DE NOMINA</div>
+        </div>
+        
+        <div class="navbarCuerpo">                    
+            <a class="enlaceNavbar sombraTexto1" href="../index.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="../view/ayuda.php"> &nbsp;Ayuda <i class="fa fa-chevron-down"></i></a>
+        </div>
     </nav>
-</header>
-<body>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
 
-        <?php
-        // Verificar si hay un error y mostrar el mensaje correspondiente
-        if (isset($_GET['error']) && $_GET['error'] == 1) {
-            echo '<p style="color: red;">Correo o contraseña incorrectos.</p>';
-        }
-        ?>
+    <div class="cuerpo">
+        <div class="login-container4">
+            <div class="loginHeader">
+                <h2>Iniciar Sesión</h2>
+            </div>
 
-        <form class="login-form" method='POST' action='../app/checkLogin.php'>
-            <label for="Mail">Correo electrónico:</label>
-            <input type="text" id="Mail" name="Mail">
+            <div class="loginBody">
+                <!-- <?php
+                    // Verificar si hay un error y mostrar el mensaje correspondiente
+                    if (isset($_GET['error']) && $_GET['error'] == 1) {
+                        echo '<p class="error">Correo o Contraseña Incorrectos.</p>';
+                    }
+                ?> -->
 
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password">
+                <form class="login-form" method='POST' action='../app/checkLogin.php'>
+                    <div class="formRow">
+                        <label class="lblinput" for="Mail">Correo electrónico:</label>
+                        <i class="fa fa-envelope"></i>
+                        <input class="input" type="text" id="Mail" name="Mail" maxlength="50"
+                            placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="formRow">
+                        <label class="lblinput" for="password">Contraseña:</label>
+                        <i class="fa fa-key"></i>
+                        <input class="input" type="password" id="password" name="password" maxlength="16"
+                            placeholder="Ingrese su Contraseña">
+                    </div>
+                
+                    <div class="formRow">
+                        <button class="boton1" type="Submit" name="Iniciar Sesion">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
 
-            <button type="Submit" name="Iniciar Sesion">Iniciar Sesión</button>
-        </form>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="mensajeFooter">            
+            No nos hacemos responsables por el mal uso de la información aquí presentada.
+            <br>
+            2023 &copy; GESTION DE NOMINA            
+        </div>
     </div>
 </body>
+
 </html>

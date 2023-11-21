@@ -1,48 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styleEmpleados.css">
-    <link rel="stylesheet" href="../../css/styleMenu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/gwen.css">
+
+    <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
+
     <title>Menú de Opciones.</title>
-    <title>Document</title>
+
 </head>
+
 <body>
-    <div class = "barra">
-        <h2>Menú<img src="../../img/menu.svg"></h2>
-        <ul>
-            <li><a href="configuracionEmpleado.php">Configuración</a></li>
-            <li><a href="infoEmpleado.php">Información</a></li>
-            <li><a href="../ayuda.php">Ayuda</a></li>
-        </ul>
-    </div>
-    <div class = "menu">
-        Panel de Empleados
-        <a href="../../iniciado.php"><button type="button">Inicio</button></a>
-    </div>
-              <form action="../../app/logout.php" method="post">
-                <button type="submit">Logout</button>
-            </form>
-    <div class = "container">
-        <div class = "option">
-            <a href="graficasEmpleado.php">
-                <img class = "grafica-img" src="../../img/graficon.svg" alt="grafica">
-                    <div class = "graficasTexto"><span>Graficas</span></div>
-            </a>
+    <div class="sidebar">
+        <div class="headerSidebar">
+            <img class="logoImg" src="../../img/img/logo.png" alt="Imagen Logo">
+            <div class="tituloSidebar">NÓMINAS</div>
         </div>
-        <div class ="option">
-            <a href="nominaReciente.php">
-                <img class = "nominaReciente-img" src="../../img/nominaReciente.svg" alt="nominaReciente">
-                <div class ="graficasTexto"><span>Nomina Reciente</span></div>
-            </a>
+        <hr>
+            <div class="bienvenidoSideBar">
+            <?php
+                    session_start();
+                    echo "Bienvenido: ";
+                    echo $_SESSION['start'];
+                ?>
+            </div>
+        <div class="sidebarContent">                
+            <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+            <a href="configuracionEmpleado.php"><i class="fa fa-cog"></i> &nbsp;Configuracion</a>
+            <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Informacion</a>
+            <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
-        <Div class ="option">
-            <a href="Historialnominas.php">
-                <img class = "historialNominas-img" src="../../img/nominas.svg" alt="historialNominas">
-                <div class = "historialTxt"><span>Historial De  Nóminas</span></div>
+
+        <form class="sidebarFooter" action="../../app/logout.php" method="post">
+            <button class="btnSalir" type="submit">Cerrar Sesion</button>
+        </form>
+    </div>
+
+
+    <div class="contenido">
+
+        <div class="contenidoHeader">
+                <h1>Panel de Empleados</h1>
+            <div class="panelTitulo">Seleccione una opcion</div>
+        </div>
+
+        <div class="contenidoBody">
+            <a class="enlaceCard" href="graficasEmpleado.php">
+                <div class="card">
+                    <div class="circle-img2">
+                        <img src="../../img/graficon.svg" alt="Imagen Grafica">
+                    </div>
+                    <div class="card-text">
+                        <p>Graficas</p>
+                    </div>
+
+                </div>
             </a>
-        </Div>
+            <a class="enlaceCard" href="nominaReciente.php">
+                <div class="card">
+                    <div class="circle-img2">
+                        <img src="../../img/nominaReciente.svg" alt="nominaReciente">
+                    </div>
+                    <div class="card-text">
+                        <p>Nomina Reciente</p>
+                    </div>
+                </div>
+            </a>
+            <a class="enlaceCard" href="Historialnominas.php">
+                <div class="card">
+                    <div class="circle-img2">
+                        <img src="../../img/nominas.svg" alt="Imagen historialNominas">
+                    </div>
+                    <div class="card-text">
+                        <p>Historial De Nóminas</p>
+                    </div>
+                </div>
+            </a>  
+
+            
     </div>
 </body>
+
 </html>
