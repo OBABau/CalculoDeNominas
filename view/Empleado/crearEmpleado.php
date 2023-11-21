@@ -49,7 +49,7 @@ include('../../app/sesion.php');
             </div>
 
             <div class="loginBody">                
-                <form class="login-form" method="POST" action="../../data/addEmpleado+.php">      
+                <form class="login-form" method="POST" action="../../data/addEmpleado.php">      
                     
                     <div class="formRow">
                         <label class="lblinput" for="nombre">Nombre:</label>

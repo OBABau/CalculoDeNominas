@@ -3,7 +3,7 @@ include('../app/sesion.php');
 include('../app/Worker.php');
 
 $myWorker = new Worker();
-$myWorker->setName($_POST ['name']);
+$myWorker->setName($_POST ['nombre']);
 $myWorker->setLastName($_POST ['apPat']);
 $myWorker->setLastName2($_POST ['apMat']);
 $myWorker->setRFC($_POST ['rfc']);
@@ -17,5 +17,5 @@ $myWorker->setContrasena($_POST['pass']);
 $myWorker->registrarCuenta($newid);
 
 
-//header('Location: ../view/Empleado/crearEmpleado.php');
+header('Location: ../view/Empleado/crearEmpleado.php');
 ?>
