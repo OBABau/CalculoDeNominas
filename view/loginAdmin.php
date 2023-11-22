@@ -26,7 +26,11 @@
       <div class="sidebarContent">
           <a href="../iniciado.php"><i class="fa fa-user"></i> &nbsp;Inicio</a>
       </div>
+      <form class="sidebarFooter" action="../app/logout.php" method="post">
+                <button class="btnSalir" type="submit">Cerrar Sesion</button>
+            </form>
   </div>
+  
   <div class="contenido">
   <h1>Panel de administrador</h1>
   </div>

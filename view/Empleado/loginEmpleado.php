@@ -52,7 +52,7 @@
         </div>
 
         <div class="contenidoBody">
-            <a class="enlaceCard" href="../../img/iconosfinales/graficas.php">
+            <a class="enlaceCard" href="graficasEmpleado.php">
                 <div class="card">
                     <div class="circle-img2">
                         <img src="../../img/iconosfinales/grafica.png" alt="Imagen Grafica">
