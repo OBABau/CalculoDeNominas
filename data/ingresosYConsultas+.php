@@ -69,10 +69,10 @@ class ingresosYConsultas extends ConexionDB
     //
 
     //Benefits
-    public function insertBenefit()
+    public function insertBenefit($amount)
     {
         $result = $this->connect();
-        $query  = "INSERT INTO `benefits`(`code`, `name`, `description`, `enterprise`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.")";
+        $query  = "INSERT INTO `benefits`(`code`, `name`, `description`, `enterprise`, amount) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.", ".$amount.")";
         if ($result)
         {
             $newid = $this->execinsert($query);
@@ -92,6 +92,48 @@ class ingresosYConsultas extends ConexionDB
             $dataset = "error";
         }
         return $dataset;
+    }
+
+    public function getBenefitsByProfile($name){
+        $result = $this->connect();
+        if($result)
+        {
+            //echo"todo bien";
+            $dataset = $this->execquery('SELECT * FROM benefits WHERE name = "'.$name.'"');
+        }
+        else
+        {
+            echo"algo salio mal";
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function getSalary($worker){
+        $result = $this->connect();
+        if($result)
+        {
+            //echo"todo bien";
+            //echo 'SELECT code from salary where worker = '.$worker.' and finished = 0;';
+            $dataset = $this->execquery('SELECT code from salary where worker = '.$worker.' and finished = 0;');
+        }
+        else
+        {
+            echo"algo salio mal";
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+
+    public function insertSalaryBenefits($benefit, $amount, $salary)
+    {
+        $result = $this->connect();
+        $query  = "INSERT INTO salary_benefits values (".$benefit.",".$salary.",".$amount.")";
+        if ($result)
+        {
+            $newid = $this->execinsert($query);
+        }
     }
 
     //Profiles

@@ -75,7 +75,7 @@
            <form method = "POST" action = "pruebasPerfiles.php">
            
                <?php
-                   echo "Prestaciones";
+                   echo "<label class=\"font-weight-bold primary table-primary\" >Prestaciones</label>";
                    echo "<br>";
            
                    $consulta2 = $myobject->getBenefits();

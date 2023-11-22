@@ -11,5 +11,5 @@ while ($tupla = mysqli_fetch_assoc($consulta))
 {
     $myobject->setenterprise($tupla['code']);
 }
-$myobject -> insertBenefit();
+$myobject -> insertBenefit($_POST['benefitAmount']);
 header("Location: ../view/Perfiles/benefits+.php");

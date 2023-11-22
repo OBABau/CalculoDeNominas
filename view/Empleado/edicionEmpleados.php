@@ -44,29 +44,36 @@
     </div>
 
     <div class="contenido2">
+    <form method = "POST" action = "../../app/benefitsModifies.php">
         <h1>Edicion de prestaciones</h1>
-        <table class="table table-striped table-hover">
+        <button type = "submit" name  = "Enviar">Enviar</button>
+        <br>
+        <br>
         <?php
 include('../../app/worker.php');
+include('../../data/ingresosYConsultas+.php');
 $myconsulta = new Worker();
 $dataset = $myconsulta->getAllWorker();
+$myobject = new ingresosYConsultas();
+$perfil = new ingresosYConsultas();
 
 
 if ($dataset != "error") {
     // Imprimir los títulos de la tabla
-    echo '<tr class="font-weight-bold primary table-primary">';
-    echo '<th>Nombre</th>';
-    echo '<th>Apellido Paterno</th>';
-    echo '<th>Apellido Materno</th>';
-    echo '<th>RFC</th>';
-    echo '<th>NSS</th>';
-    echo '<th>CURP</th>';
-    echo '<th>Número de Teléfono</th>';
-    echo '<th>Acciones</th>';
-    echo '</tr>';
-
+   
     // Imprimir los datos de la consulta
     while ($tupla = mysqli_fetch_assoc($dataset)) {
+        echo '<table class="table table-striped table-hover">';
+        echo '<tr class="font-weight-bold primary table-primary">';
+        echo '<th>Nombre</th>';
+        echo '<th>Apellido Paterno</th>';
+        echo '<th>Apellido Materno</th>';
+        echo '<th>RFC</th>';
+        echo '<th>NSS</th>';
+        echo '<th>CURP</th>';
+        echo '<th>Número de Teléfono</th>';
+        echo '<th>Acciones</th>';
+        echo '</tr>';
         echo '<tr>';
         echo "<td>" . $tupla['name'] . "</td>";
         echo "<td>" . $tupla['lastName'] . "</td>";
@@ -80,13 +87,32 @@ if ($dataset != "error") {
         echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
         echo "</td>";
         echo '</tr>';
+        echo '</table>';
+
+        echo "<label class=\"font-weight-bold primary table-primary\" >Prestaciones</label>";
+        echo "<br>";
+        $consulta2 = $myobject->getBenefits();
+        while ($tupla2 = mysqli_fetch_assoc($consulta2)){
+            $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['profile'], "benefits");
+            if($checked)
+            {
+            echo '<label>
+            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
+            </label>';
+            }
+            else
+            {
+                echo '<label>
+            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
+            </label>';
+            }
+        }
+        echo '<br>';
     }}
  else {
     echo "Algo pasó en la consulta";
 }
 ?>
-
-        </table>
     </div>
 </body>
 
