@@ -98,18 +98,16 @@ class Worker extends ConexionDB{
 
     public function getAllWorker(){
         $result = $this->connect();
-        if ($result){
-            $dataset = $this->execquery('SELECT * FROM worker where enterprise  = '.$_SESSION['code'].'');
+    
+        if ($result && isset($_SESSION['code'])) {
+            $query = 'SELECT * FROM worker where enterprise = ' . $_SESSION['code'];
+            $dataset = $this->execquery($query);
+        } else {    
+            return "error";
         }
-        else{
-            echo "algo salio mal";
-            $dataset = "error";
-        }
-
+    
         return $dataset;
     }
-
-
-
+    
 }//fin de la clase
 ?>
