@@ -26,7 +26,7 @@
             <div class="bienvenidoSideBar">Aguilar Villegas Daniel</div>
         </div>
         <div class="sidebarContent">
-            <a href="/index.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+            <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>

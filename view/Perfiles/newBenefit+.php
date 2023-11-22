@@ -31,8 +31,9 @@
                     echo $_SESSION['start'];
                 ?> 
                   </div>
+                  <hr>
             <div class="sidebarContent">                
-                <a href="/index.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+            <a href="../Empresa/loginEmpresa.php"><i class="fa fa-home"></i> &nbsp;Panel Empresa</a>
                 <a href="creacionPerfiles.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
                 <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
             </div>

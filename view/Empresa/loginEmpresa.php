@@ -83,7 +83,7 @@
                         <img src="../../img/edicionEmpleados.svg" alt="Imagen edicionEmpleados">
                     </div>
                     <div class="card-text">
-                        <p>Edicion de Empleados</p>
+                        <p>PROXIMAMENTE EDICION PRESTACIONES</p>
                     </div>
                 </div>
             </a>
