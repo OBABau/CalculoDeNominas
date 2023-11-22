@@ -61,7 +61,7 @@
                 
                 <div class="formRow">
                     <label class="lblinput" for="rfc">Dirección:</label>
-                    <input class="input" type="text" id="direccion" name="direccion" maxlength="30"
+                    <input class="input" type="text" id="direccion" name="direccion" maxlength="100"
                         placeholder="Ingrese Direccion" required>
                 </div>              
 

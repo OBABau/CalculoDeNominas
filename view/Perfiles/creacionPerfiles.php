@@ -48,17 +48,7 @@
         </div>        
 
         <div class="contenidoBody">
-            <a class="enlaceCard" href="newIncome+.php">
-                <div class="card">
-                    <div class="circle-img2">
-                        <img src="../../img/iconosfinales/nuevoingreso.png" alt="Imagen graficaEmpresa">
-                    </div>
-                    <div class="card-text">
-                        <p>Nuevo Ingreso</p>
-                    </div>
-                </div>
-            </a>
-
+            
             <a class="enlaceCard" href="newBenefit+.php">
                 <div class="card">
                     <div class="circle-img2">
@@ -66,29 +56,6 @@
                     </div>
                     <div class="card-text">
                         <p>Nueva prestación</p>
-                    </div>
-                </div>
-            </a>
-
-
-            <a class="enlaceCard" href="newProfile+.php">
-                <div class="card">
-                    <div class="circle-img2">
-                        <img src="../../img/iconosfinales/nuevoperfil.png" alt="Imagen perfiles">
-                    </div>
-                    <div class="card-text">
-                        <p>Nuevo perfil</p>
-                    </div>
-                </div>
-            </a>
-                   
-            <a class="enlaceCard" href="income+.php">
-                <div class="card">
-                    <div class="circle-img2">
-                        <img src="../../img/iconosfinales/ingresos.png" alt="Imagen graficaEmpresa">
-                    </div>
-                    <div class="card-text">
-                        <p>Ingresos</p>
                     </div>
                 </div>
             </a>
@@ -103,6 +70,19 @@
                     </div>
                 </div>
             </a>
+            
+            <a class="enlaceCard" href="newProfile+.php">
+                <div class="card">
+                    <div class="circle-img2">
+                        <img src="../../img/iconosfinales/nuevoperfil.png" alt="Imagen perfiles">
+                    </div>
+                    <div class="card-text">
+                        <p>Nuevo perfil</p>
+                    </div>
+                </div>
+            </a>
+                   
+            
 
             <a class="enlaceCard" href="profile+.php">
                 <div class="card">
@@ -114,9 +94,6 @@
                     </div>
                 </div>
             </a>
-
-
-
         </div>
 </body>
 

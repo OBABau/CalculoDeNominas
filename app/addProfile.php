@@ -9,8 +9,8 @@ $myobject -> setDescription($_POST['profileDescription']);
 $consulta = $myobject->getEnterprise();
 while ($tupla = mysqli_fetch_assoc($consulta))
 {
-    $myobject->setEnterprise($tupla['code']);
+    $myobject->setEnterprise($tupla['code'] );
 }
-$myobject -> insertProfile();
+$myobject -> insertProfile($_POST['profileAmount']);
 header("Location: ../view/Perfiles/profile+.php");
 ?>

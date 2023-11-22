@@ -60,7 +60,12 @@
                         <i class="fa fa-user"></i>
                         <input class="input" type="text" id="benefitDescription" name="benefitDescription" maxlength="100"
                             placeholder="Ingrese la Descripcion">
-                    </div>                             
+                    </div>  
+                    <div class="formRow">                        
+                        <label class="lblinput" for="benefitAmount">Cantidad:</label>                        
+                        <input class="inputNumber" type="number" name="benefitAmount" id="benefitAmount" maxlength="100"
+                        placeholder="0">
+                    </div>                           
                     <div class="formRow">
                         <button class="boton1" type="Submit" value="Enviar">Registrar</button>
                     </div>                

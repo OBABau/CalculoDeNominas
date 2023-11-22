@@ -5,9 +5,10 @@ echo "<br>";
 $perfil = new perfiles();
 $perfil->updateTo0("incomes");
 $perfil->updateTo0("benefits");
+echo "llego";
 if(isset($_POST['Enviar'])){
     foreach($_POST as $key => $value){
-        
+        echo "llego2";
         if(is_array($value)){
             foreach($value as $option){
                 echo "Key: " . $key . ", Value: " . $option . "<br>";
@@ -19,4 +20,6 @@ if(isset($_POST['Enviar'])){
         }
     }
 }
+
+header("location: creacionPerfiles.php");
 ?>

@@ -56,7 +56,13 @@
                         <i class="fa fa-user"></i>
                         <input class="input" type="text" id="profileDescription" name="profileDescription" maxlength="100"
                             placeholder="Descripcion de el Perfil">
-                    </div>                    
+                    </div> 
+                    
+                    <div class="formRow">                        
+                        <label class="lblinput" for="prodileAmount">Cantidad:</label>                        
+                        <input class="inputNumber" type="number" name="profileAmount" id="profileAmount" maxlength="100"
+                        placeholder="0">
+                    </div>  
                     <div class="formRow">
                         <button class="boton1" type="Submit" value="Enviar">Registrar</button>
                     </div>                

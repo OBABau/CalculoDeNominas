@@ -2,15 +2,9 @@ INSERT INTO USER_TYPE VALUES (1,'admin');
 INSERT INTO USER_TYPE VALUES (2,'employee');
 INSERT INTO USER_TYPE VALUES (3,'enterprise');
 
-drop `user_type`
-
 INSERT INTO USER (email, password, creationDate, userType) VALUES ('usuario1@example.com', '123', '2023-10-23', 1);
 INSERT INTO USER (email, password, creationDate, userType) VALUES ('usuario2@example.com', '123', '2023-10-23', 2);
 INSERT INTO USER (email, password, creationDate, userType) VALUES ('usuario3@example.com', '123', '2023-10-23', 3);
-
-update table `enterprise`
-set user = null
-where code = 1;
 
 alter table user
 add column active boolean
@@ -90,13 +84,7 @@ END;
 DELIMITER ;
 
 alter table `benefits`
-add column operation varchar(5)
-
-alter table `benefits`
 add column amount float
-
-alter table `incomes`
-add column operation varchar(5)
 
 alter table `incomes`
 add column amount float
@@ -130,24 +118,15 @@ alter table `salary`
 add column finished boolean
 
 DELIMITER //
-CREATE TRIGGER trg_update_finished_status
-BEFORE UPDATE
-ON worker
-FOR EACH ROW
-BEGIN
-    IF NEW.hours >= '14:00:00' THEN
-        SET NEW.finished = TRUE;
-    END IF;
-END;
-//
-
-DELIMITER //
 CREATE EVENT update_salary_finished
 ON SCHEDULE EVERY 1 WEEK
-STARTS '2023-11-13 00:00:00'
+STARTS '2023-11-13 05:00:00'
 DO
 BEGIN
     -- Actualizar el valor de finished en la tabla salary
+    update salary as s
+    set s.total = (days/2)*(select income from profile where code = s.profile);
+
     UPDATE salary
     SET finished = TRUE;
 
@@ -158,9 +137,15 @@ BEGIN
 END;
 //
 
-SET GLOBAL event_scheduler = ON;
 
 
 ALTER TABLE WORKER
 ADD COLUMN active BOOLEAN DEFAULT 1;
 
+SET GLOBAL event_scheduler = ON;
+
+alter table salary
+change hours days int
+
+alter table profile
+add column salary float

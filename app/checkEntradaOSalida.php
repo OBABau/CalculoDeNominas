@@ -15,6 +15,8 @@ $empleado = new Empleado();
     {
         $empleado->entryInsert($tupla['code'],$tupla['enterprise'],$tupla['profile']);
     }
+
+    $_SESSION['codeRegistro'] = 0;
  header("location: ../view/registroEntrada.php");
 
 
