@@ -83,7 +83,7 @@
                         <img src="../../img/iconosfinales/edicionprestaciones.png" alt="Imagen edicionEmpleados">
                     </div>
                     <div class="card-text">
-                        <p>PROXIMAMENTE EDICION PRESTACIONES</p>
+                        <p>Edicion de prestaciones</p>
                     </div>
                 </div>
             </a>
