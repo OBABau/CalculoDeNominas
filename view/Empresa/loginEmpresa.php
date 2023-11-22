@@ -59,7 +59,7 @@
             <a class="enlaceCard" href="graficasEmpresa.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/graficon.svg" alt="Imagen Recibo">
+                        <img src="../../img/iconosfinales/grafica.png" alt="Imagen Recibo">
                     </div>
                     <div class="card-text">
                         <p>Graficas</p>
@@ -70,7 +70,7 @@
             <a class="enlaceCard" href="../Empleado/listaEmpleados.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/listaEmpleados.svg" alt="Imagen Recibo">
+                        <img src="../../img/iconosfinales/empleado.png" alt="Imagen Recibo">
                     </div>
                     <div class="card-text">
                         <p>Lista De Empleados</p>
@@ -80,7 +80,7 @@
             <a class="enlaceCard" href="../Empleado/edicionEmpleados.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/edicionEmpleados.svg" alt="Imagen edicionEmpleados">
+                        <img src="../../img/iconosfinales/edicionprestaciones.png" alt="Imagen edicionEmpleados">
                     </div>
                     <div class="card-text">
                         <p>PROXIMAMENTE EDICION PRESTACIONES</p>
@@ -90,7 +90,7 @@
             <a class="enlaceCard" href="../Perfiles/creacionPerfiles.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/perfiles.svg" alt="Imagen graficasEmpresa">
+                        <img src="../../img/iconosfinales/creacionperfiles.png" alt="Imagen graficasEmpresa">
                     </div>
                     <div class="card-text">
                         <p>Creacion de perfiles para empleados</p>
@@ -100,7 +100,7 @@
             <a class="enlaceCard" href="HistorialPagos.php">
                 <div class="card"> 
                     <div class="circle-img2">
-                        <img src="../../img/historialPagos.svg" alt="Imagen historialPagos">
+                        <img src="../../img/iconosfinales/historial.png" alt="Imagen historialPagos">
                     </div>
                     <div class="card-text">
                         <p>Historial de Pagos</p>
@@ -110,7 +110,7 @@
             <a class="enlaceCard" href="../registroEntrada.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/historialPagos.svg" alt="Imagen historialPagos">
+                        <img src="../../img/iconosfinales/registros.png" alt="Imagen historialPagos">
                     </div>
                     <div class="card-text">
                         <p>Registrar entrada y salida</p>

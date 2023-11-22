@@ -21,10 +21,15 @@
             <img class="logoImg" src="../../img/img/logo.png" alt="Imagen Logo">
             <div class="tituloSidebar">NÓMINAS</div>
         </div>
-        <div class="userSidebar">
-            <!-- <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?>  -->
-            <div class="bienvenidoSideBar">Aguilar Villegas Daniel</div>
+        <hr>
+        <div class="bienvenidoSideBar">
+        <?php
+                    session_start();
+                    echo "Bienvenido: ";
+                    echo $_SESSION['start'];
+                ?> 
         </div>
+        <hr>
         <div class="sidebarContent">
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
