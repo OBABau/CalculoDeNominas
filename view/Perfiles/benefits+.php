@@ -53,9 +53,15 @@
                     while($tupla = mysqli_fetch_assoc($consulta))
                     {   
                         echo'<tr class="font-weight-bold primary table-primary">';
+                        echo"<th>Codigo</th>";
+                        echo"<th>Nombre</th>";
+                        echo"<th>Descripcion</th>";
+                        echo"<th>Cantidad</th>";
+                        echo "</tr>";
                         echo"<td>".$tupla['code']."</td>";
                         echo"<td>".$tupla['name']."</td>";
                         echo"<td>".$tupla['description']."</td>";
+                        echo"<td>".$tupla['amount']."</td>";
                         echo"</tr>";            
                     }
                 }

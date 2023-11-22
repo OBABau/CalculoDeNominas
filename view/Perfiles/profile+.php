@@ -48,110 +48,60 @@
         <h1>Perfiles</h1>       
         <table class="table table-striped table-hover">
         <?php
-            include("../../data/ingresosYConsultas+.php");
-            $myobject = new ingresosYConsultas();
-            $consulta = $myobject->getProfiles();
-            $perfil = new ingresosYConsultas();
-            if($consulta != 'error')
-            {       
-                while($tupla = mysqli_fetch_assoc($consulta))
-                {   
-                    $consulta2 = $myobject->getIncomes();        
-                    echo '<tr class="font-weight-bold primary table-primary">';
-                    echo "<td>".$tupla['code']."</td>";
-                    echo "<td>".$tupla['name']."</td>";
-                    echo "<td>".$tupla['description']."</td>";
-                    echo '</tr>';
-            ?>                   
-        </table>
+           include("../../data/ingresosYConsultas+.php");
+           $myobject = new ingresosYConsultas();
+           $consulta = $myobject->getProfiles();
+           $perfil = new ingresosYConsultas();
+           if($consulta != 'error')
+           {       
+               while($tupla = mysqli_fetch_assoc($consulta))
+               {   
+                   $consulta2 = $myobject->getIncomes();
+                   echo "<table class=\"table table-striped table-hover\">";
+                   echo "<tr class=\"font-weight-bold primary table-primary\">";
+                   echo "<th>Codigo</th>";
+                   echo "<th>Nombre</th>";
+                   echo "<th>Descripcion</th>";
+                   echo "<th>Sueldo</th>";
+                   echo "</tr>";
 
-        <?php
-        echo "Ingresos";
-        echo "<br>";
-        while ($tupla2 = mysqli_fetch_assoc($consulta2))
-        {
-            $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "incomes");
-            if($checked)
-            {
-            echo '<label>
-            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
-            </label>';
-            }
-            else
-            {
-                echo '<label>
-            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
-            </label>';
-            }
-        }
-        echo "<br>";
-        echo "Prestaciones";
-        echo "<br>";
-
-        $consulta2 = $myobject->getBenefits();
-        while ($tupla2 = mysqli_fetch_assoc($consulta2))
-        {
-            $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "benefits");
-            if($checked)
-            {
-            echo '<label>
-            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
-            </label>';
-            }
-            else
-            {
-                echo '<label>
-            <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
-            </label>';
-            }
-        }            
-    ?>
-
-        <form method="POST" action="pruebasPerfiles.php">
-            <?php
-                while ($tupla2 = mysqli_fetch_assoc($consulta2))
-                {
-                    $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "incomes");
-                    if($checked)
-                    {
-                        echo '<div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked  >
-                              <label class="form-check-label" for="ingresos">'.$tupla2['name'].'</label>
-                              </div>';
-                    }
-                    else
-                    {
-                        echo '<div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="ingresos" name='.$tupla['code'].'[] value = "'.$tupla2['name'].'" >
-                                <label class="form-check-label" for="ingresos">'.$tupla2['name'].'</label>
-                              </div>';
-                    }
-                }
-
-                echo "<br>";
-                echo "<h3>Prestaciones</h3>";                
-                $consulta2 = $myobject->getBenefits();
-                while ($tupla2 = mysqli_fetch_assoc($consulta2))
-                {
-                    $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "benefits");
-                    if($checked)
-                    {
-                        echo '<div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="ingresos" name='.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked>
-                                <label class="form-check-label" for="ingresos">'.$tupla2['name'].'</label>
-                              </div>';
-                    }
-                    else
-                    {
-                        echo '<div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="ingresos" name='.$tupla['code'].'[] value = "'.$tupla2['name'].'" >
-                                <label class="form-check-label" for="ingresos">'.$tupla2['name'].'</label>
-                              </div>';
-                    }
-                } 
-            }
-        }               
-        ?>
+                   echo "<td>".$tupla['code']."</td>";
+                   echo "<td>".$tupla['name']."</td>";
+                   echo "<td>".$tupla['description']."</td>";
+                   echo "<td>".$tupla['income']."</td>";
+                   echo '</tr>';
+                   echo "</table>";
+           ?>
+           <form method = "POST" action = "pruebasPerfiles.php">
+           
+               <?php
+                   echo "Prestaciones";
+                   echo "<br>";
+           
+                   $consulta2 = $myobject->getBenefits();
+                   while ($tupla2 = mysqli_fetch_assoc($consulta2)){
+                       $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "benefits");
+                       if($checked)
+                       {
+                       echo '<label>
+                       <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
+                       </label>';
+                       }
+                       else
+                       {
+                           echo '<label>
+                       <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
+                       </label>';
+                       }
+                   }
+                   }
+               }
+           
+               
+                       ?>
+               <button type = "submit" name  = "Enviar">Enviar</button>
+           </body>
+        </div>   
         </form>
 
     </div>

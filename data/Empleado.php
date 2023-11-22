@@ -115,5 +115,7 @@ public function entryInsert( $worker, $enterprise, $profile ){
     }
     return $dataset;
 }
+
+public function get empleaod
 }
 ?>

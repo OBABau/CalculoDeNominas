@@ -43,10 +43,50 @@
         </form>
     </div>
 
-    <div class="contenido">
-        AQUI SE PODRAN EDITAR LOS EMPLEADOS DE LA EMPRESA, INFO , ASIGNAR PERFILES, ETC
+    <div class="contenido2">
+        <h1>Edicion de prestaciones</h1>
+        <table class="table table-striped table-hover">
+        <?php
+include('../../app/worker.php');
+$myconsulta = new Worker();
+$dataset = $myconsulta->getAllWorker();
 
-        (POSIBLE QUE SE BORRE ESTE APARTADO Y TODO SE INTEGRA A LISTA DE EMPLEADOS)
+
+if ($dataset != "error") {
+    // Imprimir los títulos de la tabla
+    echo '<tr class="font-weight-bold primary table-primary">';
+    echo '<th>Nombre</th>';
+    echo '<th>Apellido Paterno</th>';
+    echo '<th>Apellido Materno</th>';
+    echo '<th>RFC</th>';
+    echo '<th>NSS</th>';
+    echo '<th>CURP</th>';
+    echo '<th>Número de Teléfono</th>';
+    echo '<th>Acciones</th>';
+    echo '</tr>';
+
+    // Imprimir los datos de la consulta
+    while ($tupla = mysqli_fetch_assoc($dataset)) {
+        echo '<tr>';
+        echo "<td>" . $tupla['name'] . "</td>";
+        echo "<td>" . $tupla['lastName'] . "</td>";
+        echo "<td>" . $tupla['lastName2'] . "</td>";
+        echo "<td>" . $tupla['RFC'] . "</td>";
+        echo "<td>" . $tupla['NSS'] . "</td>";
+        echo "<td>" . $tupla['CURP'] . "</td>";
+        echo "<td>" . $tupla['number'] . "</td>";
+        echo "<td>";
+        echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
+        echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
+        echo "</td>";
+        echo '</tr>';
+    }}
+ else {
+    echo "Algo pasó en la consulta";
+}
+?>
+
+        </table>
     </div>
 </body>
 

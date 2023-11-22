@@ -42,10 +42,10 @@ class ingresosYConsultas extends ConexionDB
         return $dataset;
     }
     //incomes
-    public function insertIncome($amount, $operation)
+    public function insertIncome($amount)
     {
         $result = $this->connect();
-        $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`, `operation`, `amount`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.",'".$operation."', ".$amount.")";
+        $query  = "INSERT INTO `incomes`(`code`, `name`, `description`, `enterprise`, `amount`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.", ".$amount.")";
         if ($result)
         {
             $newid = $this->execinsert($query);
@@ -96,10 +96,10 @@ class ingresosYConsultas extends ConexionDB
 
     //Profiles
 
-    public function insertProfile()
+    public function insertProfile($income)
     {
         $result = $this->connect();
-        $query  = "INSERT INTO `profile`(`code`, `name`, `description`, `enterprise`) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.")";
+        $query  = "INSERT INTO `profile`(`code`, `name`, `description`, `enterprise`, income) VALUES (null,'".$this->name."','".$this->description."',".$this->enterprise.", ".$income.")";
         if ($result)
         {
             $newid = $this->execinsert($query);
