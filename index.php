@@ -26,6 +26,7 @@
         <div class="navbarCuerpo">          
             <a class="enlaceNavbar sombraTexto1" href="index.php"> &nbsp;Inicio<i class="fa fa-chevron-down"></i></a>
             <a class="enlaceNavbar sombraTexto1" href="view/Empresa/verPlanes.php"> &nbsp;Ver Planes<i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="view/Empresa/registrarEmpresas.php"> &nbsp;Registrate<i class="fa fa-chevron-down"></i></a>
             <a class="enlaceNavbar sombraTexto1" href="view/login.php"> &nbsp;Login<i class="fa fa-chevron-down"></i></a>
         </div>
 

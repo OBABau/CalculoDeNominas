@@ -25,6 +25,7 @@
         
         <div class="navbarCuerpo">                    
             <a class="enlaceNavbar sombraTexto1" href="../../index.php"> &nbsp;Inicio<i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="../../view/ayuda.php"> &nbsp;Ayuda<i class="fa fa-chevron-down"></i></a>
         </div>
     </nav>
 
