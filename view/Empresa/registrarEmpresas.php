@@ -20,11 +20,12 @@
 <body>
     <nav class="navbar">
         <div class="navbarHeader">
-            <div class="navbarTitulo">GESTION DE NOMINA</div>
+            <div class="navbarTitulo">TFT</div>
         </div>
         
         <div class="navbarCuerpo">                    
             <a class="enlaceNavbar sombraTexto1" href="../../index.php"> &nbsp;Inicio<i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="../../view/ayuda.php"> &nbsp;Ayuda<i class="fa fa-chevron-down"></i></a>
         </div>
     </nav>
 
@@ -82,7 +83,7 @@
         <div class="mensajeFooter">            
             No nos hacemos responsables por el mal uso de la información aquí presentada.
             <br>
-            2023 &copy; GESTION DE NOMINA            
+            2023 &copy; TFT            
         </div>
     </div>
 </body>

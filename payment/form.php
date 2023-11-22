@@ -18,7 +18,7 @@ include('../app/sesion.php');
 <body>
     <nav class="navbar">
         <div class="navbarHeader">
-            <div class="navbarTitulo">GESTION DE NOMINA</div>
+            <div class="navbarTitulo">TFT</div>
             <div class="login">
             <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?>            
         </div>

@@ -144,5 +144,11 @@ SET GLOBAL event_scheduler = ON;
 alter table salary
 change hours days int
 
+<<<<<<< HEAD
 alter table profile
 add column salary float
+=======
+ALTER TABLE WORKER
+ADD COLUMN active BOOLEAN DEFAULT 1;
+
+>>>>>>> origin/cambios-tarde-del-21
