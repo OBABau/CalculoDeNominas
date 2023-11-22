@@ -48,7 +48,7 @@ class ConexionDB{
 		return $this->dataset;
 	}
 	else{
-		//echo "algo paso en la consulta";
+		echo "algo paso en la consulta";
 		return 0;
 	}
 }

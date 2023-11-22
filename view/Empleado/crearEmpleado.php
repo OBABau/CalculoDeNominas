@@ -71,26 +71,26 @@ include('../../app/sesion.php');
                     <div class="formRow">                        
                         <label class="lblinput" for="rfc">RFC:</label>                        
                         <input class="input" type="text" name="rfc" id="rfc" pattern="[A-Z0-9]{13}"
-                        title="Debe ingresar exactamente 13 caracteres alfanuméricos"  maxlength=13 required>
+                        title="Debe ingresar exactamente 13 caracteres alfanuméricos" required>
                     </div>
                     
 
                     <div class="formRow">
                         <label class="lblinput" for="nss">NSS:</label>
                         <input class="input" type="text" id="nss" name="nss"
-                         pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" maxlength=11 required>
+                         pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" required>
                     </div>        
 
                     <div class="formRow">
                         <label class="lblinput" for="curp">CURP:</label>
-                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{16}"
-                        title="Debe ingresar un CURP válido" maxlength=16 required>
+                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{13}"
+                        title="Debe ingresar un CURP válido" required>
                     </div>        
                     
                 <div class="formRow">
                     <label class="lblinput" for="phone">Número de Teléfono:</label>
                     <input class="input" type="text" id="phone" name="phone"  pattern="\d{10}"
-                    title="Debe ingresar exactamente 12 dígitos" maxlength= 10 minlength= 10 required>
+                    title="Debe ingresar exactamente 12 dígitos" required>
                 </div>        
 
         
