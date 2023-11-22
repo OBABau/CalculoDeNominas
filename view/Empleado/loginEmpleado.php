@@ -53,10 +53,10 @@
         </div>
 
         <div class="contenidoBody">
-            <a class="enlaceCard" href="graficasEmpleado.php">
+            <a class="enlaceCard" href="../../img/iconosfinales/graficas.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/graficon.svg" alt="Imagen Grafica">
+                        <img src="../../img/iconosfinales/grafica.png" alt="Imagen Grafica">
                     </div>
                     <div class="card-text">
                         <p>Graficas</p>
@@ -67,7 +67,7 @@
             <a class="enlaceCard" href="nominaReciente.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nominaReciente.svg" alt="nominaReciente">
+                        <img src="../../img/iconosfinales/nominareciente.png" alt="nominaReciente">
                     </div>
                     <div class="card-text">
                         <p>Nomina Reciente</p>
@@ -77,7 +77,7 @@
             <a class="enlaceCard" href="Historialnominas.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nominas.svg" alt="Imagen historialNominas">
+                        <img src="../../img/iconosfinales/historial.png" alt="Imagen historialNominas">
                     </div>
                     <div class="card-text">
                         <p>Historial De Nóminas</p>

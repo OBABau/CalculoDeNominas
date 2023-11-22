@@ -20,7 +20,7 @@
 <body>
     <nav class="navbar">
         <div class="navbarHeader">
-            <div class="navbarTitulo">GESTION DE NOMINA</div>
+            <div class="navbarTitulo">TFT</div>
         </div>
         
         <div class="navbarCuerpo">          
@@ -34,8 +34,8 @@
 
     <div class="cuerpo2">        
         <div class="hero1 sombra p-4">
-            <h1 class="text-center font-weight-bold text-white mt-4 titulo11">GESTOR DE NOMINAS</h1>            
-            <h1 class="text-center mb-4 subtitulo22">Administra tus nominas, contrata servicios y mucho mas.</h1>                   
+            <h1 class="text-center font-weight-bold text-white mt-4 titulo11">TFT</h1>            
+            <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar nominas.</h1>                   
       <div class="d-flex container-fluid mt-3 sombra2" lc-helper="background" style="height:50vh;background:url(img/img/busines3.jpg)  center / cover no-repeat;">
     </div>
     <div class="container p-5 bg1 sombra2" style="margin-top:-100px">
@@ -43,14 +43,14 @@
             <div class="col-md-4 text-center align-self-center">
                 <div class="lc-block border-end border-2 ">
                     <div editable="rich">
-                        <p class="display-4 font-weight-bold">WHY?</p>
+                        <p class="display-4 font-weight-bold">¿Quiénes somos?</p>
                     </div>
                 </div><!-- /lc-block -->
             </div><!-- /col -->
             <div class="col-md-8">
                 <div class="lc-block ">
                     <div editable="rich">
-                        <p class="display-4 subtitulo11">Think different and create a wonderful kind of digital agency.</p>
+                        <p class="display-4 subtitulo11"><br> Axis Development.</p>
                     </div>
                 </div><!-- /lc-block -->
             </div><!-- /col -->
@@ -59,9 +59,8 @@
             <div class="col-md-9 offset-md-1">
                 <div class="lc-block mt-5">
                     <div editable="rich">
-                        <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.&nbsp;</p>
-                        <p class="lead">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis tempor
-                            ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis. </p>
+                        <p class="lead"> Una empresa apasionada por la innovación y el desarrollo de soluciones tecnológicas. En el corazón de nuestra misión se encuentra el compromiso con la excelencia en el diseño y la implementación de software de vanguardia.&nbsp;</p>
+                        <p class="lead">En Axis Development, entendemos que cada proyecto es único. Nos destacamos por nuestro enfoque personalizado, colaborando estrechamente con nuestros clientes para comprender sus necesidades y ofrecer soluciones adaptadas. </p>
                     </div>
                 </div><!-- /lc-block -->
             </div><!-- /col -->
@@ -108,10 +107,9 @@
 			<!-- requires glightbox, please flag the option in the picostrap customizer panel-->
 
 
-			<div class="lc-block position-relative"><img class="img-fluid rounded shadow" src="https://images.unsplash.com/photo-1621947081720-86970823b77a?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=3840&amp;q=80" srcset="https://images.unsplash.com/photo-1621947081720-86970823b77a?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=3840&amp;q=80 3840w, https://images.unsplash.com/photo-1621947081720-86970823b77a??ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=150&amp;q=80 150w, https://images.unsplash.com/photo-1621947081720-86970823b77a??ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=300&amp;q=80 300w, https://images.unsplash.com/photo-1621947081720-86970823b77a??ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=768&amp;q=80 768w, https://images.unsplash.com/photo-1621947081720-86970823b77a??ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1024&amp;q=80 1024w" sizes="(max-width: 3840px) 100vw, 3840px" width="3840" height="" alt="Photo by Richard Horvath">
-				<a class="position-absolute top-50 start-50 translate-middle glightbox d-flex justify-content-center align-items-center" href="https://www.youtube.com/watch?v=BKgpLOUYZJ4">
+			<div class="lc-block position-relative"><img class="img-fluid rounded shadow" src="img/ind1.jpg">
 					<svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" fill="currentColor" class="text-white" viewBox="0 0 16 16" lc-helper="svg-icon">
-						<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"></path>
+						
 					</svg>
 				</a>
 			</div>
@@ -119,7 +117,7 @@
 		<div class="col-md-6 col-xl-5">
 			<div class="lc-block mb-3">
 				<div editable="rich">
-					<h1 class="fw-bolder display-2 subtitulo11">Lorem ipsum dolor sit</h1>
+					<h1 class="fw-bolder display-2 subtitulo11">¿Problemas con las nóminas?</h1>
 				</div>
 			</div><!-- /lc-block -->
 			<!-- /lc-block -->
@@ -128,12 +126,12 @@
 			<div class="lc-block mb-4">
 				<div editable="rich">
 
-					<p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam velit temporibus impedits maxime repellendus esse tempore odio voluptatum iusto consectetur voluptates.</p>
+					<p class="lead text-white">No te preocupes más. Con nuestra plataforma tu empresa tendrá la facilidad de administrar y contabilizar las nóminas de tus empleados de manera sencilla</p>
 
 				</div>
 			</div>
 			<div class="lc-block">
-				<a class="btn btn-lg btn-light" href="#" role="button">Get it now</a>
+				<a class="btn btn-lg btn-light" href="view/Empresa/registrarEmpresas.php" role="button">Registrate</a>
 			</div><!-- /lc-block -->
 		</div><!-- /col -->
 	</div>
@@ -150,7 +148,7 @@
         <div class="mensajeFooter">            
             No nos hacemos responsables por el mal uso de la información aquí presentada.
             <br>
-            2023 &copy; GESTION DE NOMINA            
+            2023 &copy; TFT            
         </div>
     </div>
 
