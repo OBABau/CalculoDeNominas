@@ -34,7 +34,6 @@
             </div>
         <div class="sidebarContent">                
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-            <a href="configuracionEmpleado.php"><i class="fa fa-cog"></i> &nbsp;Configuracion</a>
             <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Informacion</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
@@ -56,7 +55,7 @@
             <a class="enlaceCard" href="graficasEmpleado.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/graficon.svg" alt="Imagen Grafica">
+                        <img src="../../img/iconosfinales/grafica.png" alt="Imagen Grafica">
                     </div>
                     <div class="card-text">
                         <p>Graficas</p>
@@ -67,7 +66,7 @@
             <a class="enlaceCard" href="nominaReciente.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nominaReciente.svg" alt="nominaReciente">
+                        <img src="../../img/iconosfinales/nominareciente.png" alt="nominaReciente">
                     </div>
                     <div class="card-text">
                         <p>Nomina Reciente</p>
@@ -77,7 +76,7 @@
             <a class="enlaceCard" href="Historialnominas.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nominas.svg" alt="Imagen historialNominas">
+                        <img src="../../img/iconosfinales/historial.png" alt="Imagen historialNominas">
                     </div>
                     <div class="card-text">
                         <p>Historial De Nóminas</p>

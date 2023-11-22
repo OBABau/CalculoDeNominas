@@ -22,7 +22,7 @@
     ?>
     <nav class="navbar">
         <div class="navbarHeader">
-            <div class="navbarTitulo">GESTION DE NOMINA</div>
+            <div class="navbarTitulo">TFT</div>
         </div>
         
         <div class="navbarCuerpo">                              
@@ -101,7 +101,7 @@
     <div class="mensajeFooter">            
         No nos hacemos responsables por el mal uso de la información aquí presentada.
         <br>
-        2023 &copy; GESTION DE NOMINA            
+        2023 &copy; TFT            
     </div>
 </div>
 </body>

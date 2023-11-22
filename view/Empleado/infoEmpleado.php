@@ -24,6 +24,7 @@
             <img class="logoImg" src="../../img/img/logo.png" alt="Imagen Logo">
             <div class="tituloSidebar">NÓMINAS</div>
         </div>
+        <hr>
         <div class="bienvenidoSideBar">
             <?php
                     session_start();

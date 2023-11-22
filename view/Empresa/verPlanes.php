@@ -24,7 +24,7 @@ include('../app/sesion.php');
     <header>        
         <nav class="navbar">
             <div class="navbarHeader">
-                <div class="navbarTitulo">GESTION DE NOMINA</div>
+                <div class="navbarTitulo">TFT</div>
             </div>
             
             <div class="navbarCuerpo">            

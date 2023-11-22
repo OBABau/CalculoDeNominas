@@ -91,7 +91,7 @@ if ($dataset != "error") {
         echo "<td>" . $tupla['number'] . "</td>";
         echo "<td>";
         echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
-        echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
+        echo "<a href='../../app/eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
         echo "</td>";
         echo '</tr>';
     }

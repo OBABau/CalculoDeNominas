@@ -139,6 +139,9 @@ END;
 
 
 
+ALTER TABLE WORKER
+ADD COLUMN active BOOLEAN DEFAULT 1;
+
 SET GLOBAL event_scheduler = ON;
 
 alter table salary
