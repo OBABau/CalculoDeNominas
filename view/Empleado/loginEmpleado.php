@@ -34,7 +34,6 @@
             </div>
         <div class="sidebarContent">                
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-            <a href="configuracionEmpleado.php"><i class="fa fa-cog"></i> &nbsp;Configuracion</a>
             <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Informacion</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
