@@ -49,7 +49,7 @@
             <a class="enlaceCard" href="crearEmpleado.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/perfiles.svg" alt="Imagen Perfiles">
+                        <img src="../../img/iconosfinales/añadirusuario.png" alt="Imagen Perfiles">
                     </div>
                     <div class="card-text">
                         <p>Agregar Empleado</p>
@@ -61,33 +61,45 @@
 
         <h1>Lista de Usuarios Registrados</h1>
         <table class="table table-striped table-hover">
-            <?php
-                include('../../app/worker.php');
-                $myconsulta = new Worker();
-                $dataset = $myconsulta->getAllWorker();
-                if ($dataset != "error")
-                {
-                    while ($tupla = mysqli_fetch_assoc($dataset))
-                    {
-                        echo '<tr class="font-weight-bold primary table-primary">';
-                        echo "<td>"  . $tupla['name'] . "</td>";
-                        echo "<td>"  . $tupla['lastName'] . "</td>";
-                        echo "<td>"  . $tupla['lastName2'] . "</td>";
-                        echo "<td>"  . $tupla['RFC'] . "</td>";
-                        echo "<td>"  . $tupla['NSS'] . "</td>";
-                        echo "<td>"  . $tupla['CURP'] . "</td>";
-                        echo "<td>"  . $tupla['number'] . "</td>";
-                        echo "<td>";
-                        echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
-                        echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
-                        echo "</td>";
-                        echo "</tr>";
-                    }
-                }
-                else{
-                    echo "algo paso en la consulta";
-                }
-            ?>
+        <?php
+include('../../app/worker.php');
+$myconsulta = new Worker();
+$dataset = $myconsulta->getAllWorker();
+
+if ($dataset != "error") {
+    // Imprimir los títulos de la tabla
+    echo '<tr class="font-weight-bold primary table-primary">';
+    echo '<th>Nombre</th>';
+    echo '<th>Apellido Paterno</th>';
+    echo '<th>Apellido Materno</th>';
+    echo '<th>RFC</th>';
+    echo '<th>NSS</th>';
+    echo '<th>CURP</th>';
+    echo '<th>Número de Teléfono</th>';
+    echo '<th>Acciones</th>';
+    echo '</tr>';
+
+    // Imprimir los datos de la consulta
+    while ($tupla = mysqli_fetch_assoc($dataset)) {
+        echo '<tr>';
+        echo "<td>" . $tupla['name'] . "</td>";
+        echo "<td>" . $tupla['lastName'] . "</td>";
+        echo "<td>" . $tupla['lastName2'] . "</td>";
+        echo "<td>" . $tupla['RFC'] . "</td>";
+        echo "<td>" . $tupla['NSS'] . "</td>";
+        echo "<td>" . $tupla['CURP'] . "</td>";
+        echo "<td>" . $tupla['number'] . "</td>";
+        echo "<td>";
+        echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
+        echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
+        echo "</td>";
+        echo '</tr>';
+    }
+} else {
+    echo "Algo pasó en la consulta";
+}
+?>
+
         </table>
     </div>
 </body>

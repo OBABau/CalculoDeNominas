@@ -49,7 +49,7 @@
                         <label class="lblinput" for="profileName">Nombre:</label>
                         <i class="fa fa-envelope"></i>
                         <input class="input" type="text" id="profileName" name="profileName" maxlength="30"
-                            placeholder="ejemplo@correo.com">
+                            placeholder="Nombre del perfil">
                     </div>
                     <div class="formRow">
                         <label class="lblinput" for="profileDescription">Descripción:</label>

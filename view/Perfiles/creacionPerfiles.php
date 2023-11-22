@@ -51,7 +51,7 @@
             <a class="enlaceCard" href="newIncome+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/graficon.svg" alt="Imagen graficaEmpresa">
+                        <img src="../../img/iconosfinales/nuevoingreso.png" alt="Imagen graficaEmpresa">
                     </div>
                     <div class="card-text">
                         <p>Nuevo Ingreso</p>
@@ -62,7 +62,7 @@
             <a class="enlaceCard" href="newBenefit+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nuevaPresentacion.svg" alt="Imagen Nueva prestación">
+                        <img src="../../img/iconosfinales/nuevaprestacion.png" alt="Imagen Nueva prestación">
                     </div>
                     <div class="card-text">
                         <p>Nueva prestación</p>
@@ -74,7 +74,7 @@
             <a class="enlaceCard" href="newProfile+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/perfiles.svg" alt="Imagen perfiles">
+                        <img src="../../img/iconosfinales/nuevoperfil.png" alt="Imagen perfiles">
                     </div>
                     <div class="card-text">
                         <p>Nuevo perfil</p>
@@ -85,7 +85,7 @@
             <a class="enlaceCard" href="income+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/graficon.svg" alt="Imagen graficaEmpresa">
+                        <img src="../../img/iconosfinales/ingresos.png" alt="Imagen graficaEmpresa">
                     </div>
                     <div class="card-text">
                         <p>Ingresos</p>
@@ -96,7 +96,7 @@
             <a class="enlaceCard" href="benefits+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/nuevaPresentacion.svg" alt="Imagen Prestaciones">
+                        <img src="../../img/iconosfinales/prestaciones.png" alt="Imagen Prestaciones">
                     </div>
                     <div class="card-text">
                         <p>Prestaciones</p>
@@ -107,7 +107,7 @@
             <a class="enlaceCard" href="profile+.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/perfiles.svg" alt="Imagen perfiles">
+                        <img src="../../img/iconosfinales/perfiles.png" alt="Imagen perfiles">
                     </div>
                     <div class="card-text">
                         <p>Perfiles</p>

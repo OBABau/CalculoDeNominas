@@ -70,33 +70,33 @@ include('../../app/sesion.php');
 
                     <div class="formRow">                        
                         <label class="lblinput" for="rfc">RFC:</label>                        
-                        <input class="input" type="text" name="rfc" id="rfc" pattern="[A-Z0-9]{13}"
-                        title="Debe ingresar exactamente 13 caracteres alfanuméricos" required>
+                        <input class="input" type="text" name="rfc" id="rfc" 
+                        title="Debe ingresar exactamente 13 caracteres alfanuméricos"  maxlength="13" required>
                     </div>
                     
 
                     <div class="formRow">
                         <label class="lblinput" for="nss">NSS:</label>
                         <input class="input" type="text" id="nss" name="nss"
-                         pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" required>
+                         pattern="\d{11}" title="Debe ingresar exactamente 11 dígitos" minlength="11" maxlength="11" required>
                     </div>        
 
                     <div class="formRow">
                         <label class="lblinput" for="curp">CURP:</label>
-                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{13}"
-                        title="Debe ingresar un CURP válido" required>
+                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{18}"
+                        title="Debe ingresar un CURP válido" minlength="18" maxlength="18" required>
                     </div>        
                     
                 <div class="formRow">
                     <label class="lblinput" for="phone">Número de Teléfono:</label>
                     <input class="input" type="text" id="phone" name="phone"  pattern="\d{10}"
-                    title="Debe ingresar exactamente 12 dígitos" required>
+                    title="Debe ingresar exactamente 12 dígitos" minlength="10" maxlength="10"required>
                 </div>        
 
         
             <div class="formRow">
                 <label class="lblinput" for="mail">Email:</label>
-                <input class="input" type="email" id="mail" name="mail" placeholder="ejemplo@dominio.com" required>
+                <input class="input" type="email" id="mail" name="mail" placeholder="ejemplo@dominio.com" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com)">
             </div>        
             
             <div class="formRow">
