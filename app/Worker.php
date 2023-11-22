@@ -99,7 +99,7 @@ class Worker extends ConexionDB{
     public function getAllWorker(){
         $result = $this->connect();
         if ($result){
-            $dataset = $this->execquery('SELECT * FROM worker where enterprise  = '.$_SESSION['code'].'');
+            $dataset = $this->execquery('SELECT * FROM worker where enterprise  = '.$_SESSION['code'].' AND active = "1"');
         }
         else{
             echo "algo salio mal";
@@ -108,6 +108,21 @@ class Worker extends ConexionDB{
 
         return $dataset;
     }
+
+    public function updateActiveStatus($id, $status)
+    {
+        $result = $this->connect();
+        if ($result) {
+            $dataset = $this->execquery("UPDATE worker SET active = $status WHERE code = $id");
+        } else {
+            echo "Algo salió mal";
+            $dataset = "error";
+        }
+    
+        return $dataset;
+    }
+    
+
 
 
 
