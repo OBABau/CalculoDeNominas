@@ -109,7 +109,7 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
         <h2>Estadísticas de la Empresa</h2>
 
         <div class="formRow">
-            <p>Total de gastos de la empresa (Todos los tiempos): <?php echo $resultado['totalSum']; ?></p>
+            <p>Total de gastos de la empresa (Todos los tiempos): $<?php echo $resultado['totalSum']; ?> </p>
         </div>
         <hr>
         <br>
