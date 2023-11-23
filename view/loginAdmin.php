@@ -47,14 +47,14 @@
     <a class="enlaceCard" href="Admin/reactivarUsuarios.php">
         <div class="card">
         <div class="circle-img2">
-          <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">
+          <img src="../img/iconosfinales/reactivarUser.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
             <p>Reactivar cuentas</p>
           </div>        
         </div>
     </a>
-    <a class="enlaceCard" href="Admin/FAQ.php">
+    <a class="enlaceCard" href="Admin/verFAQs.php">
         <div class="card">
         <div class="circle-img2">
           <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">

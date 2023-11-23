@@ -34,36 +34,7 @@
     </div>
 
     <div class="contenido">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Descripcion</th>
-                    <!-- Agrega más encabezados según sea necesario -->
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                include('../../app/FAQ.php');
-                $instancia = new FAQs();
-                $result = $instancia->getFAQs();
-                if ($result == "error") {
-                    echo "<tr><td colspan='4'>No hay nada para mostrar</td></tr>";
-                } else {
-                    while ($tupla = mysqli_fetch_assoc($result)) {
-                        echo "<tr>";
-                        echo "<td>" . $tupla['code'] . "</td>";
-                        echo "<td>" . $tupla['Titulo'] . "</td>";
-                        echo "<td>" . $tupla['Correo'] . "</td>";
-                        echo "<td>" . $tupla['Descripcion'] . "</td>";
-                        echo "</tr>";
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
+        
     </div>
 </body>
     
