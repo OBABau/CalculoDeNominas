@@ -71,7 +71,7 @@
         <div class="sidebarContent">                
             <a href="/index.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpleado.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
-            <a href="../generate-pdf.php"><i class="fa fa-arrow-left"></i> &nbsp;Descargar PDF</a>
+            <a href="../generate-pdf.php"><i class="fa fa-download"></i> &nbsp;Descargar PDF</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
         <form class="sidebarFooter" action="app/logout.php" method="post">
@@ -126,23 +126,23 @@
                 echo "<br>";
                 echo "Dias trabajados: ".$tupla3['days']/2;
                 echo "<br>";
-                echo "Salario: ".$tupla4['income'];
+                echo "Salario: $".$tupla4['income'];
                 echo "<br>";
                 echo "_________________________________________________________________";
                 echo "<br>";
                 echo "<h5>Percepciones</h5>";
                 $totalP = 0;
-                echo "Sueldo ordinario: ".$tupla3['total'];
+                echo "Sueldo ordinario: $".$tupla3['total'];
                 $totalP += $tupla3['total'];
                 echo "<br>";
-                echo "Septimo dia: ".$tupla3['total']/6;
+                echo "Septimo dia: $".$tupla3['total']/6;
                 $totalP += $tupla3['total']/6;
                 echo "<br>";
                 $consulta5 = $empleado->getBenefits($tupla3['code']);
                 $totalBenefits = 0;
                 while ($tupla5 = mysqli_fetch_assoc($consulta5))
                 {
-                    echo $tupla5['name'].": ".$tupla5['total'];
+                    echo $tupla5['name'].": $".$tupla5['total'];
                     $totalBenefits += $tupla5['total'];
                     $totalP += $tupla5['total'];
                 }
@@ -191,7 +191,7 @@
                     $subsidio = 0;
                 }
                 echo "<br>";
-                echo "Subsidio para el empleo: ".$subsidio;
+                echo "Subsidio para el empleo: $".$subsidio;
                 $totalP += $subsidio;
                 echo "<br>";
                 echo "_________________________________________________________________";
@@ -264,7 +264,7 @@
                     $ISR = $impuestoMarginal + 27150.83;
                 }
 
-                echo "ISR: ".$ISR;
+                echo "ISR: $".$ISR;
                 $totalD += $ISR;
                 //IMSS
                 function calcularIMSS($salarioBase, $tasaDescuentoIMSS) {
@@ -287,17 +287,17 @@
                 
                 $imss = calcularIMSS($salarioBase, $tasaDescuentoIMSS);
                 echo "<br>";
-                echo "IMSS: " . $imss;
+                echo "IMSS: $" . $imss;
                 $totalD += $imss;
                 echo "<br>";
                 echo "_________________________________________________________________";
                 echo "<br>";
 
-                echo "<h5>Total de percepciones: ".$totalP."</h5>";
+                echo "<h5>Total de percepciones: $".$totalP."</h5>";
                 echo "<br>";
-                echo "<h5>Total de deducciones: ".$totalD."</h5>";
+                echo "<h5>Total de deducciones: $".$totalD."</h5>";
                 echo "<br>";
-                echo "<h5>Neto a recibir: ".$totalP-$totalD."</h5>";
+                echo "<h5>Neto a recibir: $".$totalP-$totalD."</h5>";
                 
             }
         }}
