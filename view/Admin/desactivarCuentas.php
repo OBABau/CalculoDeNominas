@@ -33,9 +33,8 @@
             </div>
         <div class="sidebarContent">
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-            <a href="../Empresa/loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
-            <a href="configuracionEmpleado.php"><i class="fa fa-cog"></i> &nbsp;Configuracion</a>
-            <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+            <a href="../loginAdmin.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
+            <a href="../../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
 
         <form class="sidebarFooter" action="../../app/logout.php" method="post">
