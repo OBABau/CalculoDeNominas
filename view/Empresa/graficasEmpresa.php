@@ -41,7 +41,21 @@
     </div>
 
     <div class="contenido">
-        AQUI SE MOSTRARAN LAS GRAFICAS DE LAS GANANCIAS DE LA EMPRESA JUNTO CON GASTOS Y OTRAS COSAS (SI ES QUE NOS SALE)
+        <h2>Estadísticas de la Empresa</h2>
+
+        <div class="estadisticas-container">
+            <div class="formRow">
+                <label for="gastoMensual">Gasto Mensual:</label>
+                <input type="text" id="gastoMensual" name="gastoMensual" placeholder="">
+            </div>
+
+            <div class="formRow">
+                <label for="gastoAnual">Gasto Anual:</label>
+                <input type="text" id="gastoAnual" name="gastoAnual" placeholder="">
+            </div>
+        </div>
+
+     
     </div>
 </body>
 
