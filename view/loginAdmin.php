@@ -68,7 +68,7 @@
     <a class="enlaceCard" href="Admin/actualizarEmpresas.php">
         <div class="card">
         <div class="circle-img2">
-          <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
+          <img src="../img/iconosfinales/desactive.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
             <p>Desactivar contrato Empresas</p>
@@ -78,7 +78,7 @@
     <a class="enlaceCard" href="Admin/reactivarEmpresas.php">
         <div class="card">
         <div class="circle-img2">
-          <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
+          <img src="../img/iconosfinales/active.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
             <p>Reactivar contrato Empresa</p>
