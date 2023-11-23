@@ -63,28 +63,67 @@ public function getEmpleado(){
     return $dataset;
 }
 
-public function getData(){
+public function getData() {
     $result = $this->connect();
-    if($result)
-    {
-        echo "SELECT MONTH(payDate) as month, SUM(total) as totalIncome
-        FROM SALARY
-        WHERE worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].")
-        GROUP BY MONTH(payDate)";
-        //echo"todo bien";
-        $dataset = $this->execquery("SELECT MONTH(payDate) as month, SUM(total) as totalIncome
-        FROM SALARY
-        WHERE worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].")
-        GROUP BY MONTH(payDate)");
+    if ($result) {
+        $query = "SELECT 
+            YEAR(payDate) as year,
+            MONTH(payDate) as month, 
+            SUM(total) as totalIncome 
+        FROM (
+            SELECT 
+                payDate,
+                MONTH(payDate) as month, 
+                total
+            FROM 
+                SALARY 
+            WHERE 
+                worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].") 
+                AND MONTH(payDate) IS NOT NULL
+                AND total <> 0
+        ) AS subquery
+        GROUP BY 
+            year, month";
+        $dataset = $this->execquery($query);
 
+        if ($dataset) {
+            return $dataset;
+        } else {
+            echo "Error al ejecutar la consulta.";
+            return false;
+        }
+    } else {
+        echo "Error en la conexión a la base de datos.";
+        return false;
     }
-    else
-    {
-        echo"algo salio mal";
-        $dataset = "error";
-    }
-    return $dataset;
 }
+public function getDataByYear() {
+    $result = $this->connect();
+    if ($result) {
+        $query = "SELECT 
+            YEAR(payDate) as year, 
+            SUM(total) as totalIncome 
+        FROM SALARY 
+        WHERE worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].") 
+            AND YEAR(payDate) IS NOT NULL 
+            AND total <> 0 
+        GROUP BY year";
+        $dataset = $this->execquery($query);
+
+        if ($dataset) {
+            return $dataset;
+        } else {
+            echo "Error al ejecutar la consulta.";
+            return false;
+        }
+    } else {
+        echo "Error en la conexión a la base de datos.";
+        return false;
+    }
+}
+
+
+
 
 public function getEmpleadoEntry($email){
     $result = $this->connect();
