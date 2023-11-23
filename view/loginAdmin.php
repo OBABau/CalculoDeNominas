@@ -31,9 +31,53 @@
             </form>
   </div>
   
-  <div class="contenido">
+<div class="contenido">
   <h1>Panel de administrador</h1>
-  </div>
+    <div class="contenidoBody">
+      <a class="enlaceCard" href="Admin/desactivarEmpresas.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/desactivarEmpresa.png" alt="Imagen Grafica">
+        </div>
+        <div class="card-text">
+          <p>Desactivar Empresa</p>
+        </div>        
+    </div>
+    </a>
+
+    <a class="enlaceCard" href="Admin/FAQ.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>FAQ Usuarios</p>
+          </div>        
+        </div>
+    </a>
+
+    <a class="enlaceCard" href="Admin/usuarios.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/empleados.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>Usuarios</p>
+          </div>        
+        </div>
+    </a>
+
+    <a class="enlaceCard" href="Admin/actualizarEmpresas.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>Actualizar Empresa</p>
+          </div>        
+        </div>
+    </a>
+</div>
 </body>
 
 </html>

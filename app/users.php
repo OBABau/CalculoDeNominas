@@ -5,7 +5,6 @@ include('../data/conexionDB.php');
         private $password;
         private $userType;
 
-
         public function getEmail()
         {
             return $this->email;
@@ -53,8 +52,5 @@ include('../data/conexionDB.php');
             }
             return $dataset;
         }
-        
-
-        
     }
 ?>
