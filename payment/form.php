@@ -30,7 +30,7 @@ include('../app/sesion.php');
         </div>
 
         <div class="navbarFooter">
-            <form class="formNavbar" action="app/logout.php" method="post">
+            <form class="formNavbar" action="../app/logout.php" method="post">
                 <button class="btnNavbar" type="submit">Logout</button>
             </form>
         </div>
