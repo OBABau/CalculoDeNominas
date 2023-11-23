@@ -16,60 +16,80 @@ if (!$userID) {
 
 $empleado = new Empleado();
 $consulta = $empleado->getData();
+$consultaYearly = $empleado->getDataByYear(); // Agregado
 
-if ($consulta === "error") {
+if ($consulta === "error" || $consultaYearly === "error") {
     echo "Error al obtener datos.";
 } else {
     ?>
     <html>
-<head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawCharts);
 
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([  
-                ['Month', 'Total Income'],
-                <?php
-                $monthNames = [
-                    1 => 'Enero',
-                    2 => 'Febrero',
-                    3 => 'Marzo',
-                    4 => 'Abril',
-                    5 => 'Mayo',
-                    6 => 'Junio',
-                    7 => 'Julio',
-                    8 => 'Agosto',
-                    9 => 'Septiembre',
-                    10 => 'Octubre',
-                    11 => 'Noviembre',
-                    12 => 'Diciembre',
-                ];
+            function drawCharts() {
+                // Gráfica mensual
+                var dataMonthly = google.visualization.arrayToDataTable([  
+                    ['Month', 'Total Income'],
+                    <?php
+                    $monthNames = [
+                        1 => 'Enero',
+                        2 => 'Febrero',
+                        3 => 'Marzo',
+                        4 => 'Abril',
+                        5 => 'Mayo',
+                        6 => 'Junio',
+                        7 => 'Julio',
+                        8 => 'Agosto',
+                        9 => 'Septiembre',
+                        10 => 'Octubre',
+                        11 => 'Noviembre',
+                        12 => 'Diciembre',
+                    ];
 
-                while ($resultado = mysqli_fetch_assoc($consulta)) {
-                    $month = $monthNames[$resultado['month']];
-                    $year = $resultado['year'];
-                    $label = "$month $year";
-                    echo "['" . $label . "'," . $resultado['totalIncome'] . "],";
-                }
-                ?>
-            ]);
+                    while ($resultado = mysqli_fetch_assoc($consulta)) {
+                        $month = $monthNames[$resultado['month']];
+                        $year = $resultado['year'];
+                        $label = "$month $year";
+                        echo "['" . $label . "'," . $resultado['totalIncome'] . "],";
+                    }
+                    ?>
+                ]);
 
-            var options = {
-                title: 'Ingreso total mensual'
-            };
+                var optionsMonthly = {
+                    title: 'Ingreso total mensual'
+                };
 
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                var chartMonthly = new google.visualization.PieChart(document.getElementById('piechartMonthly'));
+                chartMonthly.draw(dataMonthly, optionsMonthly);
 
-            chart.draw(data, options);
-        }
-    </script>
-</head>
-<body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-</body>
-</html>
+                // Gráfica anual
+                var dataYearly = google.visualization.arrayToDataTable([  
+                    ['Year', 'Total Income'],
+                    <?php
+                    while ($resultadoYearly = mysqli_fetch_assoc($consultaYearly)) {
+                        $year = $resultadoYearly['year'];
+                        echo "['" . $year . "'," . $resultadoYearly['totalIncome'] . "],";
+                    }
+                    ?>
+                ]);
+
+                var optionsYearly = {
+                    title: 'Ingreso total anual'
+                };
+
+                var chartYearly = new google.visualization.PieChart(document.getElementById('piechartYearly'));
+                chartYearly.draw(dataYearly, optionsYearly);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="piechartMonthly" style="width: 900px; height: 500px;"></div>
+        <div id="piechartYearly" style="width: 900px; height: 500px;"></div>
+    </body>
+    </html>
     <?php
 }
 ?>
