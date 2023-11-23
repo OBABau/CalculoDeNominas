@@ -71,7 +71,17 @@
           <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
-            <p>Actualizar Empresa</p>
+            <p>Desactivar contrato Empresas</p>
+          </div>        
+        </div>
+    </a>
+    <a class="enlaceCard" href="Admin/reactivarEmpresas.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>Reactivar contrato Empresa</p>
           </div>        
         </div>
     </a>
