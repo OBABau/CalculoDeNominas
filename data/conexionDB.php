@@ -11,9 +11,9 @@ class ConexionDB{
 
 //constructor
 	public function __construct(){
-		$this->HOST="25.2.55.35";
+		$this->HOST="localhost";
 		$this->USER="root";
-		$this->PASS="1234";
+		$this->PASS="";
 		$this->DB="calculo_de_nominas";
 	}
 	public function getConnection() {
