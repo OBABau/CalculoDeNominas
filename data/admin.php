@@ -28,6 +28,16 @@ include('conexionDB.php');
             }
             return $dataset;
         }
+        public function getUsers0(){
+            $result = $this->connect();
+            if ($result) {
+                $query = "SELECT `code`, `email`, `password`, `creationDate` FROM `user` WHERE `hell` = 0";
+                $dataset = $this->execquery($query);
+            } else {
+                $dataset = "Error";
+            }
+            return $dataset;
+        }
 
         
             public function desactivarUsuario($userId) {
@@ -40,5 +50,15 @@ include('conexionDB.php');
             }
             return $dataset;
         }
+        public function reactivarUsuario($userId) {
+            $result = $this->connect();
+            if ($result) {
+            $query = "UPDATE `user` SET `hell` = 1 WHERE `code` = '$userId'";
+            $this->execquery($query);$dataset = $this->execquery($query);
+        } else {
+            $dataset = "Error";
+        }
+        return $dataset;
+    }
         }
 ?>
