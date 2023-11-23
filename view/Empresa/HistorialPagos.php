@@ -28,7 +28,12 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:3rem;
+            margin-left: 35%;
+            margin-right: 10rem;
+            padding: 2rem;
         }
+
         h3 {
             text-align: center;
             color: #333;

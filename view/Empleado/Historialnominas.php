@@ -27,9 +27,12 @@
             max-width: 800px;
             margin: 20px auto;
             background-color: #fff;
-            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:3rem;
+            margin-left: 35%;
+            margin-right: 10rem;
+            padding: 2rem;
         }
         h3 {
             text-align: center;
@@ -51,6 +54,15 @@
             margin-top: 20px;
             font-size: 20px;
             font-weight: bold;
+        }
+
+        .guion-under {
+            display: block;
+            margin-top: 3rem;
+            margin-left: 35%;
+            margin-right: 10rem;
+            padding: 2rem;
+            border-bottom: 1px solid #000;
         }
     </style>
 </head>
@@ -113,7 +125,8 @@
                 echo "<br>";
                 echo "RFC Empresa:". $tupla2['RFC'];
                 echo "<br>";
-                echo "_________________________________________________________________";
+                echo '<hr class="guion-under" style="border: none; height: 1px; color: #000; background-color: #000; margin: 0px; padding: 0px;">';
+    
                 echo "<br>";
                 echo "Nombre: ".$tupla['name']." ".$tupla["lastName"]." ".$tupla['lastName2'];
                 echo "<br>";
@@ -131,7 +144,8 @@
                 echo "<br>";
                 echo "Salario: $".$tupla4['income'];
                 echo "<br>";
-                echo "_________________________________________________________________";
+                echo "<br>";
+                echo '<hr class="guion-under" style="border: none; height: 1px; color: #000; background-color: #000; margin: 0px; padding: 0px;">';
                 echo "<br>";
                 echo "<h5>Percepciones</h5>";
                 $totalP = 0;
@@ -210,7 +224,9 @@
                     $totalGravable += $tupla4['income']/2;
                     echo "<br>";
                 }
-                echo "_________________________________________________________________";
+                echo "<br>";
+                echo '<hr class="guion-under" style="border: none; height: 1px; color: #000; background-color: #000; margin: 0px; padding: 0px;">';
+                echo "<br>";
                 echo "<h5>Deducciones</h5>";
                 $totalD = 0; 
                 if ($totalGravable <= 0)
@@ -307,7 +323,8 @@
                 echo "IMSS: $" . $imss;
                 $totalD += $imss;
                 echo "<br>";
-                echo "_________________________________________________________________";
+                echo "<br>";
+                echo '<hr class="guion-under" style="border: none; height: 1px; color: #000; background-color: #000; margin: 0px; padding: 0px;">';
                 echo "<br>";
 
                 echo "<h5>Total de percepciones: $".$totalGravable."</h5>";
