@@ -49,8 +49,13 @@ include('../app/sesion.php');
                     <img class="imagenCarta" src="../../img/paquete1.jpg" alt="Imagen Paquete1">
                 </div>
                 <div class="carta-body">
-                    <div class="cartaTitulo">Plan 1</div>
-                    <p>Paquete en Desarrollo (Este paquete hara que tu cuenta cuente con un contrato por 1 mes)</p>                    
+                    <div class="cartaTitulo">Plan Mensual</div>
+                    <p>Contrata nuestro servicio por 1 mes</p>  
+                    <ul>
+                        -Administras tus empleados   <br>
+                        -Registra entrada/salida de tus empleados  <br>
+                        -Calcula nominas
+                    </ul>                  
                 </div>
                 <div class="carta-footer">                    
                 </div>
@@ -62,7 +67,7 @@ include('../app/sesion.php');
                 </div>
                 <div class="carta-body">
                     <div class="cartaTitulo">Plan 2</div>
-                    <p>Próximamente, paquete en desarrollo (Podrás seleccionar el plan, cada plan tendrá tiempos de contrato diferentes. En este caso el paquete 2 será por 1 año)</p>
+                    <p>Próximamente, paquete en desarrollo</p>
                 </div>
                 <div class="carta-footer">                    
                 </div>

@@ -52,5 +52,17 @@ include('../data/conexionDB.php');
             }
             return $dataset;
         }
+
+        public function getUsers() {
+            $query = "SELECT `email`, `password`, `creationDate` FROM `user`";
+            $result = mysqli_query($this->conn, $query);
+    
+            // Verifica si la consulta fue exitosa
+            if ($result) {
+                return $result;
+            } else {
+                return "error";
+            }
+        }
     }
 ?>

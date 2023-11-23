@@ -34,12 +34,12 @@
             </div>
 
             <div class="loginBody">
-                <!-- <?php
-                    // Verificar si hay un error y mostrar el mensaje correspondiente
+                 <?php
+                    
                     if (isset($_GET['error']) && $_GET['error'] == 1) {
                         echo '<p class="error">Correo o Contraseña Incorrectos.</p>';
                     }
-                ?> -->
+                ?> 
 
                 <form class="login-form" method='POST' action='../app/checkLogin.php'>
                     <div class="formRow">

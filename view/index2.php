@@ -53,8 +53,13 @@ include('../app/sesion.php');
                     <img class="imagenCarta" src="../img/paquete1.jpg" alt="Imagen Paquete1">
                 </div>
                 <div class="carta-body">
-                    <div class="cartaTitulo">Plan 1</div>
-                    <p>Paquete por 1 mes</p>                    
+                    <div class="cartaTitulo">Plan Mensual</div>
+                    <p>Contrata nuestro servicio por 1 mes</p>  
+                    <ul>
+                        -Administras tus empleados   <br>
+                        -Registra entrada/salida de tus empleados  <br>
+                        -Calcula nominas
+                    </ul>                  
                 </div>
                 <div class="carta-footer">
                     <a class="abtnContratarServicio" href="../payment/form.php"> Contratar Servicio</a>

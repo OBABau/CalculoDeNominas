@@ -15,7 +15,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../css/gwen.css">
-    <title>Perfiles</title>
+    <title>Estadisticas</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 ?> 
                   </div>
             <div class="sidebarContent">                
-                <a href="../Empleado/loginEmpleado.php"><i class="fa fa-home"></i> &nbsp;Panel Empleado</a>
+                <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Pagina Inicial</a>
                 <a href="../Empleado/loginEmpleado.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
                 <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
             </div>
@@ -45,7 +45,8 @@
     </header>
 
     <div class="contenido2">
-        <h1>Graficas</h1>       
+        <h1>Graficas</h1> 
+        Aqui podras visualizar las graficas respecto a tus ganancias      
         <table class="table table-striped table-hover">
         <?php
            include("../../data/ingresosYConsultas+.php");
@@ -71,35 +72,9 @@
                    echo "<td>".$tupla['income']."</td>";
                    echo '</tr>';
                    echo "</table>";
-           ?>
-           <form method = "POST" action = "pruebasPerfiles.php">
-           
-               <?php
-                   echo "<label class=\"font-weight-bold primary table-primary\" >Prestaciones</label>";
-                   echo "<br>";
-           
-                   $consulta2 = $myobject->getBenefits();
-                   while ($tupla2 = mysqli_fetch_assoc($consulta2)){
-                       $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "benefits");
-                       if($checked)
-                       {
-                       echo '<label>
-                       <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
-                       </label>';
-                       }
-                       else
-                       {
-                           echo '<label>
-                       <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
-                       </label>';
                        }
                    }
-                   }
-               }
-           
-               
-                       ?>
-               <button type = "submit" name  = "Enviar">Enviar</button>
+                   ?>
            </body>
         </div>   
         </form>

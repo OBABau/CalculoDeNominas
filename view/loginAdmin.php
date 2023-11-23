@@ -34,17 +34,26 @@
 <div class="contenido">
   <h1>Panel de administrador</h1>
     <div class="contenidoBody">
-      <a class="enlaceCard" href="Admin/desactivarEmpresas.php">
+      <a class="enlaceCard" href="Admin/desactivarCuentas.php">
         <div class="card">
         <div class="circle-img2">
           <img src="../img/iconosfinales/desactivarEmpresa.png" alt="Imagen Grafica">
         </div>
         <div class="card-text">
-          <p>Desactivar Empresa</p>
+          <p>Desactivar Cuentas</p>
         </div>        
     </div>
     </a>
-
+    <a class="enlaceCard" href="Admin/reactivarUsuarios.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>Reactivar cuentas</p>
+          </div>        
+        </div>
+    </a>
     <a class="enlaceCard" href="Admin/FAQ.php">
         <div class="card">
         <div class="circle-img2">

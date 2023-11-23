@@ -49,6 +49,69 @@ class Empresa extends ConexionDB {
         $this->contrasena = $contrasena;
     }
 
+    public function getDataByTotalAll($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT SUM(total) as totalSum
+            FROM salary
+            WHERE enterprise = (SELECT code FROM enterprise WHERE user = " . $userCode . ")";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+    
+    public function getDataByMonth($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT YEAR(payDate) as anio, MONTHNAME(payDate) as mes, SUM(total) as totalMes FROM salary WHERE enterprise = 
+            (SELECT code FROM enterprise WHERE user = ".$userCode.") AND payDate IS NOT NULL GROUP BY anio, mes;";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+
+    public function getDataByYear($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT YEAR(payDate) as anio, SUM(total) as totalAnio 
+                      FROM salary 
+                      WHERE enterprise = (SELECT code FROM enterprise WHERE user = ".$userCode.") 
+                            AND payDate IS NOT NULL 
+                      GROUP BY anio;";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+    
+
+/* ---------------------------------------------------------------------------------------------------------------  */
 
     public function getUser() {
         $result  = $this->connect();
