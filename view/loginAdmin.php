@@ -65,17 +65,6 @@
         </div>
     </a>
 
-    <a class="enlaceCard" href="Admin/usuarios.php">
-        <div class="card">
-        <div class="circle-img2">
-          <img src="../img/iconosfinales/empleados.png" alt="Imagen Grafica">
-        </div>
-          <div class="card-text">
-            <p>Usuarios</p>
-          </div>        
-        </div>
-    </a>
-
     <a class="enlaceCard" href="Admin/actualizarEmpresas.php">
         <div class="card">
         <div class="circle-img2">
