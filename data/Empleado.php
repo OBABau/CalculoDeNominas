@@ -53,7 +53,30 @@ public function getEmpleado(){
     if($result)
     {
         //echo"todo bien";
-        $dataset = $this->execquery("select code from worker where user in (select code from user where email = '".$_SESSION['start']."')");
+        $dataset = $this->execquery("select * from worker where user in (select code from user where email = '".$_SESSION['start']."')");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function getData(){
+    $result = $this->connect();
+    if($result)
+    {
+        echo "SELECT MONTH(payDate) as month, SUM(total) as totalIncome
+        FROM SALARY
+        WHERE worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].")
+        GROUP BY MONTH(payDate)";
+        //echo"todo bien";
+        $dataset = $this->execquery("SELECT MONTH(payDate) as month, SUM(total) as totalIncome
+        FROM SALARY
+        WHERE worker IN (SELECT code FROM WORKER WHERE user = ". $_SESSION['userCode'].")
+        GROUP BY MONTH(payDate)");
+
     }
     else
     {
