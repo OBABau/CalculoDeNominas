@@ -13,6 +13,44 @@
     <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
 
     <title>Historial de Pagos</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .contenido {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+        .info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .percepciones-deducciones {
+            margin-top: 20px;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        </style>
 </head>
 
 <body>
@@ -27,6 +65,7 @@
                     session_start();
                     echo "Bienvenido: ";
                     echo $_SESSION['start'];
+                    echo $_SESSION['code'];
                 ?> 
         </div>
         <div class="sidebarContent">
@@ -40,8 +79,47 @@
     </div>
 
     <div class="contenido">
-        UN HISTORIAL DE LOS PAGOS REALIZADOS A LOS EMPLEADOS SE MOSTRARA A QUE EMPLEADO FUE EL PAGO Y LA FECHA QUE SE
-        REALIZO EL PAGO
+        <?php
+        include ('../../data/Empresa.php');
+        $empresa = new empresa();
+        $consulta = $empresa->getSalaryExpenses();
+        echo "<h2>HISTORIAL DE PAGOS</h2>";
+        echo '<table class="table table-striped table-hover">';
+        while($tupla = mysqli_fetch_assoc($consulta))
+        {
+            echo "<table class=\"table table-striped table-hover\">";
+                   echo "<tr class=\"font-weight-bold primary table-primary\">";
+                   echo "<th>Gastos en sueldo </th>";
+                   echo "<th>Gastos en prestaciones</th>";
+                   echo "<th>Fecha</th>";
+                   echo "</tr>";
+            echo "<td>".$tupla['total']."</td>";
+            $consulta2 = $empresa->getBenefitsExpenses();
+            $YOR = 0;
+            while ($tupla2 = mysqli_fetch_assoc($consulta2))
+            {
+                
+            if($tupla['finished'] == $tupla2['finished']){
+            echo "<td>".$tupla2['total']."</td>";
+            $YOR = 1;
+            }
+        }
+           
+            if($YOR = 1)
+            {
+            echo "<td>".$tupla['payDate']."</td>";
+            $YOR = 0;
+            }else
+            {
+                echo "<td>0</td>";
+                echo "<td>".$tupla['payDate']."</td>";
+            }
+            $YOR=0;
+        }
+    
+        
+        ?>
+        
     </div>
 </body>
 

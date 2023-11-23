@@ -187,6 +187,22 @@ public function getEmpleadoSalary($codeW){
     return $dataset;
 }
 
+public function getEmpleadoSalaryAll($codeW){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select * from salary where worker = ".$codeW);
+        //echo "select * from worker where code = ".$codeW."";
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
 public function getEmpleadoProfile($codeP){
     $result = $this->connect();
     if($result)
@@ -241,5 +257,43 @@ public function entryInsert( $worker, $enterprise, $profile ){
     }
     return $dataset;
 }
+
+public function entryInsertSunday(){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("update salary 
+        set sunday = true");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
 }
+
+public function insertISR($salary){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("insert into salary_deductions values (1, ".$salary.")");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+}
+
+
+
+
+
+
 ?>

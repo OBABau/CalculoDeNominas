@@ -69,7 +69,7 @@
                 ?>
             </div>
         <div class="sidebarContent">                
-            <a href="/index.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
+            <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpleado.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
             <a href="../generate-pdf.php"><i class="fa fa-download"></i> &nbsp;Descargar PDF</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
@@ -80,19 +80,19 @@
     </div>          
 </html>
 
-
 <html>
 <body>
-    <div class="contenido">
-        <h3>RECIBO DE NOMINA</h3>
-        <?PHP
+    <?php
         include (__DIR__.'../../../data/Empresa.php');
         include ('../../data/Empleado.php');
         include ('../../data/ingresosYConsultas+.php');
         $empresa = new Empresa();
         $empleado = new Empleado();
         $IYC = new ingresosYConsultas();
-
+        function calcularIMSS($salarioBase, $tasaDescuentoIMSS) {
+            $imss = $salarioBase * $tasaDescuentoIMSS;
+            return $imss;
+        }
         $consulta = $empleado->getEmpleadoData($_SESSION['code']);
         while ($tupla = mysqli_fetch_assoc($consulta))
         {
@@ -105,6 +105,9 @@
                 $consulta4 = $empleado->getEmpleadoProfile($tupla3['profile']);
                 while ($tupla4 = mysqli_fetch_assoc($consulta4))
                 {
+                echo ' <div class="contenido">
+                    <h3>RECIBO DE NOMINA</h3>
+                    <?PHP';
                 echo "<br>";
                 echo "<h4>".$tupla2['fiscalName']."</h4>";
                 echo "<br>";
@@ -145,10 +148,16 @@
                     echo $tupla5['name'].": $".$tupla5['total'];
                     $totalBenefits += $tupla5['total'];
                     $totalP += $tupla5['total'];
+                    echo "<br>";
                 }
-                $totalGravable = $totalBenefits + $tupla3['total'] + $tupla3['total']/6;
-
-                if ($totalGravable <= 407.33)
+                $totalGravable = 0;
+                $totalGravable += $totalBenefits;
+                $totalGravable += $tupla3['total'];
+                $totalGravable += $tupla3['total']/6;
+                if($totalGravable <= 0)
+                {
+                    $subsidio = 0;
+                } else if ($totalGravable <= 407.33)
                 {
                     $subsidio = 93.73;
 
@@ -190,14 +199,26 @@
                 {
                     $subsidio = 0;
                 }
-                echo "<br>";
                 echo "Subsidio para el empleo: $".$subsidio;
                 $totalP += $subsidio;
+                $totalGravable += $subsidio;
                 echo "<br>";
+
+                if ($tupla3['sunday'] == 1)
+                {
+                    echo "Prima dominical: ".$tupla4['income']/2;
+                    $totalP += $tupla4['income']/2;
+                    $totalGravable += $tupla4['income']/2;
+                    echo "<br>";
+                }
                 echo "_________________________________________________________________";
                 echo "<h5>Deducciones</h5>";
-                $totalD = 0;
-                if ($totalGravable <= 171.78)
+                $totalD = 0; 
+                if ($totalGravable <= 0)
+                {
+                    
+                    $ISR = 0;
+                }else if ($totalGravable <= 171.78)
                 {
                     $diferencia = $totalGravable - 0.01;
                     $impuestoMarginal = $diferencia*0.0192;
@@ -266,11 +287,12 @@
 
                 echo "ISR: $".$ISR;
                 $totalD += $ISR;
+                //insert del ISR a BD
+                
+
+                //
                 //IMSS
-                function calcularIMSS($salarioBase, $tasaDescuentoIMSS) {
-                    $imss = $salarioBase * $tasaDescuentoIMSS;
-                    return $imss;
-                }
+                
                 
                 $salarioBase = $tupla3['total']; // monto en pesos mexicanos
                 $salarioTotal = $tupla3['total']+$tupla3['total']/6+$subsidio;
@@ -293,20 +315,21 @@
                 echo "_________________________________________________________________";
                 echo "<br>";
 
-                echo "<h5>Total de percepciones: $".$totalP."</h5>";
+                echo "<h5>Total de percepciones: $".$totalGravable."</h5>";
                 echo "<br>";
                 echo "<h5>Total de deducciones: $".$totalD."</h5>";
                 echo "<br>";
                 echo "<h5>Neto a recibir: $".$totalP-$totalD."</h5>";
-                
+                echo "</div>";
             }
         }}
         }
         
         
         ?>
-    </div>
+    
     
 </body>
 </html>
+
 

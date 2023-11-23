@@ -15,8 +15,15 @@ $empleado = new Empleado();
     {
         $empleado->entryInsert($tupla['code'],$tupla['enterprise'],$tupla['profile']);
     }
+    
+    $hoy = date("w");
 
-    $_SESSION['codeRegistro'] = 0;
+    // Verificar si el día actual es domingo
+    if ($hoy == 0) {
+        $empleado->entryInsertSunday();
+    } else {
+        echo "Hoy no es domingo.";
+    }
  header("location: ../view/registroEntrada.php");
 
 
