@@ -362,12 +362,9 @@ body {
 
     position:relative;
 }
-
 .formRow .input {
     padding-right: 30px;
 }
-
-
 .formRow .fa {
     position: absolute;
     right: 10px;
@@ -375,7 +372,6 @@ body {
     transform: translateY(65%);
     color:rgb(38, 81, 149);
 }
-
 .formRow2{
     display:flex;
     flex-direction: column;
