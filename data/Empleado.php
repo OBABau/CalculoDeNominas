@@ -140,12 +140,76 @@ public function getEmpleadoEntry($email){
     return $dataset;
 }
 
+public function getEnterpriseData($codeE){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select * from enterprise where code = ".$codeE."");
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
 public function getEmpleadoData($codeW){
     $result = $this->connect();
     if($result)
     {
         //echo"todo bien";
         $dataset = $this->execquery("select * from worker where code = ".$codeW."");
+        //echo "select * from worker where code = ".$codeW."";
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function getEmpleadoSalary($codeW){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select * from salary where worker = ".$codeW." and finished = 1");
+        //echo "select * from worker where code = ".$codeW."";
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function getEmpleadoProfile($codeP){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select * from profile where code = ".$codeP);
+        //echo "select * from worker where code = ".$codeW."";
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function getBenefits($codeS){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("select sb.benefits, sb.salary, sb.total, b.name from salary_benefits as sb inner JOIN benefits as b on b.code = sb.benefits where sb.salary = ".$codeS);
+        //echo "select * from worker where code = ".$codeW."";
     }
     else
     {
