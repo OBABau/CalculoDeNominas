@@ -1,7 +1,8 @@
 <?php 
 include('../../data/conexionDB.php');
 //include('../../app/sesion.php');
-include_once('../Perfiles/profile+.php');
+include('../Perfiles/profileGraphics.php');
+include('../../data/empleado.php');
 
 if (!isset($_SESSION['redirected'])) {
   header("Location: graficasEmpleado.php");
@@ -14,13 +15,11 @@ if (!$userID) {
   exit();
 }
 
-$query = "SELECT MONTH(payDate) as month, SUM(total) as totalIncome
-          FROM SALARY
-          WHERE worker = ".$_SESSION['code']."
-          GROUP BY MONTH(payDate)";
+$empleado = new Empleado();
+echo $_SESSION['userCode'];
 $conexionDB = new ConexionDB(); // Crear una instancia de la clase ConexionDB
-$conexionDB->connect(); // Usa la instancia para conectarte a la base de datos
-$consulta = $conexionDB->execquery($query);
+$conexion = $conexionDB->connect(); // Usa la instancia para conectarte a la base de datos
+$consulta = $empleado->getData();
 
 ?>
 
@@ -35,8 +34,24 @@ $consulta = $conexionDB->execquery($query);
         var data = google.visualization.arrayToDataTable([  
           ['Month', 'Total Income'],
           <?php
+          $monthNames = [
+            1 => 'January',
+            2 => 'February',
+            3 => 'March',
+            4 => 'April',
+            5 => 'May',
+            6 => 'June',
+            7 => 'July',
+            8 => 'August',
+            9 => 'September',
+            10 => 'October',
+            11 => 'November',
+            12 => 'December',
+          ];
+
           while ($resultado = mysqli_fetch_assoc($consulta)) {
-            echo "['".$resultado['month']."',".$resultado['totalIncome']."],";
+            $month = $monthNames[$resultado['month']];
+            echo "['".$month."',".$resultado['totalIncome']."],";
           }
           ?>
         ]);

@@ -31,6 +31,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1) {
     while($tupla = mysqli_fetch_assoc($consulta))
     {
     $_SESSION['code'] = $tupla['code'];
+    $_SESSION['userCode'] = $tupla['user'];
     }
     echo $_SESSION['code'];
 
