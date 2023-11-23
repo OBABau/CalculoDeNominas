@@ -14,7 +14,7 @@
 
     <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
 
-    <title>Edicion Empleados</title>
+    <title>Edicion Prestaciones</title>
 </head>
 
 <body>

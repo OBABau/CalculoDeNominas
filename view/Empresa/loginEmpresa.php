@@ -41,7 +41,7 @@
            
 <form action="../../app/logout.php" method="post">
             <form action="../../app/logout.php" method="post">
-                <button class="btnSalir2" type="submit">Logout</button>
+                <button class="btnSalir2" type="submit">Cerrar Sesíon</button>
             </form>
 
         </div>

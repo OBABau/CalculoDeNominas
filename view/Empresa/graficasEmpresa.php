@@ -12,7 +12,7 @@
 
     <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
 
-    <title>Historial de Pagos</title>
+    <title>Estadísticas de la Empresa</title>
 </head>
 
 <body>
