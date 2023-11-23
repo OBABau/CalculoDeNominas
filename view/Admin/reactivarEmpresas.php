@@ -39,14 +39,14 @@
         <table class="table table-striped table-hover">
         <?php
 include('../../data/admin.php');
-$instancia = new admin();
+$instancia4 = new admin();
 
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
-    $userIdToDelete = $_POST["eliminar"];
-    $instancia->desactivarUsuario($userIdToDelete);
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["reactivar"])) {
+    $userIdToDelete = $_POST["reactivar"];
+    $instancia4->reactivarEmpresas($userIdToDelete);
         }
 
-        $dataset = $instancia->getUsers();
+        $dataset = $instancia4->getEnterpriseDesactive();
 
     if ($dataset != "error") {
     echo '<tr class="font-weight-bold primary table-primary">';
@@ -64,8 +64,8 @@ $instancia = new admin();
         echo "<td>" . $tupla['creationDate'] . "</td>";
         echo "<td>";
         echo "<form method='post' action=''>";
-        echo "<input type='hidden' name='eliminar' value='" . $tupla['code'] . "'>";
-        echo "<button type='submit'>Desactivar</button>";
+        echo "<input type='hidden' name='reactivar' value='" . $tupla['code'] . "'>";
+        echo "<button type='submit'>Reactivar</button>";
         echo "</form>";
         echo "</td>";
         echo '</tr>';

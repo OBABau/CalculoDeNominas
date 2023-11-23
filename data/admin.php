@@ -60,5 +60,49 @@ include('conexionDB.php');
         }
         return $dataset;
     }
+
+    public function getEnterpriseActive(){
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT `code`, `email`, `password`, `creationDate` FROM `user` WHERE `active` = 1 AND `userType` = 3";
+            $dataset = $this->execquery($query);
+        } else {
+            $dataset = "Error";
+        }
+        return $dataset;
+    }
+
+    public function getEnterpriseDesactive(){
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT `code`, `email`, `password`, `creationDate` FROM `user` WHERE `active` = 0 AND `userType` = 3";
+            $dataset = $this->execquery($query);
+        } else {
+            $dataset = "Error";
+        }
+        return $dataset;
+    }
+    
+    public function desactivarEmpresas($userId) {
+        $result = $this->connect();
+        if ($result) {
+        $query = "UPDATE `user` SET `active` = 0 WHERE `code` = '$userId'";
+        $this->execquery($query);$dataset = $this->execquery($query);
+    } else {
+        $dataset = "Error";
+    }
+    return $dataset;
+}
+public function reactivarEmpresas($userId) {
+        $result = $this->connect();
+        if ($result) {
+        $query = "UPDATE `user` SET `active` = 1 WHERE `code` = '$userId'";
+        $this->execquery($query);$dataset = $this->execquery($query);
+    } else {
+        $dataset = "Error";
+    }
+    return $dataset;
+}
+
         }
 ?>

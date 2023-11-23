@@ -47,14 +47,14 @@
     <a class="enlaceCard" href="Admin/reactivarUsuarios.php">
         <div class="card">
         <div class="circle-img2">
-          <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">
+          <img src="../img/iconosfinales/reactivarUser.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
             <p>Reactivar cuentas</p>
           </div>        
         </div>
     </a>
-    <a class="enlaceCard" href="Admin/FAQ.php">
+    <a class="enlaceCard" href="Admin/verFAQs.php">
         <div class="card">
         <div class="circle-img2">
           <img src="../img/iconosfinales/FAQ.png" alt="Imagen Grafica">
@@ -65,24 +65,23 @@
         </div>
     </a>
 
-    <a class="enlaceCard" href="Admin/usuarios.php">
-        <div class="card">
-        <div class="circle-img2">
-          <img src="../img/iconosfinales/empleados.png" alt="Imagen Grafica">
-        </div>
-          <div class="card-text">
-            <p>Usuarios</p>
-          </div>        
-        </div>
-    </a>
-
     <a class="enlaceCard" href="Admin/actualizarEmpresas.php">
         <div class="card">
         <div class="circle-img2">
-          <img src="../img/iconosfinales/actualizarEmpresa.png" alt="Imagen Grafica">
+          <img src="../img/iconosfinales/desactive.png" alt="Imagen Grafica">
         </div>
           <div class="card-text">
-            <p>Actualizar Empresa</p>
+            <p>Desactivar contrato Empresas</p>
+          </div>        
+        </div>
+    </a>
+    <a class="enlaceCard" href="Admin/reactivarEmpresas.php">
+        <div class="card">
+        <div class="circle-img2">
+          <img src="../img/iconosfinales/active.png" alt="Imagen Grafica">
+        </div>
+          <div class="card-text">
+            <p>Reactivar contrato Empresa</p>
           </div>        
         </div>
     </a>
