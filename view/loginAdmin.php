@@ -34,13 +34,13 @@
 <div class="contenido">
   <h1>Panel de administrador</h1>
     <div class="contenidoBody">
-      <a class="enlaceCard" href="Admin/desactivarEmpresas.php">
+      <a class="enlaceCard" href="Admin/desactivarCuentas.php">
         <div class="card">
         <div class="circle-img2">
           <img src="../img/iconosfinales/desactivarEmpresa.png" alt="Imagen Grafica">
         </div>
         <div class="card-text">
-          <p>Desactivar Empresa</p>
+          <p>Desactivar Cuentas</p>
         </div>        
     </div>
     </a>
