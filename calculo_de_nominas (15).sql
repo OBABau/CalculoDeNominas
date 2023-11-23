@@ -38,14 +38,14 @@ INSERT INTO `benefits` (`code`, `name`, `description`, `enterprise`, `amount`) V
 (2, 'Gratificacion', 'Gratificacion por desempeno', 1, 450),
 (3, 'Bono de Productividad', 'Se otorga al concretar 36 puntos en la evaluacion semestral', 1, 5000);
 DROP TRIGGER IF EXISTS `trg_benefits_insert`;
-DELIMITER $$
+DELIMITER //
 CREATE TRIGGER `trg_benefits_insert` AFTER INSERT ON `benefits` FOR EACH ROW BEGIN
     INSERT INTO PROFILE_BENEFITS(benefits, profile, status)
     SELECT NEW.code, P.code, NULL
     FROM PROFILE P
     WHERE P.enterprise = NEW.enterprise;
 END
-$$
+//
 DELIMITER ;
 
 DROP TABLE IF EXISTS `deduction`;
@@ -91,14 +91,14 @@ INSERT INTO `incomes` (`code`, `name`, `description`, `enterprise`, `amount`) VA
 (1, 'Salario tester', 'salario base para el tester', 1, 600),
 (2, 'Salario developers', 'salario base para los desarrolladores', 1, 650);
 DROP TRIGGER IF EXISTS `trg_incomes_insert`;
-DELIMITER $$
+DELIMITER //
 CREATE TRIGGER `trg_incomes_insert` AFTER INSERT ON `incomes` FOR EACH ROW BEGIN
     INSERT INTO PROFILE_INCOMES(incomes, profile, status)
     SELECT NEW.code, P.code, NULL
     FROM PROFILE P
     WHERE P.enterprise = NEW.enterprise;
 END
-$$
+//
 DELIMITER ;
 
 DROP TABLE IF EXISTS `operations`;
@@ -124,13 +124,13 @@ INSERT INTO `payments` (`id`, `name`, `cardNumber`, `cvv`, `expirationDate`, `us
 (1, 'Brian Bautista', '1234567891011121', '123', '06/20', 4),
 (2, 'Luis Islas Reyes', '1231231244444444', '333', '08/34', 3);
 DROP TRIGGER IF EXISTS `after_insert_payment`;
-DELIMITER $$
+DELIMITER //
 CREATE TRIGGER `after_insert_payment` AFTER INSERT ON `payments` FOR EACH ROW BEGIN
     UPDATE user
     SET active = 1
     WHERE code = NEW.user_id;
 END
-$$
+//
 DELIMITER ;
 
 DROP TABLE IF EXISTS `profile`;
@@ -148,7 +148,7 @@ INSERT INTO `profile` (`code`, `name`, `description`, `enterprise`, `income`) VA
 (2, 'Developer', 'El encargado de desarrollar las aplicaciones', 1, 650),
 (3, 'Diseñador', 'El encargado de hacer los diseños de la pagina', 1, 625);
 DROP TRIGGER IF EXISTS `CreateProfileRelationships`;
-DELIMITER $$
+DELIMITER //
 CREATE TRIGGER `CreateProfileRelationships` AFTER INSERT ON `profile` FOR EACH ROW BEGIN
     
     INSERT INTO PROFILE_INCOMES (incomes, profile, status)
@@ -160,7 +160,7 @@ CREATE TRIGGER `CreateProfileRelationships` AFTER INSERT ON `profile` FOR EACH R
     SELECT B.code, NEW.code, NULL
     FROM BENEFITS B;
 END
-$$
+//
 DELIMITER ;
 
 DROP TABLE IF EXISTS `profile_benefits`;
@@ -274,7 +274,7 @@ INSERT INTO `user` (`code`, `email`, `password`, `creationDate`, `userType`, `ac
 (8, 'luis.islas@axis.com', '123', '2023-11-21', 2, NULL, 4, 1),
 (10, 'daniel.aguilar@axis.com', '123', '2023-11-22', 2, NULL, 5, 0);
 DROP TRIGGER IF EXISTS `trg_worker_insert`;
-DELIMITER $$
+DELIMITER //
 CREATE TRIGGER `trg_worker_insert` AFTER INSERT ON `user` FOR EACH ROW BEGIN
     IF NEW.worker IS NOT NULL THEN
         UPDATE worker
@@ -282,7 +282,7 @@ CREATE TRIGGER `trg_worker_insert` AFTER INSERT ON `user` FOR EACH ROW BEGIN
         WHERE code = NEW.worker;
     END IF;
 END
-$$
+//
 DELIMITER ;
 
 DROP TABLE IF EXISTS `user_type`;
@@ -463,8 +463,8 @@ ALTER TABLE `worker`
   ADD CONSTRAINT `worker_ibfk_2` FOREIGN KEY (`user`) REFERENCES `user` (`code`),
   ADD CONSTRAINT `worker_ibfk_3` FOREIGN KEY (`profile`) REFERENCES `profile` (`code`);
 
-DELIMITER $$
-DROP EVENT IF EXISTS `update_salary_finished`$$
+DELIMITER //
+DROP EVENT IF EXISTS `update_salary_finished`//
 CREATE DEFINER=`root`@`localhost` EVENT `update_salary_finished` ON SCHEDULE EVERY 1 WEEK STARTS '2023-11-13 05:15:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
 
     update salary as s
@@ -476,7 +476,7 @@ CREATE DEFINER=`root`@`localhost` EVENT `update_salary_finished` ON SCHEDULE EVE
     INSERT INTO salary (worker, days,payDate, enterprise, profile, finished)
     SELECT code,0,CURRENT_TIMESTAMP, enterprise, profile, 0
     FROM worker;
-END$$
+END//
 
 DELIMITER ;
 SET FOREIGN_KEY_CHECKS=1;
