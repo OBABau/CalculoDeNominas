@@ -145,3 +145,7 @@ ADD COLUMN active BOOLEAN DEFAULT 1;
 alter table profile
 add column salary float
 
+alter table user
+add column `enterprise` int,
+add foreign key (`enterprise`) references `enterprise`(code)
+

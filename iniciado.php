@@ -27,6 +27,12 @@ include('app/sesion.php');
         
         <div class="navbarCuerpo">            
             <?php
+            include ('data/Empresa.php');
+            $empresa = new Empresa();
+            $consulta = $empresa->getEnterpriseFromUser();
+            while ($tupla = mysqli_fetch_assoc($consulta))
+            {
+                
                 if($userType == 1) 
                 {
                 echo '<a class="enlaceNavbar sombraTexto1" href="view/loginAdmin.php">Panel de Administrador <i class="fa fa-chevron-down"></i></a>';
@@ -34,10 +40,14 @@ include('app/sesion.php');
                 elseif($userType == 2) 
                 {
                     echo '<a class="enlaceNavbar sombraTexto1" href="view/Empleado/loginEmpleado.php">Panel de Empleado<i class="fa fa-chevron-down"></i></a>';
-                } 
+                }
+                elseif ($userType == 3 && is_null($tupla['enterprise']))
+                {
+                    header('location: view/Empresa/registrarEmpresas2.php');
+                }
                 elseif($userType == 3) 
                 {
-                    include('data/conexionDB.php');
+                    include_once('data/conexionDB.php');
                     $myobject = new ConexionDB();
                     $result = $myobject->connect();
                     if($result)
@@ -54,6 +64,7 @@ include('app/sesion.php');
                         }
                     }
                 }
+            }
                 ?>
             <a class="enlaceNavbar sombraTexto1" href="iniciado.php">Inicio <i class="fa fa-chevron-down"></i></a>
             
