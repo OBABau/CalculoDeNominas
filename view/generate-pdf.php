@@ -263,7 +263,7 @@ $dompdf->setOptions($options);
 
 $dompdf->loadhtml($html);
 
-$dompdf->setPaper('letter');
+//$dompdf->setPaper('letter');
 $dompdf->setPaper('A4', 'landscape');
 
 $dompdf->render();
