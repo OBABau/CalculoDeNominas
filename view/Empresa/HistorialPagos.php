@@ -70,7 +70,7 @@
                     session_start();
                     echo "Bienvenido: ";
                     echo $_SESSION['start'];
-                    echo $_SESSION['code'];
+                    echo $_SESSION['code']; 
                 ?> 
         </div>
         <div class="sidebarContent">
@@ -94,9 +94,9 @@
         {
             echo "<table class=\"table table-striped table-hover\">";
                    echo "<tr class=\"font-weight-bold primary table-primary\">";
-                   echo "<th>Gastos en sueldo </th>";
-                   echo "<th>Gastos en prestaciones</th>";
-                   echo "<th>Fecha</th>";
+                   echo "<th>Gastos en sueldo  </th>";
+                   echo "<th>Gastos en prestaciones  </th>";
+                   echo "<th> Fecha</th>";
                    echo "</tr>";
             echo "<td>".$tupla['total']."</td>";
             $consulta2 = $empresa->getBenefitsExpenses();

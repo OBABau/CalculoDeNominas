@@ -26,8 +26,8 @@
         <div class="navbarCuerpo">          
             <a class="enlaceNavbar sombraTexto1" href="index.php"> &nbsp;Inicio<i class="fa fa-chevron-down"></i></a>
             <a class="enlaceNavbar sombraTexto1" href="view/Empresa/verPlanes.php"> &nbsp;Ver Planes<i class="fa fa-chevron-down"></i></a>
-            <a class="enlaceNavbar sombraTexto1" href="view/Empresa/registrarEmpresas.php"> &nbsp;Registrate<i class="fa fa-chevron-down"></i></a>
-            <a class="enlaceNavbar sombraTexto1" href="view/login.php"> &nbsp;Login<i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="view/Empresa/registrarEmpresas.php"> &nbsp;Regístrate<i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="view/login.php"> &nbsp;Iniciar Sesión<i class="fa fa-chevron-down"></i></a>
         </div>
 
     </nav>
@@ -35,7 +35,7 @@
     <div class="cuerpo2">        
         <div class="hero1 sombra p-4">
             <h1 class="text-center font-weight-bold text-white mt-4 titulo11">TFT</h1>            
-            <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar nominas.</h1>                   
+            <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar nóminas.</h1>                   
       <div class="d-flex container-fluid mt-3 sombra2" lc-helper="background" style="height:50vh;background:url(img/img/busines3.jpg)  center / cover no-repeat;">
     </div>
     <div class="container p-5 bg1 sombra2" style="margin-top:-100px">
@@ -69,7 +69,7 @@
 </div>
 
 <div class="contenedorCarrousel mx-auto mt-4">
-    <h1 class="text-center font-weight-bold mt-4 titulo11">GESTOR DE NOMINAS</h1>
+    <h1 class="text-center font-weight-bold mt-4 titulo11">GESTOR DE NÓMINAS</h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../css/gwen.css">
 
     <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
-    <title>Menu de Opciones</title>
+    <title>Menú  de Opciones</title>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
             <div class="login">
                 <h1>Panel de Empresa </h1>
             </div>
-            <div class="panelTitulo">Seleccione una opcion</div>
+            <div class="panelTitulo">Seleccione una opción</div>
         </div>
 
         <div class="contenidoBody">
@@ -62,18 +62,18 @@
                         <img src="../../img/iconosfinales/grafica.png" alt="Imagen Recibo">
                     </div>
                     <div class="card-text">
-                        <p>Graficas</p>
+                        <p>Gráficas</p>
                     </div>
 
                 </div>
             </a>
-            <a class="enlaceCard" href="../Empleado/listaEmpleados.php">
+            <a class="enlaceCard" href="../Perfiles/creacionPerfiles.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/iconosfinales/empleado.png" alt="Imagen Recibo">
+                        <img src="../../img/iconosfinales/creacionperfiles.png" alt="Imagen graficasEmpresa">
                     </div>
                     <div class="card-text">
-                        <p>Lista De Empleados</p>
+                        <p>Creación de perfiles para empleados</p>
                     </div>
                 </div>
             </a>
@@ -83,17 +83,17 @@
                         <img src="../../img/iconosfinales/edicionprestaciones.png" alt="Imagen edicionEmpleados">
                     </div>
                     <div class="card-text">
-                        <p>Edicion de prestaciones</p>
+                        <p>Edición de prestaciones</p>
                     </div>
                 </div>
             </a>
-            <a class="enlaceCard" href="../Perfiles/creacionPerfiles.php">
+            <a class="enlaceCard" href="../Empleado/listaEmpleados.php">
                 <div class="card">
                     <div class="circle-img2">
-                        <img src="../../img/iconosfinales/creacionperfiles.png" alt="Imagen graficasEmpresa">
+                        <img src="../../img/iconosfinales/empleado.png" alt="Imagen Recibo">
                     </div>
                     <div class="card-text">
-                        <p>Creacion de perfiles para empleados</p>
+                        <p>Lista De Empleados</p>
                     </div>
                 </div>
             </a>

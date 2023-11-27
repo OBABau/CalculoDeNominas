@@ -21,7 +21,7 @@ include('app/sesion.php');
             <div class="navbarTitulo">TFT</div>
 
             <div class="mensajeSesion">                 
-              <?php echo "Bienvenido," .$_SESSION['start']. "!" ; ?> 
+              <?php echo "Bienvenido, " .$_SESSION['start']. "!" ; ?> 
             </div>
         </div>
         
@@ -54,23 +54,128 @@ include('app/sesion.php');
                         }
                     }
                 }
-                ?>
+            ?>
             <a class="enlaceNavbar sombraTexto1" href="iniciado.php">Inicio <i class="fa fa-chevron-down"></i></a>
-            
         </div>
 
         <div class="navbarFooter">
             <form class="formNavbar" action="app/logout.php" method="post">
-                <button class="btnNavbar" type="submit">Logout</button>
+                <button class="btnNavbar" type="submit">Cerrar Sesión</button>
             </form>
         </div>
     </nav>
 
+    <div class="bienvenida">
+            <?php
+                if($userType == 3){
+                    include_once('data/conexionDB.php');
+                    $myobject2 = new ConexionDB();
+                    $result2 = $myobject2->connect();
+                    if($result2)
+                    {
+                        $consult2 = $myobject2->execquery("SELECT * FROM user WHERE email ='".$_SESSION['start']."'");
+                        $tupla2 = mysqli_fetch_assoc($consult2);
+                        if ($tupla2['active'] == 1){
+                            echo '
+                            <br><br><br>
+                            <h1 class="text-center font-weight-bold mt-4 titulo11">BIENVENIDO</h1>
+                            <p class="text-center subtitulo22">¡Gracias por unirte a TFT!</p>
+                            <p class="text-center subtitulo22">¿Qué hago ahora?</p>
+                            <p class="text-center subtitulo22">Empieza por ver estos sencillos videos para tu rápida capacitación con nuestra página!</p>
+                        
+                            <div class="contenedorCarrousel mx-auto mt-4">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner sombra">
+                                <div class="carousel-item active">
+                                <a href="Videos/perfiles.html"><img class="d-block w-100" src="Videos/img/crearPerfiles.png" alt="First slide"></a>
+                                </div>
+                                <div class="carousel-item">
+                                <a href="Videos/empleados.html"><img class="d-block w-100" src="Videos/img/empleados.gif" alt="First slide"></a>
+                                </div>
+                                <div class="carousel-item">
+                                <a href="Videos/registro.html"><img class="d-block w-100" src="Videos/img/registro.gif" alt="First slide"></a>
+                                </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            </div>
+                            </div>
+                            ';
+                        }
+                        else{
+                            echo '
+                            <br><br><br>
+                            <h1 class="text-center font-weight-bold mt-4 titulo11">BIENVENIDO</h1>
+                            <p class="text-center subtitulo22">¿Qué hago ahora?</p>
+                            <p class="text-center subtitulo22">Empieza por contratar nuestros servicios para que accedas a todas tus opciones empresariales!</p> 
+                            ';
+                        }
+                    }
+                }
+                ?>
+            </div>
+
+            <div class="bienvenida2">
+            <?php
+                if($userType == 2){
+                    echo '
+                    <br><br><br>
+                    <h1 class="text-center font-weight-bold mt-4 titulo11">BIENVENIDO</h1>
+                    <p class="text-center subtitulo22">¡Ahora formas parte de TFT!</p>
+                    <p class="text-center subtitulo22">¿Qué puedes hacer ahora?</p>
+                    <p class="text-center subtitulo22">Empieza por visitar tu panel de empleado para consultar tus nóminas!.</p> ';
+                    
+                    // <div class="contenedorCarrousel mx-auto mt-4">
+                    // <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    // <ol class="carousel-indicators">
+                    // <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    // <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    // <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    // </ol>
+                    // <div class="carousel-inner sombra">
+                    //     <div class="carousel-item active">
+                    //     <a href="Videos/perfiles.html"><img class="d-block w-100" src="Videos/img/crearPerfiles.png" alt="First slide"></a>
+                    //     </div>
+                    //     <div class="carousel-item">
+                    //     <a href="Videos/empleados.html"><img class="d-block w-100" src="Videos/img/empleados.gif" alt="First slide"></a>
+                    //     </div>
+                    //     <div class="carousel-item">
+                    //     <a href="Videos/registro.html"><img class="d-block w-100" src="Videos/img/registro.gif" alt="First slide"></a>
+                    //     </div>
+                    //     </div>
+                    //     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    //     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    //     <span class="sr-only">Previous</span>
+                    //     </a>
+                    //     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    //     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    //     <span class="sr-only">Next</span>
+                    //     </a>
+                    // </div>
+                    // </div>
+                    // </div>';
+                }
+                ?>
+            </div>
+       
+    
     <div class="cuerpo2">        
-        <div class="hero1 sombra p-4">
+            <div class="hero1 sombra p-4">
             <h1 class="text-center font-weight-bold text-white mt-4 titulo11">TFT</h1>            
-            <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar nominas.</h1>                   
-      <div class="d-flex container-fluid mt-3 sombra2" lc-helper="background" style="height:50vh;background:url(img/img/busines3.jpg)  center / cover no-repeat;">
+            <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar tus nóminas.</h1>                   
+        <div class="d-flex container-fluid mt-3 sombra2" lc-helper="background" style="height:50vh;background:url(img/img/busines3.jpg)  center / cover no-repeat;">
     </div>
     <div class="container p-5 bg1 sombra2" style="margin-top:-100px">
         <div class="row">
@@ -103,7 +208,7 @@ include('app/sesion.php');
 </div>
 
 <div class="contenedorCarrousel mx-auto mt-4">
-    <h1 class="text-center font-weight-bold mt-4 titulo11">GESTOR DE NOMINAS</h1>
+    <h1 class="text-center font-weight-bold mt-4 titulo11">GESTOR DE NÓMINAS</h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -130,7 +235,7 @@ include('app/sesion.php');
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
+    </div>
 </div>
         
        
@@ -164,9 +269,6 @@ include('app/sesion.php');
 
 				</div>
 			</div>
-			<div class="lc-block">
-				<a class="btn btn-lg btn-light" href="view/Empresa/registrarEmpresas.php" role="button">Registrate</a>
-			</div><!-- /lc-block -->
 		</div><!-- /col -->
 	</div>
 </div>

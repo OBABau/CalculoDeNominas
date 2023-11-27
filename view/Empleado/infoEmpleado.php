@@ -49,7 +49,7 @@
             $empleado = new Empleado();
             // Obtener datos del usuario
             $datosUsuario = $empleado->getUserData($_SESSION['start']);
-            $userId = $empleado->setUser($_SESSION['code']);
+            // $userId = $empleado->setUser($_SESSION['code']);
             $datosEmpleado = $empleado->obtenerDatosEmpleado();
         ?>
 

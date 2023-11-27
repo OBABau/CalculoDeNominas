@@ -29,19 +29,19 @@ include('../app/sesion.php');
             
             <div class="navbarCuerpo">            
                 <a class="enlaceNavbar" href="../../index.php">Inicio &nbsp;<i class="fa fa-chevron-down"></i></a>
-                <a class="enlaceNavbar" href="registrarEmpresas.php">Registrate &nbsp;<i class="fa fa-chevron-down"></i></a>
+                <a class="enlaceNavbar" href="registrarEmpresas.php">Regístrate &nbsp;<i class="fa fa-chevron-down"></i></a>
             </div>
 
             <div class="navbarFooter">
                 <a href="../login.php">
-                    <button class="btnNavbar" type="submit">LogIn</button>
+                    <button class="btnNavbar" type="submit">Iniciar Sesión</button>
                 </a>
             </div>
         </nav>
     </header>
 
     <div class="cuerpo">
-        <h1 style="text-align: center;">VISUALIZACION DE SERVICIOS DISPONIBLES</h1>
+        <h1 style="text-align: center;">VISUALIZACIÓN DE SERVICIOS DISPONIBLES</h1>
 
         <div class="contenedorCartas">
             <div class="carta">
@@ -50,11 +50,11 @@ include('../app/sesion.php');
                 </div>
                 <div class="carta-body">
                     <div class="cartaTitulo">Plan Mensual</div>
-                    <p>Contrata nuestro servicio por 1 mes</p>  
+                    <p>Contrata nuestro servicio por 1 mes: </p>  
                     <ul>
-                        -Administras tus empleados   <br>
-                        -Registra entrada/salida de tus empleados  <br>
-                        -Calcula nominas
+                    -Administras tus empleados.   <br>
+                    -Registra entrada/salida de tus empleados.  <br>
+                    -Calcula nóminas.
                     </ul>                  
                 </div>
                 <div class="carta-footer">                    
@@ -67,7 +67,7 @@ include('../app/sesion.php');
                 </div>
                 <div class="carta-body">
                     <div class="cartaTitulo">Plan 2</div>
-                    <p>Próximamente, paquete en desarrollo</p>
+                    <p>Próximamente, paquete en desarrollo...</p>
                 </div>
                 <div class="carta-footer">                    
                 </div>

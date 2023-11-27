@@ -128,7 +128,11 @@ class Empresa extends ConexionDB {
 
     public function getSalaryExpenses() {
         $result  = $this->connect();
-        $query = "SELECT sum(s.total) as total, s.finished, s.payDate from salary as s where s.enterprise = ".$_SESSION['code']." and finished > 0 group by finished;";
+        $query = 
+        "SELECT sum(s.total) as total, s.finished, s.payDate 
+        from salary as s 
+        where s.enterprise = ".$_SESSION['code']." and finished > 0 group by finished;";
+        
         if ($result)
         {
             $dataset = $consulta = $this->execquery($query);
@@ -186,7 +190,7 @@ public function obtenerDatosEmpresa($email) {
         if ($consulta) {
            
             if ($tupla = mysqli_fetch_assoc($consulta)) {
-                return $tupla;
+                return $tupla;  
             }
         }
     }

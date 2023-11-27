@@ -34,7 +34,7 @@
             </div>
         <div class="sidebarContent">                
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-            <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Informacion</a>
+            <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Información</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
 
@@ -58,7 +58,7 @@
                         <img src="../../img/iconosfinales/grafica.png" alt="Imagen Grafica">
                     </div>
                     <div class="card-text">
-                        <p>Graficas</p>
+                        <p>Gráficas</p>
                     </div>
 
                 </div>
@@ -69,7 +69,7 @@
                         <img src="../../img/iconosfinales/nominareciente.png" alt="nominaReciente">
                     </div>
                     <div class="card-text">
-                        <p>Nomina Reciente</p>
+                        <p>Nómina Reciente</p>
                     </div>
                 </div>
             </a>
