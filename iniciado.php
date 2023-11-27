@@ -56,7 +56,7 @@ include('app/sesion.php');
                 }
                 ?>
             <a class="enlaceNavbar sombraTexto1" href="iniciado.php">Inicio <i class="fa fa-chevron-down"></i></a>
-            
+            sexooo
         </div>
 
         <div class="navbarFooter">
