@@ -151,11 +151,6 @@ DROP TRIGGER IF EXISTS `CreateProfileRelationships`;
 DELIMITER //
 CREATE TRIGGER `CreateProfileRelationships` AFTER INSERT ON `profile` FOR EACH ROW BEGIN
     
-    INSERT INTO PROFILE_INCOMES (incomes, profile, status)
-    SELECT I.code, NEW.code, NULL
-    FROM INCOMES I;
-
-    
     INSERT INTO PROFILE_BENEFITS (benefits, profile, status)
     SELECT B.code, NEW.code, NULL
     FROM BENEFITS B;

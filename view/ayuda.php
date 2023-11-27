@@ -20,10 +20,24 @@
         <div class="navbarHeader">
             <div class="navbarTitulo">TFT</div>
         </div>
-        
+        <?php
+        session_start();
+        if (isset($_SESSION['type']))
+        {
+        ?>
         <div class="navbarCuerpo">                    
             <a class="enlaceNavbar sombraTexto1" href="../iniciado.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
         </div>
+        <?php
+        }
+        else {
+        ?>
+        <div class="navbarCuerpo">                    
+            <a class="enlaceNavbar sombraTexto1" href="../index.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
+        </div>
+        <?php
+        }
+        ?>
     </nav>
 
     <div class="cuerpo">

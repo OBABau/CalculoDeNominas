@@ -1,5 +1,5 @@
 <?php
-include('conexionDB.php');
+include_once('conexionDB.php');
 
 class Empresa extends ConexionDB {
     private $nombre;
@@ -124,6 +124,16 @@ class Empresa extends ConexionDB {
                 return $tupla['code'];
             }
         }
+    }
+
+    public function getEnterpriseFromUser() {
+        $result  = $this->connect();
+        $query = "select enterprise from user where email = '".$_SESSION['start']."';";
+        if ($result)
+        {
+            $dataset = $this->execquery($query);
+        }
+        return $dataset;
     }
 
     public function getSalaryExpenses() {
