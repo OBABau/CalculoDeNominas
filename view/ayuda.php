@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,48 +12,86 @@
     <link rel="stylesheet" href="../css/gwen.css">
 
     <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
-    <title>Ayuda</title>    
+    <title>Ayuda</title>
 </head>
 
-<body>
-    <div class="sidebar">
-        <div class="headerSidebar">
-            <img class="logoImg" src="../img/img/logo.png" alt="Imagen Logo">
-            <div class="tituloSidebar">NÓMINAS</div>
+<body>    
+    <nav class="navbar">
+        <div class="navbarHeader">
+            <div class="navbarTitulo">TFT</div>
+        </div>
+        <?php
+        session_start();
+        if (isset($_SESSION['type']))
+        {
+        ?>
+        <div class="navbarCuerpo">                    
+            <a class="enlaceNavbar sombraTexto1" href="../iniciado.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
+        </div>
+        <?php
+        }
+        else {
+        ?>
+        <div class="navbarCuerpo">                    
+            <a class="enlaceNavbar sombraTexto1" href="../index.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
+        </div>
+        <?php
+        }
+        ?>
+    </nav>
+
+    <div class="cuerpo">
+        <div class="login-container4">
+            <div class="loginHeader">
+                <h2>Cuentanos tu problema</h2>
+            </div>
+
+            <div class="loginBody">
+                
+
+                <form class="login-form" method='POST' action='../data/addAyuda.php'>
+                    <div class="formRow">
+                        <label class="lblinput" for="Mail">Correo electrónico:</label>
+                        <i class="fa fa-envelope"></i>
+                        <input class="input" type="text" id="Mail" name="Mail" maxlength="50"
+                            placeholder="ejemplo@correo.com">
+                    </div>
+                    <div class="formRow">
+                        <label class="lblinput" for="text">Título:</label>
+                        <input class="input" type="text" id="titulo" name="titulo" maxlength="64"
+                            placeholder="Título del problema">
+                    </div>
+
+                    <div class="formRow">
+                        <label class="lblinput" for="text">Descripcion:</label>
+                        <textarea class="textarea1" name="descripcion" id="descripcion" cols="30" rows="10" style="resize: none;  font-family: 'Poppins', sans-serif;" placeholder="   Descripción del problema"></textarea>
+                    </div>
+
+                    <div class="formRow2">
+                        <button class="boton1" type="Submit" name="Iniciar Sesion">Enviar</button>
+                    </div>
+                </form>
+                    <?php
+                        // Recupera el mensaje del parámetro de la URL
+                        $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
+
+                        if ($mensaje) {
+                        echo '<p class="bien">' . $mensaje . '</p>';
+                        }
+                    ?>
+            </div>
+
         </div>
 
-        <div class="userSidebar">
-        </div>
-
-        <div class="sidebarContent">
-            <a href="../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>            
-        </div>
     </div>
 
-    <div class="contenido">
-        <html lang="en">
-        <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulario de Ayuda</title>
-        </head>
-        <body>
-
-        <h2>Formulario de Ayuda</h2>
-
-        <form action="../app/addAyuda.php" method="post">
-            <label for="titulo">Título del Problema:</label>
-            <input type="text" id="titulo" name="tit-prob" required>
-            <br><br><br>
-            <label for="descripcion">Descripción del Problema:</label>
-            <br><br>
-            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+    <div class="footer">
+        <div class="mensajeFooter">            
+            No nos hacemos responsables por el mal uso de la información aquí presentada.
             <br>
-
-            <input type="submit" value="Enviar">
-        </form>
+            2023 &copy; TFT            
+        </div>
     </div>
-
 </body>
 
 </html>

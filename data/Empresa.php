@@ -1,5 +1,5 @@
 <?php
-include('conexionDB.php');
+include_once('conexionDB.php');
 
 class Empresa extends ConexionDB {
     private $nombre;
@@ -49,6 +49,69 @@ class Empresa extends ConexionDB {
         $this->contrasena = $contrasena;
     }
 
+    public function getDataByTotalAll($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT SUM(total) as totalSum
+            FROM salary
+            WHERE enterprise = (SELECT code FROM enterprise WHERE user = " . $userCode . ")";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+    
+    public function getDataByMonth($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT YEAR(payDate) as anio, MONTHNAME(payDate) as mes, SUM(total) as totalMes FROM salary WHERE enterprise = 
+            (SELECT code FROM enterprise WHERE user = ".$userCode.") AND payDate IS NOT NULL GROUP BY anio, mes;";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+
+    public function getDataByYear($userCode) {
+        $result = $this->connect();
+        if ($result) {
+            $query = "SELECT YEAR(payDate) as anio, SUM(total) as totalAnio 
+                      FROM salary 
+                      WHERE enterprise = (SELECT code FROM enterprise WHERE user = ".$userCode.") 
+                            AND payDate IS NOT NULL 
+                      GROUP BY anio;";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Error al ejecutar la consulta.";
+                return false;
+            }
+        } else {
+            echo "Error en la conexión a la base de datos.";
+            return false;
+        }
+    }
+    
+
+/* ---------------------------------------------------------------------------------------------------------------  */
 
     public function getUser() {
         $result  = $this->connect();
@@ -62,6 +125,40 @@ class Empresa extends ConexionDB {
             }
         }
     }
+
+    public function getEnterpriseFromUser() {
+        $result  = $this->connect();
+        $query = "select enterprise from user where email = '".$_SESSION['start']."';";
+        if ($result)
+        {
+            $dataset = $this->execquery($query);
+        }
+        return $dataset;
+    }
+
+    public function getSalaryExpenses() {
+        $result  = $this->connect();
+        $query = 
+        "SELECT sum(s.total) as total, s.finished, s.payDate 
+        from salary as s 
+        where s.enterprise = ".$_SESSION['code']." and finished > 0 group by finished;";
+        
+        if ($result)
+        {
+            $dataset = $consulta = $this->execquery($query);
+        }
+        return $dataset;
+    }   
+
+    public function getBenefitsExpenses() {
+        $result  = $this->connect();
+        $query = "SELECT sum(sb.total) as total, s.finished from salary_benefits as sb INNER join salary as s on s.code = sb.salary where s.enterprise = ".$_SESSION['code']." group by finished;";
+        if ($result)
+        {
+            $dataset = $consulta = $this->execquery($query);
+        }
+        return $dataset;
+    }   
 
     public function setUser($userId) 
     {
@@ -103,7 +200,7 @@ public function obtenerDatosEmpresa($email) {
         if ($consulta) {
            
             if ($tupla = mysqli_fetch_assoc($consulta)) {
-                return $tupla;
+                return $tupla;  
             }
         }
     }
@@ -247,5 +344,7 @@ public function checkCuenta(){
         }
     }
 }
+
+
 
 ?>

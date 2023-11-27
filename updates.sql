@@ -18,28 +18,10 @@ AFTER INSERT ON PROFILE
 FOR EACH ROW
 BEGIN
     
-    INSERT INTO PROFILE_INCOMES (incomes, profile, status)
-    SELECT I.code, NEW.code, NULL
-    FROM INCOMES I;
-
     -- Crear registros en PROFILE_BENEFITS
     INSERT INTO PROFILE_BENEFITS (benefits, profile, status)
     SELECT B.code, NEW.code, NULL
     FROM BENEFITS B;
-END;
-//
-
-
-DELIMITER//
-CREATE TRIGGER trg_incomes_insert
-AFTER INSERT
-ON INCOMES
-FOR EACH ROW
-BEGIN
-    INSERT INTO PROFILE_INCOMES(incomes, profile, status)
-    SELECT NEW.code, P.code, NULL
-    FROM PROFILE P
-    WHERE P.enterprise = NEW.enterprise;
 END;
 //
 
@@ -140,9 +122,8 @@ END;
 CREATE TABLE Ayuda (
     code INT AUTO_INCREMENT PRIMARY KEY,
     Titulo VARCHAR(100) NOT NULL,
-    Descripcion VARCHAR(100) NOT NULL,
-    user INT,
-    FOREIGN KEY (user) REFERENCES USER(code)
+    Correo VARCHAR(100) NOT NULL,
+    Descripcion VARCHAR(164) NOT NULL
 );
 
 ALTER TABLE WORKER
@@ -163,4 +144,8 @@ ADD COLUMN active BOOLEAN DEFAULT 1;
 
 alter table profile
 add column salary float
+
+alter table user
+add column `enterprise` int,
+add foreign key (`enterprise`) references `enterprise`(code)
 

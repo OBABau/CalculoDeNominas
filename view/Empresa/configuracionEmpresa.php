@@ -14,7 +14,7 @@ if ($datosUsuario) {
     $correo = $datosUsuario["email"];
     $contrasena = $datosUsuario["password"];
 }
-
+    
 // Verifica si se encontraron datos de empresa
 if ($datosEmpresa) {
     $nombre = $datosEmpresa['name'];
