@@ -40,7 +40,7 @@
     <div class="contenido">
         <div class="login-container">
             <div class="loginHeader">
-                <h1>Registro de un Nuevo Tipo de Perfil</h1>
+                <h1>Registro de un Nuevo Perfil</h1>
             </div>
 
             <div class="loginBody">                
@@ -59,9 +59,9 @@
                     </div> 
                     
                     <div class="formRow">                        
-                        <label class="lblinput" for="prodileAmount">Salario diario:</label>                        
-                        <input class="inputNumber" type="number" name="profileAmount" id="profileAmount" maxlength="100"
-                        placeholder="0">
+                        <label class="lblinput" for="profileAmount">Salario diario:</label>                        
+                        <input class="inputNumber" type="decimal" name="profileAmount" id="profileAmount" maxlength="100" pattern="^[0-9]+(\.[0-9]+)?$"
+                        placeholder="0" >
                     </div>  
                     <div class="formRow">
                         <button class="boton1" type="Submit" value="Enviar">Registrar</button>

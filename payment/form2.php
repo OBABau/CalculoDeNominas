@@ -58,17 +58,17 @@ include('../app/sesion.php');
                     </div>
                     <div class="formRow">
                         <label class="lblinput" for="cardNumber">Numero de la tarjeta (16 digitos):</label>
-                        <i class="fa fa-key"></i>
+                        <i class="fa fa-address-card"></i>
                         <input class="input" type="text" id="cardNumber" name="cardNumber" pattern="\d{16}" title="Ingresa 16 digitos" minlength="16" maxlength="16" required>
                     </div>
                     <div class="formRow">
                         <label class="lblinput" for="cvv">CVV (3 digitos):</label>
-                        <i class="fa fa-key"></i>
+                        <i class="fa fa-lock"></i>
                         <input class="input" type="text" id="cvv" name="cvv"pattern="\d{3}" title="Ingresa 3 digitos" minlength="3" maxlength="3" required>
                     </div>          
                     <div class="formRow">
                         <label class="lblinput" for="expirationDate">Fecha de expiración(MM/YY):</label>
-                        <i class="fa fa-key"></i>
+                        <i class="fa fa-calendar"></i>
                         <input class="input" type="text" id="expirationDate" name="expirationDate" pattern="\d{2}/\d{2}" title="Ingresa fecha valida (MM/YY)" minlength="5"  maxlength="5" required>
                     </div> 
                     <div class="formRow">

@@ -58,13 +58,13 @@
                {   
                    $consulta2 = $myobject->getIncomes();
                    echo "<table class=\"table table-striped table-hover\">";
-                   echo "<tr class=\"font-weight-bold primary table-primary\">";
+                   echo "<tr class='font-weight-bold primary table-primary'>";
                    echo "<th>Codigo</th>";
                    echo "<th>Nombre</th>";
                    echo "<th>Descripcion</th>";
                    echo "<th>Sueldo</th>";
                    echo "</tr>";
-
+                   
                    echo "<td>".$tupla['code']."</td>";
                    echo "<td>".$tupla['name']."</td>";
                    echo "<td>".$tupla['description']."</td>";
@@ -76,14 +76,14 @@
            
                <?php
                    echo "<label class=\"font-weight-bold primary table-primary\" >Prestaciones</label>";
-                   echo "<br>";
+                   echo "<br> ";
            
                    $consulta2 = $myobject->getBenefits();
                    while ($tupla2 = mysqli_fetch_assoc($consulta2)){
                        $checked = $perfil->setCheckboxes($tupla2['code'],$tupla['code'], "benefits");
                        if($checked)
                        {
-                       echo '<label>
+                       echo '<label>  
                        <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" checked > '.$tupla2['name'].'
                        </label>';
                        }
@@ -91,15 +91,19 @@
                        {
                            echo '<label>
                        <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
-                       </label>';
+                       </label>'; 
                        }
+                       echo '<span style="margin-right: 30px;"></span>';
                    }
                    }
                }
            
                
                        ?>
-               <button type = "submit" name  = "Enviar">Enviar</button>
+                <br>
+                <br>
+                <br>
+               <button class = "btnPerfiles" type = "submit" name  = "Enviar">Enviar</button>
            </body>
         </div>   
         </form>

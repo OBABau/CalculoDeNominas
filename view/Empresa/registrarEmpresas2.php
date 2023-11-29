@@ -61,13 +61,13 @@
                 
                 <div class="formRow">
                     <label class="lblinput" for="rfc">Dirección:</label>
-                    <input class="input" type="text" id="direccion" name="direccion" maxlength="100"
+                    <input class="input" type="text" id="direccion" name="direccion" maxlength="100" 
                         placeholder="Ingrese Direccion" required>
                 </div>              
 
                 <div class="formRow">
                     <label class="lblinput" for="codigo_postal">Código Postal:</label>
-                    <input class="input" type="text" id="codigo_postal" name="codigo_postal" maxlength="9"
+                    <input class="input" type="text" id="codigo_postal" name="codigo_postal" maxlength="5" pattern="^\d{5}$"
                         placeholder="Ingrese CP" required>
                 </div>              
 

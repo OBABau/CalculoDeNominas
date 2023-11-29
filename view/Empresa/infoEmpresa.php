@@ -29,7 +29,7 @@
             <a href="loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
-        <form class="sidebarFooter" action="app/logout.php" method="post">
+        <form class="sidebarFooter" action="../../app/logout.php" method="post">
             <button class="btnSalir" type="submit">Cerrar Sesion</button>
         </form>
     </div>

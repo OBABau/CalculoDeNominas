@@ -37,7 +37,7 @@
                 <a href="creacionPerfiles.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
                 <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
             </div>
-            <form class="sidebarFooter" action="app/logout.php" method="post">
+            <form class="sidebarFooter" action="../../app/logout.php" method="post">
                 <button class="btnSalir" type="submit">Cerrar Sesion</button>
             </form>
         </div>
@@ -49,16 +49,14 @@
                 $myobject = new ingresosYConsultas;
                 $consulta = $myobject->getBenefits();
                 if($consulta != 'error')
-                {       
-                    while($tupla = mysqli_fetch_assoc($consulta))
-                    {   
-                        echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Codigo</th>";
+                {       echo'<tr class="font-weight-bold primary table-primary">';
+                        
                         echo"<th>Nombre</th>";
                         echo"<th>Descripcion</th>";
                         echo"<th>Cantidad</th>";
                         echo "</tr>";
-                        echo"<td>".$tupla['code']."</td>";
+                    while($tupla = mysqli_fetch_assoc($consulta))
+                    {   
                         echo"<td>".$tupla['name']."</td>";
                         echo"<td>".$tupla['description']."</td>";
                         echo"<td>".$tupla['amount']."</td>";

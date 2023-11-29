@@ -695,3 +695,21 @@ body {
 
 
 /*-----------------------------------*/
+
+.btnPerfiles {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    margin-left: 15%;
+    background-color: #0b5b96;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 0.4rem 2rem;
+    /* Espaciado interno */
+    border: none;
+    /* Quita el borde */
+    border-radius: 0.3rem;
+    /* Añade esquinas redondeadas */
+    cursor: pointer;
+    width: 60%;
+}

@@ -37,7 +37,7 @@
                 <a href="creacionPerfiles.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
                 <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
             </div>
-            <form class="sidebarFooter" action="app/logout.php" method="post">
+            <form class="sidebarFooter" action="../../app/logout.php" method="post">
                 <button class="btnSalir" type="submit">Cerrar Sesion</button>
             </form>
         </div>                    
@@ -62,8 +62,8 @@
                             placeholder="Ingrese la Descripcion">
                     </div>  
                     <div class="formRow">                        
-                        <label class="lblinput" for="benefitAmount">Pago semanal:</label>                        
-                        <input class="inputNumber" type="number" name="benefitAmount" id="benefitAmount" maxlength="100"
+                        <label class="lblinput" for="benefitAmount">Bonificacion semanal:</label>                        
+                        <input class="inputNumber" type="decimal" name="benefitAmount" id="benefitAmount" maxlength="100" pattern="^[0-9]+(\.[0-9]+)?$"
                         placeholder="0">
                     </div>                           
                     <div class="formRow">

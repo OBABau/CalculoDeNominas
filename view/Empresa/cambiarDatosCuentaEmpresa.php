@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($actualizacionExitosa) {
        
-        header("Location: configuracionEmpresa.php?mensajeCuenta=exito");
+        header("Location: ../../app/logout.php");
         exit();
     } else {
        

@@ -34,7 +34,6 @@
         <div class="sidebarContent">
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="../Empresa/loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
-            <a href="configuracionEmpleado.php"><i class="fa fa-cog"></i> &nbsp;Configuracion</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
 
@@ -45,6 +44,8 @@
 
     <div class="contenido2">
         <h2>Agregar un Empleado Nuevo</h2>
+        <h6 style='color: red;'>RECUERDA CREAR PERFILES ANTES DE INGRESAR A TUS EMPLEADOS</h6>
+        
         <div class="contenidoBody mx-auto">
             <a class="enlaceCard" href="crearEmpleado.php">
                 <div class="card">
@@ -54,6 +55,7 @@
                     <div class="card-text">
                         <p>Agregar Empleado</p>
                     </div>
+                    
                 </div>
             </a>            
         </div>
