@@ -3,7 +3,6 @@ session_start();
 include ("../../data/perfiles.php");
 echo "<br>";
 $perfil = new perfiles();
-$perfil->updateTo0("incomes");
 $perfil->updateTo0("benefits");
 echo "llego";
 if(isset($_POST['Enviar'])){
