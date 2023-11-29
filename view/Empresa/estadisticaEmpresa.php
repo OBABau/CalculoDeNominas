@@ -55,9 +55,9 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
         </div>
         <hr>
         <div class="sidebarContent">
-            <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+        </div>
         <form class="text-center" action="../../app/logout.php" method="post">
             <button class="btnSalir2" type="submit">Cerrar Sesion</button>
     </div>
