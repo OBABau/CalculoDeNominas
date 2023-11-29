@@ -13,7 +13,7 @@ include('../app/sesion.php');
     <link rel="stylesheet" href="../css/gwen.css">
     
     <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
-    <title>Payment Form</title>
+    <title>Forma de pago</title>
 </head>
 <body>
     <nav class="navbar">
@@ -49,7 +49,7 @@ include('../app/sesion.php');
             </div> 
 
             <div class="loginBody">
-                <form class="login-form" method="post" action="addPayment.php">
+                <form class="login-form" method="post" action="addPayment2.php">
                     <div class="formRow">
                         <label class="lblinput" for="name">Nombre del titular:</label>
                         <i class="fa fa-user"></i>

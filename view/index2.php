@@ -71,11 +71,18 @@ include('../app/sesion.php');
                     <img class="imagenCarta" src="../img/paquete2.jpg" alt="Imagen Paquete1">
                 </div>
                 <div class="carta-body">
-                    <div class="cartaTitulo">Plan 2</div>
-                    <p>Próximamente, paquete en desarrollo</p>
+                    <div class="cartaTitulo">Plan anual</div>
+                    <p>Contrata nuestro servicio por 1 año</p>  
+                    <ul>
+                        -Administras tus empleados   <br>
+                        -Registra entrada/salida de tus empleados  <br>
+                        -Calcula nominas <br>
+                        -Más tiempo con nosotros <br>
+                        -Apoyar a axis development <br>
+                    </ul>  
                 </div>
                 <div class="carta-footer">
-                    <a class="abtnContratarServicio" href="#">Proximamente</a>
+                    <a class="abtnContratarServicio" href="../payment/form2.php">Contratar Servicio</a>
                 </div>
             </div>            
         </div>

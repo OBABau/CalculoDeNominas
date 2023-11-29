@@ -48,7 +48,17 @@ class Payment extends ConexionDB {
         $userId = $this->getUserByEmail();
     
         if ($userId !== false) {
-            $query = "INSERT INTO payments (name, cardNumber, cvv, expirationDate, user_id) VALUES ('$this->name', '$this->cardNumber', '$this->cvv', '$this->expirationDate', '$userId')";
+            // Obtener la fecha actual
+            $currentDate = date('Y-m-d');
+    
+            // Calcular la fecha un mes después
+            $endDate = date('Y-m-d', strtotime('+1 month', strtotime($currentDate)));
+    
+            // Establecer el tipo de contrato como "mes"
+            $contractType = "mes";
+    
+            // Construir la consulta SQL con las nuevas columnas
+            $query = "INSERT INTO payments (name, cardNumber, cvv, expirationDate, user_id, startContract, finalContract, contractType) VALUES ('$this->name', '$this->cardNumber', '$this->cvv', '$this->expirationDate', '$userId', '$currentDate', '$endDate', '$contractType')";
             $result = $this->connect();
     
             if ($result) {
@@ -63,6 +73,35 @@ class Payment extends ConexionDB {
         }
     }
     
+    public function insertPayment2() {
+        $email = $_SESSION['start'];
+        $userId = $this->getUserByEmail();
+    
+        if ($userId !== false) {
+            // Obtener la fecha actual
+            $currentDate = date('Y-m-d');
+    
+            // Calcular la fecha un año después
+            $endDate = date('Y-m-d', strtotime('+1 year', strtotime($currentDate)));
+    
+            // Establecer el tipo de contrato como "año"
+            $contractType = "año";
+    
+            // Construir la consulta SQL con las nuevas columnas
+            $query = "INSERT INTO payments (name, cardNumber, cvv, expirationDate, user_id, startContract, finalContract, contractType) VALUES ('$this->name', '$this->cardNumber', '$this->cvv', '$this->expirationDate', '$userId', '$currentDate', '$endDate', '$contractType')";
+            $result = $this->connect();
+    
+            if ($result) {
+                echo "Todo bien";
+                $newid = $this->execinsert($query);
+            } else {
+                echo "Algo anda mal.jpg";
+                $newid = 0;
+            }
+        } else {
+            echo "Error: No se pudo obtener el ID del usuario.";
+        }
+    }
     
     
 
