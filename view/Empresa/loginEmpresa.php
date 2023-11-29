@@ -77,7 +77,18 @@
                     </div>
                 </div>
             </a>
-            
+
+            <a class="enlaceCard" href="estadisticaEmpresa.php">
+                <div class="card">
+                    <div class="circle-img2">
+                        <img src="../../img/iconosfinales/estad.jpg" alt="Imagen estadisticas">
+                    </div>
+                    <div class="card-text">
+                        <p>Estadisticas de la empresa</p>
+                    </div>
+                </div>
+            </a>
+
             <a class="enlaceCard" href="../Empleado/edicionEmpleados.php">
                 <div class="card">
                     <div class="circle-img2">

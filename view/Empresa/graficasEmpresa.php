@@ -68,7 +68,7 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
             var dataYear = new google.visualization.DataTable();
             dataYear.addColumn('string', 'Año');
             dataYear.addColumn('number', 'Total Año');
-
+                
             <?php while ($row = mysqli_fetch_assoc($consultaByYear)): ?>
                 dataYear.addRow(['<?php echo $row['anio']; ?>', <?php echo $row['totalAnio']; ?>]);
             <?php endwhile; ?>
