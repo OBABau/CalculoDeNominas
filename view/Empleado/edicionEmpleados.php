@@ -47,7 +47,7 @@
     <form method = "POST" action = "../../app/benefitsModifies.php">
         <h1>Edicion de prestaciones</h1>
         <h3>Si no vez datos, primero debes de crear a tus empleados.</h3>
-        <button type = "submit" name  = "Enviar">Enviar</button>
+        
         <br>
         <br>
         <?php
@@ -69,24 +69,12 @@ if ($dataset != "error") {
         echo '<th>Nombre</th>';
         echo '<th>Apellido Paterno</th>';
         echo '<th>Apellido Materno</th>';
-        echo '<th>RFC</th>';
-        echo '<th>NSS</th>';
-        echo '<th>CURP</th>';
-        echo '<th>Número de Teléfono</th>';
-        echo '<th>Acciones</th>';
+        
         echo '</tr>';
         echo '<tr>';
         echo "<td>" . $tupla['name'] . "</td>";
         echo "<td>" . $tupla['lastName'] . "</td>";
         echo "<td>" . $tupla['lastName2'] . "</td>";
-        echo "<td>" . $tupla['RFC'] . "</td>";
-        echo "<td>" . $tupla['NSS'] . "</td>";
-        echo "<td>" . $tupla['CURP'] . "</td>";
-        echo "<td>" . $tupla['number'] . "</td>";
-        echo "<td>";
-        echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
-        echo "<a href='eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
-        echo "</td>";
         echo '</tr>';
         echo '</table>';
 
@@ -107,6 +95,7 @@ if ($dataset != "error") {
             <input type= "checkbox" id = "ingresos" name = '.$tupla['code'].'[] value = "'.$tupla2['name'].'" > '.$tupla2['name'].'
             </label>';
             }
+            echo '<span style="margin-right: 30px;"></span>';
         }
         echo '<br>';
     }}
@@ -114,6 +103,7 @@ if ($dataset != "error") {
     echo "Algo pasó en la consulta";
 }
 ?>
+<button class = "btnPerfiles" type = "submit" name  = "Enviar">Enviar</button>
     </div>
 </body>
 

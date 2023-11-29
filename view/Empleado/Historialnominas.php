@@ -162,6 +162,7 @@
                     echo $tupla5['name'].": $".$tupla5['total'];
                     $totalBenefits += $tupla5['total'];
                     $totalP += $tupla5['total'];
+                    echo "<br>";
                 }
                 $totalGravable = 0;
                 $totalGravable += $totalBenefits;

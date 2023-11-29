@@ -59,7 +59,7 @@ if ($consulta === "error" || $consultaYearly === "error") {
                 ]);
 
                 var optionsMonthly = {
-                    title: 'Ingreso total mensual'
+                    title: 'Ingreso base total mensual'
                 };
 
                 var chartMonthly = new google.visualization.PieChart(document.getElementById('piechartMonthly'));
@@ -77,7 +77,7 @@ if ($consulta === "error" || $consultaYearly === "error") {
                 ]);
 
                 var optionsYearly = {
-                    title: 'Ingreso total anual'
+                    title: 'Ingreso base total anual'
                 };
 
                 var chartYearly = new google.visualization.PieChart(document.getElementById('piechartYearly'));

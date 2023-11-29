@@ -71,7 +71,7 @@
             </tr>
         </table>
 
-        <h2>Datos de la Empresa</h2>
+        <h2>Datos del Empleado</h2>
         <table class="table table-striped table-hover">
             <tr class="font-weight-bold primary table-primary">
                 <th>Nombre</th>

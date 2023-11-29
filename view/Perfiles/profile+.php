@@ -94,7 +94,10 @@
                        </label>'; 
                        }
                        echo '<span style="margin-right: 30px;"></span>';
+                       
                    }
+                   echo "<br>";
+                   echo "<br>";
                    }
                }
            

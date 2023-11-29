@@ -1,6 +1,19 @@
 <?php
 include('../app/sesion.php');
 include('../app/Worker.php');
+include('Empresa.php');
+$empresas = new Empresa();
+
+$empresas->setCorreo($_POST['mail']);
+$consulta = $empresas->checkCuenta();
+
+$tupla = mysqli_fetch_assoc($consulta);
+
+if ($tupla['total'] > 0) {
+    // El correo electrónico ya está en uso, redirigir de vuelta al formulario con un mensaje de error
+    header("Location: ../view/Empleado/crearEmpleado.php?error=email_en_uso");
+    exit();
+}
 
 $myWorker = new Worker();
 $myWorker->setName($_POST ['nombre']);

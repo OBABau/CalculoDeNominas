@@ -57,7 +57,7 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
             <?php endwhile; ?>
 
             var optionsMonth = {
-                title: 'Gastos mensuales de la empresa',
+                title: 'Gastos en sueldo base mensuales de la empresa',
                 legend: { position: 'none' },
             };
 
@@ -74,7 +74,7 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
             <?php endwhile; ?>
 
             var optionsYear = {
-                title: 'Gastos anuales de la empresa',
+                title: 'Gastos en sueldo base anuales de la empresa',
                 legend: { position: 'none' },
             };
 

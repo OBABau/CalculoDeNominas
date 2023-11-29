@@ -22,7 +22,7 @@ if(isset($_POST['Enviar'])){
                 while ($tupla2 = mysqli_fetch_assoc($consulta2))
                 {
                 $myobject->insertSalaryBenefits($tupla['code'],$tupla['amount'],$tupla2['code']);
-                
+                header("location: ../view/Empresa/loginEmpresa.php");
                 }
                 }
             }
@@ -33,5 +33,5 @@ if(isset($_POST['Enviar'])){
 }
 
 
-    //header("location: ../view/Empresa/loginEmpresa.php");
+
 ?>

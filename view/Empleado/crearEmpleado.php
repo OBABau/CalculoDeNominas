@@ -42,7 +42,13 @@ include('../../app/sesion.php');
         </form>
     </div>
 
-    <div class="contenido">        
+    <div class="contenido">  
+    <?php
+            // Verificar si hay un error de correo en uso
+            if (isset($_GET['error']) && $_GET['error'] === 'email_en_uso') {
+                $error_message = '<p class="error">Este correo electrónico ya está en uso.</p>';
+            } 
+        ?>       
         <div class="login-container2">
             <div class="loginHeader">
                 <h2>Registrar Nuevo Empleado</h2>
@@ -122,6 +128,11 @@ include('../../app/sesion.php');
                         </select>
                     </div>                                           
                     <div class="formRow">
+                    <?php if (!empty($error_message)) { ?>
+                            <div class="error"><?php echo $error_message; ?></div>
+                        <?php } ?>
+                        <br>
+                        <br>
                         <button class="boton1" type="Submit" value="Enviar">Registrar</button>
                     </div>                
                 </form>

@@ -25,7 +25,7 @@ $empleado = new Empleado();
     } else {
         echo "Hoy no es domingo.";
     }
- //header("location: ../view/registroEntrada.php");
+ header("location: ../view/registroEntrada.php");
 
 
 ?>
