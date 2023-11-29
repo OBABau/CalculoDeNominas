@@ -119,19 +119,7 @@
                         <p>Historial de Pagos</p>
                     </div>
                 </div>
-            </a>
-            <a class="enlaceCard" href="../registroEntrada.php">
-                <div class="card">
-                    <div class="circle-img2">
-                        <img src="../../img/iconosfinales/registros.png" alt="Imagen historialPagos">
-                    </div>
-                    <div class="card-text">
-                        <p>Registrar entrada y salida</p>
-                    </div>
-                
-            </div>
-        </a>
-            
+            </a>    
     </div>
         
 </body>

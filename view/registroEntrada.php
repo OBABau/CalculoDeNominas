@@ -32,7 +32,6 @@
 
     <div class="sidebarContent">
         <a href="../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-        <a href="Empresa/loginEmpresa.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
         <a href="ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
     </div>
 </div>
@@ -40,10 +39,11 @@
 <body>
 
     <div class="contenido">
-        <h3 style='color: red;'> Recuerda registrar tanto entrada como salida </h3>
+        <h3 style='color: red;'>Chequeo de entrada y salida al turno<br>
+    Recuerda checar una vez para tu entrada al turno y una vez para tu salida </h3>
         <div class="login-container">
             <div class="loginHeader">
-                <h2>Registrar Entrada o Salida</h2>
+                <h2>Registrar Entrada o Salida de turno de trabajo de empleados</h2>
             </div>
 
             <div class="loginBody">
@@ -77,7 +77,7 @@
             </div>
 
         </div>
-        <h3 style='color: red;'> Para consultar tu nomina debes ingresar en tu <br>navegador personal con tu cuenta de empleado</h3> 
+        <h3 style='color: red;'>Recuerda si quieres revisar tus datos o nominas como empleado, dirigete a la <br>pagina principal desde tu propio dispositivo  y inicia sesión con tu cuenta de empleado</h3> 
     </div>
 </body>
 

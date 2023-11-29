@@ -12,6 +12,7 @@ if(isset($_POST['Enviar'])){
     foreach($_POST as $key => $value){
         //echo "llego2";
         if(is_array($value)){
+            
             foreach($value as $option){
                 echo "Key: " . $key . ", Value: " . $option . "<br>";
                 $consulta = $myobject->getBenefitsByProfile($option);
@@ -29,6 +30,7 @@ if(isset($_POST['Enviar'])){
         } else {
             //echo "Key: " . $key . ", Value: " . $value . "<br>";
         }
+        header("location: ../view/Empresa/loginEmpresa.php");
     }
 }
 
