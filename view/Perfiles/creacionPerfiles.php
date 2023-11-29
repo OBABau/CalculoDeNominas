@@ -42,7 +42,7 @@
         <div class="contenidoHeader">
             <div class="login">
                 <h1>CREACION DE PERFILES</h1>
-                <p>Empieza creando una prestacion y despues un perfil.
+                <p style='color: red;' >Empieza creando una prestacion y despues un perfil.
                 </p>                
             </div>            
         </div>        

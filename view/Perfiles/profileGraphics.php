@@ -35,7 +35,7 @@
                   </div>
             <div class="sidebarContent">                
                 <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Pagina Inicial</a>
-                <a href="../Empleado/loginEmpleado.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
+                <a href="../Empleado/estadisticas.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
                 <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
             </div>
             <form class="sidebarFooter" action="../../app/logout.php" method="post">

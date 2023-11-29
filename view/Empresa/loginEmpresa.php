@@ -53,6 +53,7 @@
                 <h1>Panel de Empresa </h1>
             </div>
             <div class="panelTitulo">Seleccione una opción</div>
+               <h4 style='color: red;'> Recuerda crear perfiles antes de acceder a las demas opciones. </h4>
         </div>
 
         <div class="contenidoBody">

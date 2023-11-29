@@ -38,7 +38,9 @@
 </div>
 
 <body>
+
     <div class="contenido">
+        <h3 style='color: red;'> Recuerda registrar tanto entrada como salida </h3>
         <div class="login-container">
             <div class="loginHeader">
                 <h2>Registrar Entrada o Salida</h2>
@@ -75,7 +77,7 @@
             </div>
 
         </div>
-
+        <h3 style='color: red;'> Para consultar tu nomina debes ingresar en tu <br>navegador personal con tu cuenta de empleado</h3> 
     </div>
 </body>
 
