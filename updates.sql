@@ -149,3 +149,11 @@ alter table user
 add column `enterprise` int,
 add foreign key (`enterprise`) references `enterprise`(code)
 
+delimiter //
+CREATE TRIGGER update_enterprise_code
+AFTER INSERT ON enterprise
+FOR EACH ROW
+BEGIN
+    UPDATE user SET enterprise = NEW.code WHERE code = NEW.user;
+END;
+//

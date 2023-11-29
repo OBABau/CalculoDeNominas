@@ -40,7 +40,7 @@ class Perfiles extends ConexionDB
     }
     
     
-    public function updateTo0($type, )
+    public function updateTo0($type )
     {
         $result =  $this->connect();
         if($result)
