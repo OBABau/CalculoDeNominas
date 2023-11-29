@@ -36,7 +36,6 @@
         <div class="sidebarContent">                
             <a href="../../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
             <a href="loginEmpleado.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
-            <a href="infoEmpleado.php"><i class="fa fa-user"></i> &nbsp;Información</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
 
@@ -63,6 +62,7 @@
 
 <br>
 <br>
+<div class = "contenidoBody">
 <table class="table table-striped table-hover">
             <?php
                 include ('../../data/empleado.php');
