@@ -46,7 +46,7 @@
     <div class="contenido2">
     <form method = "POST" action = "../../app/benefitsModifies.php">
         <h1>Edicion de prestaciones</h1>
-        <h3>Si no vez datos, primero debes de crear a tus empleados.</h3>
+        <h3 style='color: red;'>Si no vez datos, primero debes de crear a tus empleados.</h3>
         
         <br>
         <br>

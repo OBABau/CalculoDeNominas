@@ -85,6 +85,7 @@
                 $totalBenefits = 0;
                 while ($tupla5 = mysqli_fetch_assoc($consulta5))
                 {
+                    $totalBenefits +=$tupla5['total'];
                     //echo $tupla5['name'].": $".$tupla5['total'];
                     //echo "<br>";
                 }

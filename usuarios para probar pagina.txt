@@ -1,13 +1,4 @@
-usuarios para la pagina
-
 admin:
 usuario1@example.com	
 
-empleados con datos ya calculados
-
-brian.bautista@axis.com
-ernesto.garcia@axis.com
-
-empresa a la que le pertenecen los empleados con datos:
-
-axis@axis.com
+contrasena: 123
