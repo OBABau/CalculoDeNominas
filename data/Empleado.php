@@ -187,6 +187,22 @@ public function getEmpleadoSalary($codeW){
     return $dataset;
 }
 
+public function getEmpleadoSalary_Benefits($codeW){
+    $result = $this->connect();
+    if($result)
+    {
+        //echo"todo bien";
+        $dataset = $this->execquery("SELECT sum(sb.total) as total, s.finished from salary_benefits as sb INNER join salary as s on s.code = sb.salary where s.worker = ".$codeW);
+        //echo "SELECT sum(sb.total) as total, s.finished from salary_benefits as sb INNER join salary as s on s.code = sb.salary where s.worker = ".$codeW;
+    }
+    else
+    {
+        echo"algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
 public function getEmpleadoSalaryAll($codeW){
     $result = $this->connect();
     if($result)
@@ -250,15 +266,7 @@ public function entryInsert( $worker, $enterprise, $profile ){
         worker = ".$worker." and finished = 0
         ");
 
-        echo "update salary 
-        set
-        days = days + 1,
-        worker = ".$worker.",
-        enterprise= ".$enterprise.",
-        profile=".$profile."
-        where 
-        worker = ".$worker." and finished = 0
-        ";
+        echo $dataset;
     }
     else
     {
