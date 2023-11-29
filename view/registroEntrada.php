@@ -62,7 +62,12 @@
                         <label class="lblinput" for="password">Contraseña:</label>
                         <i class="fa fa-key"></i>
                         <input class="input" type="password" id="password" name="password" maxlength="16" placeholder="Ingrese su Contraseña">
-                    </div>                                                            
+                    </div>
+                    <?php
+                    if (isset($_GET['error']) && $_GET['error'] == 1) {
+                        echo '<p class="error">Correo no encontrado o contrasena incorrecta</p>';
+                    } 
+                    ?>                                                           
                     <div class="formRow2">
                         <button class="boton1" type="Submit" name="Iniciar Sesion">Registrar</button>
                     </div>                    
