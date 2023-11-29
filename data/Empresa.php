@@ -139,7 +139,7 @@ class Empresa extends ConexionDB {
     public function getSalaryExpenses() {
         $result  = $this->connect();
         $query = 
-        "SELECT sum(s.total) as total, s.finished, s.payDate 
+        "SELECT s.code, sum(s.total) as total, s.finished, s.payDate 
         from salary as s 
         where s.enterprise = ".$_SESSION['code']." and finished > 0 group by finished;";
         
@@ -152,7 +152,7 @@ class Empresa extends ConexionDB {
 
     public function getBenefitsExpenses() {
         $result  = $this->connect();
-        $query = "SELECT sum(sb.total) as total, s.finished from salary_benefits as sb INNER join salary as s on s.code = sb.salary where s.enterprise = ".$_SESSION['code']." group by finished;";
+        $query = "SELECT s.code, sum(sb.total) as total, s.finished from salary_benefits as sb INNER join salary as s on s.code = sb.salary where s.enterprise = ".$_SESSION['code']." group by finished;";
         if ($result)
         {
             $dataset = $consulta = $this->execquery($query);

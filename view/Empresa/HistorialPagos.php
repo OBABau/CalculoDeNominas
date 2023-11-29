@@ -100,26 +100,20 @@
                    echo "</tr>";
             echo "<td>".$tupla['total']."</td>";
             $consulta2 = $empresa->getBenefitsExpenses();
-            $YOR = 0;
+            
             while ($tupla2 = mysqli_fetch_assoc($consulta2))
             {
-                
-            if($tupla['finished'] == $tupla2['finished']){
-            echo "<td>".$tupla2['total']."</td>";
-            $YOR = 1;
-            }
-        }
-           
-            if($YOR = 1)
+            if ($tupla['code'] == $tupla2['code'])
             {
+            echo "<td>".$tupla2['total']."</td>";
             echo "<td>".$tupla['payDate']."</td>";
-            $YOR = 0;
             }else
             {
-                echo "<td>0</td>";
+                echo "<td> 0 </td>";
                 echo "<td>".$tupla['payDate']."</td>";
             }
-            $YOR=0;
+            }
+            
         }
     
         
