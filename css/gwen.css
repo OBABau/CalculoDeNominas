@@ -284,7 +284,7 @@ body {
     font-weight: bold;
     background-color: red;
     width: 100%;
-    height: 3.5rem;
+    height: 4rem;
 }
 
 .bien{
@@ -328,7 +328,7 @@ body {
     margin: 0 auto;
     width: 30rem;
     height: 35rem;
-    background-color: #674188;
+    background-color: #0b5b96;
     border-radius: 0.3rem;
     padding: 3rem;
     /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -339,7 +339,7 @@ body {
 .login-container4{
     margin: 0 auto;
     width: 30rem;
-    background-color: #674188;
+    background-color: #0b5b96;
     border-radius: 0.3rem;
     padding: 3rem;
     /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -477,7 +477,7 @@ body {
 /* ========================== NAVBAR ================================ */
 
 .navbar{
-    background-color: #674188;
+    background-color: #0b5b96;
     display:flex;
     justify-content:space-between;
     align-items: center;
@@ -531,12 +531,12 @@ body {
     border-radius: 1rem;
     cursor:pointer;
     padding: 0.5rem 1rem;
-    color: #674188;      
+    color: #0b5b96;      
     transition: ease-out 0.3s;  
 }
 
 .btnNavbar:hover{
-    background-color: #C3ACD0;
+    background-color: rgb(46, 194, 253);
     color: white;
 }
 
@@ -571,7 +571,7 @@ body {
     border-radius: 0.3rem;
     border: 1px solid #ebebf0;    
     padding: 1rem;    
-    border-top: 4px solid #674188;
+    border-top: 4px solid #0b5b96;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);    
     transition: box-shadow 0.2s ease;    
 }
@@ -598,7 +598,7 @@ body {
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #674188;
+    color: #0b5b96;
     text-align: center;
 }
 
@@ -609,19 +609,19 @@ body {
 .abtnContratarServicio{
     border-radius: 0.3rem;
     padding: 0.5rem 1rem;
-    background-color: #674188;
+    background-color: #0b5b96;
     text-decoration: none;
     color:white;        
 }
 
 .abtnContratarServicio:hover{
     background-color: #C3ACD0;
-    color: #674188;
+    color: #0b5b96;
 }
 
 /* ======================= FOOTER ============================= */
 .footer{
-    background-color:#674188;    
+    background-color:#0b5b96;    
     position: relative;
     z-index: 100;
 }
@@ -664,7 +664,7 @@ body {
 }
 
 .hero1{
-    background-color: #7e56a2;
+    background-color: #0b5b96;
     padding: 0.5rem;
 }
 

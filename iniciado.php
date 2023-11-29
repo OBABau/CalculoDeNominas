@@ -100,16 +100,20 @@ include('app/sesion.php');
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                             </ol>
                             <div class="carousel-inner sombra">
                                 <div class="carousel-item active">
-                                <a href="Videos/perfiles.html"><img class="d-block w-100" src="Videos/img/crearPerfiles.png" alt="First slide"></a>
+                                <a href="https://www.youtube.com/watch?v=RxphN4jn0Pc&t=3s"><img class="d-block w-100" src="img/img/AgregarEmpleados.gif" alt="First slide"></a>
                                 </div>
                                 <div class="carousel-item">
-                                <a href="Videos/empleados.html"><img class="d-block w-100" src="Videos/img/empleados.gif" alt="First slide"></a>
+                                <a href="https://youtu.be/k5omWcwAzWY?si=9v0aMLa_3aw8Cwig"><img class="d-block w-100" src="img/img/crearPerfiles.png" alt="First slide"></a>
                                 </div>
                                 <div class="carousel-item">
-                                <a href="Videos/registro.html"><img class="d-block w-100" src="Videos/img/registro.gif" alt="First slide"></a>
+                                <a href="https://www.youtube.com/watch?v=JWUGiSve0KA"><img class="d-block w-100" src="img/img/EntradaYSalida.gif" alt="First slide"></a>
+                                </div>
+                                <div class="carousel-item">
+                                <a href="https://www.youtube.com/watch?v=ulyo_UTYjxs"><img class="d-block w-100" src="img/img/prestaciones.png" alt="First slide"></a>
                                 </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
