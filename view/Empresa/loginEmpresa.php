@@ -77,6 +77,7 @@
                     </div>
                 </div>
             </a>
+            
             <a class="enlaceCard" href="../Empleado/edicionEmpleados.php">
                 <div class="card">
                     <div class="circle-img2">
