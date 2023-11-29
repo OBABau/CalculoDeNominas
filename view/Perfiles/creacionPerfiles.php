@@ -41,9 +41,9 @@
     <div class="contenido">
         <div class="contenidoHeader">
             <div class="login">
-                <h1>AQUÍ SE CREARÁN LOS PERFILES</h1>
-                <p>ESTOS PERFILES TENDRÁN DIFERENTES CARACTERÍSTICAS COMO LOS INGRESOS, QUE SE AJUSTARÁN PARA CADA TIPO DE
-                    EMPLEADO</p>                
+                <h1>CREACION DE PERFILES</h1>
+                <p>Empieza creando una prestacion y despues un perfil.
+                </p>                
             </div>            
         </div>        
 

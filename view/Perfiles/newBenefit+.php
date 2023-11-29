@@ -62,7 +62,7 @@
                             placeholder="Ingrese la Descripcion">
                     </div>  
                     <div class="formRow">                        
-                        <label class="lblinput" for="benefitAmount">Cantidad:</label>                        
+                        <label class="lblinput" for="benefitAmount">Pago semanal:</label>                        
                         <input class="inputNumber" type="number" name="benefitAmount" id="benefitAmount" maxlength="100"
                         placeholder="0">
                     </div>                           

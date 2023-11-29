@@ -59,7 +59,7 @@
                     </div> 
                     
                     <div class="formRow">                        
-                        <label class="lblinput" for="prodileAmount">Cantidad:</label>                        
+                        <label class="lblinput" for="prodileAmount">Salario diario:</label>                        
                         <input class="inputNumber" type="number" name="profileAmount" id="profileAmount" maxlength="100"
                         placeholder="0">
                     </div>  
