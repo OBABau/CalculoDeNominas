@@ -260,6 +260,54 @@ public function actualizarDatosEmpresa($nombre, $direccion, $codigoPostal, $ciud
     return false;
 }
 
+
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+public function amountTotal() {
+    $result  = $this->connect();
+    $query = "select ";
+    
+    if ($result)
+    {
+        $dataset = $consulta = $this->execquery($query);
+    }
+    return $dataset;
+}   
+
+public function getTotalBenefitsAmount($enterpriseCode) {
+    $result = $this->connect();
+
+    if (!$result) {
+        return false; 
+    }
+
+    $query = "SELECT SUM(amount) AS totalAmount FROM benefits WHERE enterprise = '$enterpriseCode'";
+    $dataset = $this->execquery($query);
+
+    return $dataset;
+}
+
+public function getTotalProfileSalarys($enterpriseCode) {
+    $result = $this->connect();
+
+    if (!$result) {
+        return false; 
+    }
+
+    $query = "SELECT SUM(income) AS totalSalary FROM profile WHERE enterprise = '$enterpriseCode'";
+    $dataset = $this->execquery($query);
+
+    return $dataset;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------  */
+
+
+
+
+
+
 public function pagoDeServicio()
 {
     $result = $this->connect();

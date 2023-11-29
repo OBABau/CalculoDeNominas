@@ -15,16 +15,27 @@ if (!$userCode) {
     exit();
 }
 
+$dataset = $empresa->getEnterpriseFromUser();
+$row = mysqli_fetch_assoc($dataset);
+$enterpriseCode = $row['enterprise'];
+
+$consultaBeneficios = $empresa->getTotalBenefitsAmount($enterpriseCode);
+$resultadoBeneficios = mysqli_fetch_assoc($consultaBeneficios);
+$totalBeneficios = number_format($resultadoBeneficios['totalAmount'], 2); // Redondear a 2 decimales
+
 $consultaTotalAll = $empresa->getDataByTotalAll($userCode);
-$consultaByMonth = $empresa->getDataByMonth($userCode);
-$consultaByYear = $empresa->getDataByYear($userCode);
-
 $resultado = mysqli_fetch_assoc($consultaTotalAll);
+$totalCostoNomina = number_format($resultado['totalSum'], 2); // Redondear a 2 decimales
 
-if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear === false) {
-    echo "Error al obtener datos.";
-    exit();
-}
+$sumaSalariosbase = $empresa->getTotalProfileSalarys($enterpriseCode);
+$resultadosalarios = mysqli_fetch_assoc($sumaSalariosbase);
+$totalsalarios = number_format($resultadosalarios['totalSalary'], 2); // Redondear a 2 decimales
+
+
+$porcentajeISN = 0.0180; 
+$totalsalarios = $resultadosalarios['totalSalary'];
+$subtotalISN = $totalsalarios * $porcentajeISN;
+$totalISN = number_format($subtotalISN, 2); 
 ?>
 
 
@@ -65,11 +76,17 @@ if ($consultaTotalAll === false || $consultaByMonth === false || $consultaByYear
         <h2>Estadísticas de la Empresa</h2>
 
         <div class="formRow">
-            <p>Costo total de nomina: $<?php echo $resultado['totalSum']; ?> </p>
-            <hr color="black"> 
+            <p>Costo total de nomina: $<?php echo $totalCostoNomina; ?> </p>
+            <hr>
             <h2>Distribución de costes de nomina</h2>
+            <p>Total de beneficios para la empresa: $<?php echo $totalBeneficios; ?></p>
+            <p>Suma de salarios base de todos los perfiles: $<?php echo $totalsalarios?></p>
+            <p>Porcentaje ISN: <?php echo $porcentajeISN?> % </p>
+            <p>Subtotal ISN: $<?php echo  $subtotalISN?></p>
+            <p>ISN (Suma del salario base de los perfiles): $<?php echo $totalISN?></p>
+         
             
-            <h2>Distribución de costes de nomina</h2>
+
         </div>
         </div>
 </body>
