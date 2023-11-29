@@ -14,7 +14,7 @@ class ConexionDB{
 		$this->HOST="localhost";
 		$this->USER="root";
 		$this->PASS="";
-		$this->DB="calculo_de_nominas1";
+		$this->DB="calculo_de_nominas";
 	}
 	public function getConnection() {
         return $this->connection;
