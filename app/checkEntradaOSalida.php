@@ -13,6 +13,7 @@ $empleado = new Empleado();
     $data = $empleado->getEmpleadoData($_SESSION['codeRegistro']);
     while($tupla = mysqli_fetch_assoc($data))
     {
+        echo"sexo";
         $empleado->entryInsert($tupla['code'],$tupla['enterprise'],$tupla['profile']);
     }
     
@@ -24,7 +25,7 @@ $empleado = new Empleado();
     } else {
         echo "Hoy no es domingo.";
     }
- header("location: ../view/registroEntrada.php");
+ //header("location: ../view/registroEntrada.php");
 
 
 ?>

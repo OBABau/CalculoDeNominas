@@ -247,8 +247,18 @@ public function entryInsert( $worker, $enterprise, $profile ){
         enterprise= ".$enterprise.",
         profile=".$profile."
         where 
-        worker = ".$worker." and finished = false
+        worker = ".$worker." and finished = 0
         ");
+
+        echo "update salary 
+        set
+        days = days + 1,
+        worker = ".$worker.",
+        enterprise= ".$enterprise.",
+        profile=".$profile."
+        where 
+        worker = ".$worker." and finished = 0
+        ";
     }
     else
     {

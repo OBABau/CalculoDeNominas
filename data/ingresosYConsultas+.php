@@ -132,6 +132,7 @@ class ingresosYConsultas extends ConexionDB
         $query  = "INSERT INTO salary_benefits values (".$benefit.",".$salary.",".$amount.")";
         if ($result)
         {
+            echo $query;
             $newid = $this->execinsert($query);
         }
     }
