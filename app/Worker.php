@@ -71,6 +71,39 @@ class Worker extends ConexionDB{
          return $newid;
     }
 
+
+    public function getUsersByEnterprise()
+    {
+        $result = $this->connect();
+        if ($result) {
+            // Consulta para obtener los usuarios cuyo worker está asociado a la empresa en sesión
+            $query = "SELECT email, password FROM user WHERE worker IN (SELECT code FROM worker WHERE enterprise = " . $_SESSION['code'] . ")";
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Algo salió mal al ejecutar la consulta.";
+                return "error";
+            }
+        } else {
+            echo "Algo salió mal al conectar a la base de datos.";
+            return "error";
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
     public function registrarCuenta($workerId) {
         // Prepara la consulta SQL para insertar la cuenta del usuario
         $query = "INSERT INTO user (email, password, creationDate, usertype, worker) VALUES ('".$this->correo."', '".$this->contrasena."', NOW(), '2', $workerId)";
@@ -108,6 +141,44 @@ class Worker extends ConexionDB{
 
         return $dataset;
     }
+
+
+
+    public function getAllWorkerWithUsers()
+    {
+        $result = $this->connect();
+        if ($result) {
+            // Consulta para obtener los datos de los trabajadores y los usuarios asociados
+            $query = "SELECT w.*, u.email, u.password 
+                      FROM worker w
+                      LEFT JOIN user u ON w.code = u.worker
+                      WHERE w.enterprise = " . $_SESSION['code'] . " AND w.active = '1'";
+    
+            $dataset = $this->execquery($query);
+    
+            if ($dataset) {
+                return $dataset;
+            } else {
+                echo "Algo salió mal al ejecutar la consulta.";
+                return "error";
+            }
+        } else {
+            echo "Algo salió mal al conectar a la base de datos.";
+            return "error";
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
 
     public function updateActiveStatus($id, $status)
     {
