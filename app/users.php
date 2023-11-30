@@ -1,5 +1,5 @@
 <?php
-include('../data/conexionDB.php');
+include_once('../data/conexionDB.php');
     class usuarios extends ConexionDB {
         private $email;
         private $password;
