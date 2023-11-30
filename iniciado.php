@@ -55,7 +55,8 @@ include('app/sesion.php');
                         $consult = $myobject->execquery("select * from user where email ='".$_SESSION['start']."'");
                         $tupla = mysqli_fetch_assoc($consult);
                         if ($tupla['active'] == 1)
-                        {                            
+                        {                     
+                            echo '<a class="enlaceNavbar sombraTexto1" href="view/registroEntrada.php">Registro de entrada y salida de empleados<i class="fa fa-chevron-down"></i></a>';    
                             echo '<a class="enlaceNavbar sombraTexto1" href="view/Empresa/loginEmpresa.php">Panel de Empresa<i class="fa fa-chevron-down"></i></a>';
                         }
                         else

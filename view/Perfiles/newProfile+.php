@@ -46,7 +46,7 @@
             <div class="loginBody">                
                 <form class="login-form" method="POST" action="../../app/addProfile.php">
                     <div class="formRow">
-                        <label class="lblinput" for="profileName">Nombre:</label>
+                        <label class="lblinput" for="profileName">Nombre del perfil:</label>
                         <i class="fa fa-envelope"></i>
                         <input class="input" type="text" id="profileName" name="profileName" maxlength="30"
                             placeholder="Nombre del perfil">

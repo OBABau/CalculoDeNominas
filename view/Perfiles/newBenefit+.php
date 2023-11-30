@@ -50,7 +50,7 @@
             <div class="loginBody">                
                 <form class="login-form" method="POST" action="../../app/addBenefits.php">
                     <div class="formRow">
-                        <label class="lblinput" for="benefitName">Nombre:</label>
+                        <label class="lblinput" for="benefitName">Nombre de la prestación:</label>
                         <i class="fa fa-envelope"></i>
                         <input class="input" type="text" id="benefitName" name="benefitName" maxlength="30"
                             placeholder="Ingrese el Nombre">
