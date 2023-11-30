@@ -58,7 +58,7 @@
                         <img src="../../img/iconosfinales/grafica.png" alt="Imagen Grafica">
                     </div>
                     <div class="card-text">
-                        <p>Gráficas</p>
+                        <p>Estadisticas</p>
                     </div>
 
                 </div>

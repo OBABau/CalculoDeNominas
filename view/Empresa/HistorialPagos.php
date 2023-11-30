@@ -98,6 +98,8 @@
                    echo "<th>Gastos en prestaciones  </th>";
                    echo "<th> Fecha</th>";
                    echo "</tr>";
+
+                  
             echo "<td>".$tupla['total']."</td>";
             $consulta2 = $empresa->getBenefitsExpenses();
             

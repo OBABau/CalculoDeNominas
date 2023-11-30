@@ -65,12 +65,41 @@ include('../app/sesion.php');
                         <label class="lblinput" for="cvv">CVV (3 digitos):</label>
                         <i class="fa fa-lock"></i>
                         <input class="input" type="text" id="cvv" name="cvv"pattern="\d{3}" title="Ingresa 3 digitos" minlength="3" maxlength="3" required>
-                    </div>          
+                    </div>     
                     <div class="formRow">
-                        <label class="lblinput" for="expirationDate">Fecha de expiración(MM/YY):</label>
-                        <i class="fa fa-calendar"></i>
-                        <input class="input" type="text" id="expirationDate" name="expirationDate" pattern="\d{2}/\d{2}" title="Ingresa fecha valida (MM/YY)" minlength="5"  maxlength="5" required>
-                    </div> 
+                        <label class="lblinput" for="mes">Mes de expiración</label>
+                        <select class="form-select" name="mes">
+                        <option name = "Enero" value = "01"> 01 </option>
+                        <option name = "Febrero" value = "02"> 02 </option>
+                        <option name = "Marzo" value = "03"> 03 </option>
+                        <option name = "Abril" value = "04"> 04 </option>
+                        <option name = "Mayo" value = "05"> 05 </option>
+                        <option name = "Junio" value = "06"> 06 </option>
+                        <option name = "Julio" value = "07"> 07 </option>
+                        <option name = "Agosto" value = "08"> 08 </option>
+                        <option name = "Septiembre" value = "09"> 09 </option>
+                        <option name = "Octubre" value = "10"> 10 </option>
+                        <option name = "Noviembre" value = "11"> 11 </option>
+                        <option name = "Diciembre" value = "12"> 12 </option>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <label class="lblinput" for="anio">Año de expiración</label>
+                        <select class="form-select" name="anio">
+                        <option name = "2024" value = "24"> 24 </option>
+                        <option name = "2025" value = "25"> 25 </option>
+                        <option name = "2026" value = "26"> 26 </option>
+                        <option name = "2027" value = "27"> 27 </option>
+                        <option name = "2028" value = "28"> 28 </option>
+                        <option name = "2029" value = "29"> 29 </option>
+                        <option name = "2030" value = "30"> 30 </option>
+                        <option name = "2031" value = "31"> 31 </option>
+                        <option name = "2032" value = "32"> 32 </option>
+                        <option name = "2033" value = "33"> 33 </option>
+                        <option name = "2034" value = "34"> 34 </option>
+                        <option name = "2035" value = "35"> 35 </option>
+                        </select>
+                    </div>
                     <div class="formRow">
                         <button class="boton2" type="Submit" value="submit" name="registrarEmpresa">Pagar</button>
                     </div>                    

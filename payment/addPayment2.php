@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $payment->setName($name);
         $payment->setCardNumber($cardNumber);
         $payment->setCvv($cvv);
-        $payment->setExpirationDate($expirationDate);
+        $payment->setExpirationDate($_POST['mes'], $_POST['anio']);
         $payment->setUserId($userId);
 
         // Realizar la inserción en la base de datos

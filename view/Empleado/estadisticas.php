@@ -70,6 +70,7 @@
                 $subsidioTotal = 0;
                 $totalISR = 0;
                 $totalExentos = 0;
+                $ingresoA = 0;
                 $consulta = $empleado->getEmpleadoSalaryAll($_SESSION['code']);
                 while($tupla = mysqli_fetch_assoc($consulta)){
                 $consulta2 = $empleado->getEmpleadoSalary_Benefits($_SESSION['code']);
@@ -77,7 +78,8 @@
                     $consulta4 = $empleado->getEmpleadoProfile($tupla['profile']);
                     while ($tupla4 = mysqli_fetch_assoc($consulta4))
                     {
-                $ingresoA = $tupla2['total']+$tupla['total'];
+                        
+                $ingresoA += $tupla2['total'] + $tupla['total'];
                 if($consulta != 'error')
                 {       
                 //------------------------------------------------------------------------------------------------------
@@ -231,25 +233,26 @@
                    
                 }
             }}}
-
+            
+                       
                         echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Ingreso Anual: $ ".$ingresoA."</th>";
+                        echo"<th>Ingreso Anual: $ ".number_format($ingresoA , 3)."</th>";
                         echo "</tr>";
 
                         echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Ingresos exentos: $ ".$totalExentos."</th>";
+                        echo"<th>Ingresos exentos: $ ".number_format($totalExentos , 3)."</th>";
                         echo "</tr>";
 
                         echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Ingresos Acumulables: $ ".$ingresoA."</th>";
+                        echo"<th>Ingresos Acumulables: $ ".number_format($ingresoA - $totalISR , 3)."</th>";
                         echo "</tr>";
 
                         echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Subsidio para el empleo: $ ".$subsidioTotal."</th>";
+                        echo"<th>Subsidio para el empleo: $ ".number_format($subsidioTotal, 3)."</th>";
                         echo "</tr>";
 
                         echo'<tr class="font-weight-bold primary table-primary">';
-                        echo"<th>Impuesto retenido: $ ".$totalISR."</th>";
+                        echo"<th>Impuesto retenido: $ ".number_format($totalISR , 3)."</th>";
                         echo "</tr>";
             ?>
         </table>
