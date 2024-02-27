@@ -13,7 +13,7 @@ class ConexionDB{
 	public function __construct(){
 		$this->HOST="localhost";
 		$this->USER="root";
-		$this->PASS="";
+		$this->PASS="root";
 		$this->DB="calculo_de_nominas";
 	}
 	public function getConnection() {
@@ -33,7 +33,7 @@ class ConexionDB{
 	public function connect (){
 		$this ->connection = mysqli_connect($this->HOST, $this->USER, $this->PASS, $this->DB);
 		if ($this -> connection == true){
-			/*echo "Si conecta a la BD ";*/
+			//echo "Si conecta a la BD ";
 			return true;
 		}
 		else {
@@ -45,6 +45,7 @@ class ConexionDB{
 	public function execquery ($query) {
 	$this->dataset = mysqli_query($this->connection, $query);
 	if($this->dataset){
+		//echo "query exitoso";
 		return $this->dataset;
 	}
 	else{
@@ -60,7 +61,7 @@ public function execinsert($query){
 	}
 	else{
 		$newid = 0;
-		echo"insercion fallida";
+		//echo"insercion fallida";
 		echo $query;
 	}
 	return $newid;

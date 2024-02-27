@@ -1,5 +1,5 @@
 <?php
-require_once('ConexionDB.php');
+require_once('../../data/ConexionDB.php');
 
 $db = new ConexionDB();
 
@@ -13,7 +13,7 @@ if ($db->connect()) {
     $sql = "INSERT INTO ayuda (Titulo, Correo, Descripcion) VALUES ('$titulo', '$correo', '$descripcion')";
 
     if ($db->execinsert($sql) > 0) {
-        header('Location: ../view/ayuda.php?mensaje=Problema enviado correctamente.');
+        header('Location: ../../view/ayuda.php?mensaje=Problema enviado correctamente.');
         exit(); 
     } else {
         echo "Error al insertar el registro.";

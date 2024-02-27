@@ -320,6 +320,7 @@ public function pagoDeServicio()
 
 public function checkCuenta(){
     $result = $this->connect();
+    
     $query = "SELECT Count(*) as total FROM user WHERE email = '".$this->correo."'";
     
     if ($result)
@@ -371,22 +372,25 @@ public function checkCuenta(){
             ('".$this->nombre."', '".$this->nombreFiscal."', '".$this->rfc."', '".$this->direccion."', 
             '".$this->codigoPostal."', '".$this->ciudad."', '".$this->estado."', '".$userId."')";
     
-       
+            echo $query;
             $result = $this->connect();
             if ($result) {
         
                 $dataSet = $this->execquery($query);
     
                 if ($dataSet) {
+                    echo "Registro de empresa exitoso.";
                     return "Registro de empresa exitoso.";
                 } else {
+                    echo "";
                     return "Error al registrar la empresa.";
                 }
             } else {
+                echo "Error al registrar la empresa.";
                 return "Error en la conexión a la base de datos.";
             }
         } else {
-            
+            echo "Error en la conexión a la base de datos.";
             return "ID de usuario inválido.".$_SESSION['start'].$userId;
 
         }

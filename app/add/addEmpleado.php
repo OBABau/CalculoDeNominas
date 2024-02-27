@@ -1,7 +1,7 @@
 <?php
-include('../app/sesion.php');
-include('../app/Worker.php');
-include('Empresa.php');
+include('../sesion.php');
+include('../../data/Worker.php');
+include('../../data/Empresa.php');
 $empresas = new Empresa();
 
 $empresas->setCorreo($_POST['mail']);
@@ -11,7 +11,7 @@ $tupla = mysqli_fetch_assoc($consulta);
 
 if ($tupla['total'] > 0) {
     // El correo electrónico ya está en uso, redirigir de vuelta al formulario con un mensaje de error
-    header("Location: ../view/Empleado/crearEmpleado.php?error=email_en_uso");
+    header("Location: ../../view/Empleado/crearEmpleado.php?error=email_en_uso");
     exit();
 }
 
@@ -30,5 +30,5 @@ $myWorker->setContrasena($_POST['pass']);
 $myWorker->registrarCuenta($newid);
 
 
-header('Location: ../view/Empleado/crearEmpleado.php');
+header('Location: ../../view/Empleado/crearEmpleado.php');
 ?>

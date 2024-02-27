@@ -1,7 +1,7 @@
 <?php
 session_start();
 echo $_SESSION['start'];
-include("../data/ingresosYConsultas+.php");
+include("../../data/ingresosYConsultas+.php");
  //Inserción del ingreso
 $myobject = new ingresosYConsultas;
 $myobject -> setName($_POST['profileName']);
@@ -12,5 +12,5 @@ while ($tupla = mysqli_fetch_assoc($consulta))
     $myobject->setEnterprise($tupla['code'] );
 }
 $myobject -> insertProfile($_POST['profileAmount']);
-header("Location: ../view/Perfiles/profile+.php");
+header("Location: ../../view/Perfiles/profile+.php");
 ?>

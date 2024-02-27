@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('users.php');
-echo $_POST['Mail'];
+include('../data/users.php');
+//echo $_POST['Mail'];
 
 $objeto = new usuarios();
 $objeto->setEmail($_POST['Mail']);
@@ -25,7 +25,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1) {
     $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 2; // 2 para empleado
 
-    include('../data/Empleado.php');;
+    include(__DIR__.'/data/Empleado.php');;
     $empleado = new Empleado();
     $consulta = $empleado->getEmpleado();
     while($tupla = mysqli_fetch_assoc($consulta))
@@ -59,6 +59,6 @@ if ($datasetEnterprise != 'Error' && mysqli_num_rows($datasetEnterprise) == 1) {
 }
 
 // Si las credenciales no son válidas, redirigir al formulario de inicio de sesión con un mensaje de error
-header('Location: ../view/login.php?error=1');
+header('Location: view/login.php?error=1');
 exit();
 ?>

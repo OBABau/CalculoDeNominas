@@ -32,7 +32,7 @@
             <a href="creacionPerfiles.php"><i class="fa fa-arrow-left"></i> &nbsp;Regresar</a>
             <a href="../ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
         </div>
-        <form class="sidebarFooter" action="app/logout.php" method="post">
+        <form class="sidebarFooter" action="../../app/logout.php" method="post">
             <button class="btnSalir" type="submit">Cerrar Sesion</button>
         </form>
     </div>           
@@ -44,7 +44,7 @@
             </div>
 
             <div class="loginBody">                
-                <form class="login-form" method="POST" action="../../app/addProfile.php">
+                <form class="login-form" method="POST" action="../../app/add/addProfile.php">
                     <div class="formRow">
                         <label class="lblinput" for="profileName">Nombre del perfil:</label>
                         <i class="fa fa-envelope"></i>

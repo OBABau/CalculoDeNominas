@@ -31,8 +31,7 @@
     </div>
 
     <div class="sidebarContent">
-        <a href="../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-        <a href="ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+        <a href="../app/logout.php">&nbsp;<i class="fa fa-power-off"></i> &nbsp;Cerrar Sesion</a>
     </div>
 </div>
 
