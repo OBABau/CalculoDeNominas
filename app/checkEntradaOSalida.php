@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('../data/Empleado.php');
-include('users.php');
+include('../data/users.php');
 $empleado = new Empleado();
 $objeto = new usuarios();
 $objeto->setEmail($_POST['Mail']);
