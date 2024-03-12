@@ -25,7 +25,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1) {
     $_SESSION['start'] = $_POST['Mail']; // Guardar el correo electrónico en la sesión
     $_SESSION['type'] = 2; // 2 para empleado
 
-    include(__DIR__.'/data/Empleado.php');;
+    include(__DIR__.'/../data/Empleado.php');;
     $empleado = new Empleado();
     $consulta = $empleado->getEmpleado();
     while($tupla = mysqli_fetch_assoc($consulta))

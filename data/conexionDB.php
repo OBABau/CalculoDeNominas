@@ -13,7 +13,7 @@ class ConexionDB{
 	public function __construct(){
 		$this->HOST="localhost";
 		$this->USER="root";
-		$this->PASS="root";
+		$this->PASS="";
 		$this->DB="calculo_de_nominas";
 	}
 	public function getConnection() {

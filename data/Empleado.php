@@ -35,7 +35,8 @@ class Empleado extends ConexionDB
 
     public function obtenerDatosEmpleado() {
     $result = $this->connect();
-    $query = "SELECT * FROM worker where code = ".$_SESSION['code']."";
+    $query = "SELECT * FROM worker where code = ".$_SESSION['code'];
+    //echo $query;
     if ($result) {
         $dataset = $this->execquery($query);
     }
@@ -53,6 +54,7 @@ public function getEmpleado(){
     if($result)
     {
         //echo"todo bien";
+        //echo "select * from worker where user in (select code from user where email = '".$_SESSION['start']."')";
         $dataset = $this->execquery("select * from worker where user in (select code from user where email = '".$_SESSION['start']."')");
     }
     else
