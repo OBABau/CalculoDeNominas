@@ -39,7 +39,7 @@
         </div>
 
         <form class="sidebarFooter" action="../../app/logout.php" method="post">
-            <button class="btnSalir" type="submit">Cerrar Sesion</button>
+            <button class="btnSalir" type="submit">Cerrar Sesión</button>
         </form>
     </div>
 
@@ -48,7 +48,7 @@
 
         <div class="contenidoHeader">
                 <h1>Panel de Empleados</h1>
-            <div class="panelTitulo">Seleccione una opcion</div>
+            <div class="panelTitulo">Seleccione una opción</div>
         </div>
 
         <div class="contenidoBody">
