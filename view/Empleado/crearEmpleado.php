@@ -55,7 +55,7 @@ include('../../app/sesion.php');
             </div>
 
             <div class="loginBody">                
-                <form class="login-form" method="POST" action="../../data/addEmpleado.php">      
+                <form class="login-form" method="POST" action="../../app/add/addEmpleado.php">      
                     
                     <div class="formRow">
                         <label class="lblinput" for="nombre">Nombre:</label>
@@ -89,7 +89,7 @@ include('../../app/sesion.php');
 
                     <div class="formRow">
                         <label class="lblinput" for="curp">CURP:</label>
-                        <input class="input" type="text" id="curp" name="curp" pattern="[A-Z0-9]{18}"
+                        <input class="input" type="text" id="curp" name="curp" pattern="[(A-Za-z)0-9]{18}"
                         title="Debe ingresar un CURP válido" minlength="18" maxlength="18" required>
                     </div>        
                     

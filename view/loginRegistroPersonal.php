@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/gwen.css">
 
     <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
-    <title>Ayuda</title>
+    <title>Iniciar Sesion</title>
 </head>
 
 <body>    
@@ -20,65 +20,45 @@
         <div class="navbarHeader">
             <div class="navbarTitulo">TFT</div>
         </div>
-        <?php
-        session_start();
-        if (isset($_SESSION['type']))
-        {
-        ?>
-        <div class="navbarCuerpo">                    
-            <a class="enlaceNavbar sombraTexto1" href="../iniciado.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
-        </div>
-        <?php
-        }
-        else {
-        ?>
+        
         <div class="navbarCuerpo">                    
             <a class="enlaceNavbar sombraTexto1" href="../index.php"> &nbsp;Inicio <i class="fa fa-chevron-down"></i></a>
+            <a class="enlaceNavbar sombraTexto1" href="../view/ayuda.php"> &nbsp;Ayuda <i class="fa fa-chevron-down"></i></a>
         </div>
-        <?php
-        }
-        ?>
     </nav>
 
     <div class="cuerpo">
         <div class="login-container4">
             <div class="loginHeader">
-                <h2>Cúentanos tu problema</h2>
+                <h2>Iniciar Sesión</h2>
             </div>
 
             <div class="loginBody">
-                
+                 <?php
+                    
+                    if (isset($_GET['error']) && $_GET['error'] == 1) {
+                        echo '<p class="error">Correo o Contraseña Incorrectos.</p>';
+                    }
+                ?> 
 
-                <form class="login-form" method='POST' action='../app/add/addAyuda.php'>
+                <form class="login-form" method='POST' action='../app/checkLoginRegistroEmpleados.php'>
                     <div class="formRow">
                         <label class="lblinput" for="Mail">Correo electrónico:</label>
                         <i class="fa fa-envelope"></i>
                         <input class="input" type="text" id="Mail" name="Mail" maxlength="50"
-                            placeholder="ejemplo@correo.com" required>
+                            placeholder="ejemplo@correo.com">
                     </div>
                     <div class="formRow">
-                        <label class="lblinput" for="text">Título:</label>
-                        <input class="input" type="text" id="titulo" name="titulo" maxlength="64"
-                            placeholder="Título del problema" required>
+                        <label class="lblinput" for="password">Contraseña:</label>
+                        <i class="fa fa-key"></i>
+                        <input class="input" type="password" id="password" name="password" maxlength="16"
+                            placeholder="Ingrese su Contraseña">
                     </div>
-
+                
                     <div class="formRow">
-                        <label class="lblinput" for="text">Descripción:</label>
-                        <textarea class="textarea1" name="descripcion" id="descripcion" cols="30" rows="10" style="resize: none;  font-family: 'Poppins', sans-serif;" placeholder="   Descripción del problema" required></textarea>
-                    </div>
-
-                    <div class="formRow2">
-                        <button class="boton1" type="Submit" name="Iniciar Sesion">Enviar</button>
+                        <button class="boton1" type="Submit" name="Iniciar Sesion">Iniciar Sesión</button>
                     </div>
                 </form>
-                    <?php
-                        // Recupera el mensaje del parámetro de la URL
-                        $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
-
-                        if ($mensaje) {
-                        echo '<p class="bien">' . $mensaje . '</p>';
-                        }
-                    ?>
             </div>
 
         </div>

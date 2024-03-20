@@ -31,8 +31,7 @@
     </div>
 
     <div class="sidebarContent">
-        <a href="../iniciado.php"><i class="fa fa-home"></i> &nbsp;Inicio</a>
-        <a href="ayuda.php">&nbsp;<i class="fa fa-info"></i> &nbsp;Ayuda</a>
+        <a href="../app/logout.php">&nbsp;<i class="fa fa-power-off"></i> &nbsp;Cerrar Sesion</a>
     </div>
 </div>
 
@@ -69,7 +68,15 @@
                     if (isset($_GET['error']) && $_GET['error'] == 1) {
                         echo '<p class="error">Correo no encontrado o contrasena incorrecta</p>';
                     } 
-                    ?>                                                           
+                    ?>     
+                     <?php
+                        // Recupera el mensaje del parámetro de la URL
+                        $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
+
+                        if ($mensaje) {
+                        echo '<p class="bien">' . $mensaje . '</p>';
+                        }
+                    ?>                                                      
                     <div class="formRow2">
                         <button class="boton1" type="Submit" name="Iniciar Sesion">Registrar</button>
                     </div>                    

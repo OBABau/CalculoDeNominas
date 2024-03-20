@@ -39,7 +39,7 @@
         </div> 
 
         <div class="loginBody">
-            <form class="login-form" method="post" action="../../data/addEmpresa2.php">
+            <form class="login-form" method="post" action="../../app/add/addEmpresa2.php">
                 <div class="formRow">
                     <label class="lblinput" for="nombre">Nombre de la Empresa:</label>
                     <i class="fa fa-industry"></i>
@@ -55,7 +55,7 @@
 
                 <div class="formRow">
                     <label class="lblinput" for="rfc">RFC:</label>
-                    <input class="input" type="text" id="rfc" name="rfc" maxlength="14"
+                    <input class="input" type="text" id="rfc" name="rfc" maxlength="12"
                         placeholder="Ingrese el RFC" required>
                 </div>                          
                 

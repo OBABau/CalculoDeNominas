@@ -34,7 +34,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1){
     } else {
         echo "Hoy no es domingo.";
     }
-    header("location: ../view/registroEntrada.php");
+    header("location: ../view/registroEntrada.php?mensaje=Chequeo correcto.");
 }else
 {
     header('Location: ../view/registroEntrada.php?error=1');

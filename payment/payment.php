@@ -19,8 +19,8 @@ class Payment extends ConexionDB {
         $this->cvv = $cvv;
     }
 
-    public function setExpirationDate($expirationDate) {
-        $this->expirationDate = $expirationDate;
+    public function setExpirationDate($mes, $anio) {
+        $this->expirationDate = $mes."/".$anio;
     }
 
     public function setUserId($userId) {

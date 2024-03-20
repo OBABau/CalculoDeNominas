@@ -60,8 +60,9 @@ ob_start();
                 echo "Sueldo ordinario: $".$tupla3['total'];
                 $totalP += $tupla3['total'];
                 echo "<br>";
-                echo "Septimo dia: $".$tupla3['total']/6;
-                $totalP += $tupla3['total']/6;
+                $septimoDia = number_format($tupla3['total']/6, 3);
+                echo "Septimo dia: $".$septimoDia;
+                $totalP += $septimoDia;
                 echo "<br>";
                 $consulta5 = $empleado->getBenefits($tupla3['code']);
                 $totalBenefits = 0;
@@ -75,7 +76,7 @@ ob_start();
                 $totalGravable = 0;
                 $totalGravable += $totalBenefits;
                 $totalGravable += $tupla3['total'];
-                $totalGravable += $tupla3['total']/6;
+                $totalGravable += $septimoDia;
                 if($totalGravable <= 0)
                 {
                     $subsidio = 0;
@@ -207,8 +208,9 @@ ob_start();
                     $ISR = $impuestoMarginal + 27150.83;
                 }
 
-                echo "ISR: $".$ISR;
-                $totalD += $ISR;
+                $ISR2 = number_format($ISR, 2);
+                echo "ISR: $".$ISR2;
+                $totalD += $ISR2;
                 //IMSS
                 
                 

@@ -46,7 +46,7 @@
             </div> 
 
             <div class="loginBody">
-                <form class="login-form" method="post" action="../../data/addEmpresa.php">
+                <form class="login-form" method="post" action="../../app/add/addEmpresa.php">
                     <div class="formRow">
                         <label class="lblinput" for="correo">Correo electrónico:</label>
                         <i class="fa fa-envelope"></i>

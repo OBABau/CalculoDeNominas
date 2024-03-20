@@ -1,5 +1,6 @@
 <?php
-include("Empresa.php");
+include("../../data/Empresa.php");
+
 $miEmpresa2 = new Empresa();
 $miEmpresa2 ->iniciarSesion();
 $nombre = $_POST['nombre'];
@@ -33,5 +34,5 @@ echo "Ciudad: " . $ciudad . "<br>";
 echo "Estado: " . $estado . "<br>";
 echo $_SESSION['start'];
 echo "Mensaje del servidor: " . $mensaje;
-header("Location: ../index.php");
+header("Location: ../../index.php");
 ?>
