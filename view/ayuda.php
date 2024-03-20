@@ -43,7 +43,7 @@
     <div class="cuerpo">
         <div class="login-container4">
             <div class="loginHeader">
-                <h2>Cuentanos tu problema</h2>
+                <h2>Cúentanos tu problema</h2>
             </div>
 
             <div class="loginBody">
@@ -54,12 +54,12 @@
                         <label class="lblinput" for="Mail">Correo electrónico:</label>
                         <i class="fa fa-envelope"></i>
                         <input class="input" type="text" id="Mail" name="Mail" maxlength="50"
-                            placeholder="ejemplo@correo.com">
+                            placeholder="ejemplo@correo.com" required>
                     </div>
                     <div class="formRow">
                         <label class="lblinput" for="text">Título:</label>
                         <input class="input" type="text" id="titulo" name="titulo" maxlength="64"
-                            placeholder="Título del problema">
+                            placeholder="Título del problema" required>
                     </div>
 
                     <div class="formRow">
