@@ -64,7 +64,7 @@
         <h1>Lista de Usuarios Registrados</h1>
     <table class="table table-striped table-hover">
         <?php
-        include('../../app/worker.php');
+        include('../../data/Worker.php');
         $myconsulta = new Worker();
         $datasetWorkersWithUsers = $myconsulta->getAllWorkerWithUsers();
 
@@ -82,7 +82,7 @@
             echo '<th>Contraseña</th>';
             echo '<th>Acciones</th>';
             echo '</tr>';
-
+            
             // Imprimir los datos de la consulta de trabajadores y usuarios
             while ($tupla = mysqli_fetch_assoc($datasetWorkersWithUsers)) {
                 echo '<tr>';

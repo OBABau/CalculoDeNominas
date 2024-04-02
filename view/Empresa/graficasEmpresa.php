@@ -1,5 +1,5 @@
 <?php
-include('../../data/empresa.php'); 
+include('../../data/Empresa.php'); 
 session_start();
 
 if (!isset($_SESSION['start'])) {

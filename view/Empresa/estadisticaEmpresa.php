@@ -1,5 +1,5 @@
 <?php
-include('../../data/empresa.php'); 
+include('../../data/Empresa.php'); 
 session_start();
 
 if (!isset($_SESSION['start'])) {
@@ -31,7 +31,7 @@ $sumaSalariosbase = $empresa->getTotalProfileSalarys($enterpriseCode);
 $resultadosalarios = mysqli_fetch_assoc($sumaSalariosbase);
 $totalsalarios = number_format($resultadosalarios['totalSalary'], 2); // Redondear a 2 decimales
 
-
+echo $totalBeneficios;
 $porcentajeISN = 0.0180; 
 $totalsalarios = $resultadosalarios['totalSalary'];
 $subtotalISN = $totalsalarios * $porcentajeISN;
@@ -74,10 +74,11 @@ $totalISN = number_format($subtotalISN, 2);
     </div>
         <div class="contenido">
         <h2>Estadísticas de la Empresa</h2>
-
+            
         <div class="formRow">
-            <p>Costo total de nomina: $<?php echo $totalCostoNomina; ?> </p>
+            <p>Costo total de nomina: $<?php echo $totalCostoNomina;?> </p>
             <hr>
+            
             <h2>Distribución de costes de nomina</h2>
             <p>Total de beneficios para la empresa: $<?php echo $totalBeneficios; ?></p>
             <p>Suma de salarios base de todos los perfiles: $<?php echo $totalsalarios?></p>
