@@ -1,5 +1,5 @@
 <?php
-include(__DIR__."/../data/conexionDB.php");
+include("conexionDB.php");
 
 
 class Worker extends ConexionDB{
@@ -155,7 +155,7 @@ class Worker extends ConexionDB{
                       WHERE w.enterprise = " . $_SESSION['code'] . " AND w.active = '1'";
     
             $dataset = $this->execquery($query);
-    
+            //echo $query;
             if ($dataset) {
                 return $dataset;
             } else {
