@@ -126,7 +126,7 @@
 			<div class="lc-block mb-4">
 				<div editable="rich">
 
-					<p class="lead text-white">No te preocupes más. Con nuestra plataforma tu empresa tendrá la facilidad de administrar y contabilizar las nóminas de tus empleados de manera sencilla</p>
+					<p class="lead">No te preocupes más. Con nuestra plataforma tu empresa tendrá la facilidad de administrar y contabilizar las nóminas de tus empleados de manera sencilla</p>
 
 				</div>
 			</div>

@@ -90,42 +90,45 @@ include('app/sesion.php');
                             <br><br><br>
                             <h1 class="text-center font-weight-bold mt-4 titulo11">BIENVENIDO</h1>
                             <p class="text-center subtitulo22">¡Gracias por unirte a TFT!</p>
-                            <p class="text-center subtitulo22">¿Qué hago ahora?</p>
-                            <p class="text-center subtitulo22">Empieza por ver estos sencillos videos para tu rápida capacitación con nuestra página!</p>
+                            <h1 class="text-center font-weight-bold mt-4 titulo10">¿Qué hago ahora?</h>
+                            <p class="text-center2">Empieza por ver estos sencillos videos para tu rápida capacitación con nuestra página!</p>
                         
                             <div class="contenedorCarrousel mx-auto mt-4">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                            </ol>
-                            <div class="carousel-inner sombra">
-                                <div class="carousel-item active">
-                                <a href="https://www.youtube.com/watch?v=RxphN4jn0Pc&t=3s"><img class="d-block w-100" src="img/img/AgregarEmpleados.gif" alt="First slide"></a>
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner sombra">
+                                    <div class="carousel-item active">
+                                        <a href="https://www.youtube.com/watch?v=RxphN4jn0Pc&t=3s"><img class="d-block w-100" src="img/img/AgregarEmpleados.gif" alt="First slide"></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                        <a href="https://youtu.be/k5omWcwAzWY?si=9v0aMLa_3aw8Cwig"><img class="d-block w-100" src="img/img/crearPerfiles.png" alt="First slide"></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                        <a href="https://www.youtube.com/watch?v=JWUGiSve0KA"><img class="d-block w-100" src="img/img/EntradaYSalida.gif" alt="First slide"></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                        <a href="https://www.youtube.com/watch?v=ulyo_UTYjxs"><img class="d-block w-100" src="img/img/prestaciones.png" alt="First slide"></a>
+                                        </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="carousel-item">
-                                <a href="https://youtu.be/k5omWcwAzWY?si=9v0aMLa_3aw8Cwig"><img class="d-block w-100" src="img/img/crearPerfiles.png" alt="First slide"></a>
-                                </div>
-                                <div class="carousel-item">
-                                <a href="https://www.youtube.com/watch?v=JWUGiSve0KA"><img class="d-block w-100" src="img/img/EntradaYSalida.gif" alt="First slide"></a>
-                                </div>
-                                <div class="carousel-item">
-                                <a href="https://www.youtube.com/watch?v=ulyo_UTYjxs"><img class="d-block w-100" src="img/img/prestaciones.png" alt="First slide"></a>
-                                </div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                                </a>
                             </div>
-                            </div>
-                            </div>
+                            <br>
+                            <h1 class="text-center font-weight-bold mt-4 titulo10">¿Necesitas más información?</h>
+                            <p class="text-center2"><a href="view/Empresa/videosHelp.php">¡Visita nuestra sección de videos acerca de nosotros para resolver tus dudas!</a></p>
                             ';
                         }
                         else{
@@ -185,7 +188,8 @@ include('app/sesion.php');
             </div>
        
     
-    <div class="cuerpo2">        
+    
+            <div class="cuerpo2">        
             <div class="hero1 sombra p-4">
             <h1 class="text-center font-weight-bold text-white mt-4 titulo11">TFT</h1>            
             <h1 class="text-center mb-4 subtitulo22">La nueva plataforma encargada de administrar tus nóminas.</h1>                   
