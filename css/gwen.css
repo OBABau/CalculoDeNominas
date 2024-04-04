@@ -715,52 +715,24 @@ body {
 }
 
 /*---------------APIVIDEOS--------------------*/
-.fut {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 25px;
-    grid-row-gap: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-
-.imgvideo img#imgvid {
-    height: 80%;
-    width: 70%;
-    height: auto;
-    display: block;    margin-bottom: 10px;
-    border-radius: 10px; /* Por ejemplo, puedes agregar un borde redondeado */
-}
-
-.buscar {
-    text-align: center; /* Centra el contenido del div */
-}
-
-.buscar input[type="number"] {
-    width: 159px; /* Ajusta el ancho del campo de entrada */
-    padding: 4px; /* Agrega relleno alrededor del campo de entrada */
-    font-size: 15px; /* Tamaño de fuente */
-}
-
-.buscar input[type="number"]::placeholder {
-    
-    color: #999; /* Color del texto del placeholder */
-}
-
 .logo img{
     width: 30px;
     height: auto;
     margin-top: 10px;
 }
-
-.navbarTitulo a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: #fff; /* Cambia el color del texto a blanco */
+.navbarVideos a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
-.help{
+/* .nav-bar a {
+    text-decoration: none; /* Elimina el subrayado del enlace 
+    color: #fff; /* Cambia el color del texto a blanco 
+} */
+
+.nav-bar{
     width: auto;
     height: 70px;
     display: flex;
@@ -773,6 +745,9 @@ body {
     margin-top: auto;
     color: #fff;
 }
+.barra-vid{
+    margin-top: auto;
+}
 
 .barra-vid.logo{
     display: none;
@@ -784,11 +759,11 @@ body {
 .barra-vid ul li a{
     color: #fff;
     display: block;
-    margin: 0 2px;
     font-weight: 600;
     padding: 8px 18px;
     transition: 0.2s;
     border-radius: 30px;
+    text-decoration: none;
 }
 
 .barra-vid ul li a:hover{
@@ -890,17 +865,38 @@ body {
     text-align: center;
 }
 
-.vidhelp{
-    margin-top: 2%;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #0a7ffc;
-    font-weight: bold;
+
+
+/* Aqui ira el diseño para el despliegue de los videos.*/
+
+.Videos {
+    margin-top: 3%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 
+/* Aqui ira el estilo para el ampliador de contenido. */
 
+.buscar {
+    margin-top: 2%;
+    text-align: center; /* Centra el contenido del div */
+}
 
+.buscar input[type="number"] {
+    width: 170px; /* Ajusta el ancho del campo de entrada */
+    padding: 4px; /* Agrega relleno alrededor del campo de entrada */
+    font-size: 15px; /* Tamaño de fuente */
+}
 
+.buscar input[type="number"]::placeholder {
+    
+    color: #999; /* Color del texto del placeholder */
+}
 
 /*-----------------CIERRE DE ESTILOS PARA APIVIDEOS-------------------*/

@@ -10,8 +10,5 @@ if (!isset($_SESSION['redirected'])) {
 $correoUsuario = isset($_SESSION['start']) ? $_SESSION['start'] : null; 
 $userType = isset($_SESSION['type']) ? $_SESSION['type'] : null;
 
-// if(!isset($_SESSION['cantidad'])){
-//     $_SESSION['cantidad'] = '6';
-// }
 
 ?>
