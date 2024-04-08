@@ -1,0 +1,17 @@
+{
+    "name": "bauti/calculo-de-nominas",
+    "autoload": {
+        "psr-4": {
+            "Bauti\\CalculoDeNominas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "OBABau",
+            "email": "bautistabni@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.0"
+    }
+}

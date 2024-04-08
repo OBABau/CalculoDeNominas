@@ -253,22 +253,40 @@ public function getBenefits($codeS){
     return $dataset;
 }
 
-public function entryInsert( $worker, $enterprise, $profile ){
+public function entryInsert( $worker){
     $result = $this->connect();
     if($result)
     {
-        //echo"todo bien";
-        $dataset = $this->execquery("update salary 
-        set
-        days = days + 1,
-        worker = ".$worker.",
-        enterprise= ".$enterprise.",
-        profile=".$profile."
-        where 
-        worker = ".$worker." and finished = 0
-        ");
+        $dataset = $this->execquery("Select * from weekinfo where salary in (select code from salary where worker =".$worker." and finished = 0)");
+        if(date('N') == 1)
+        {
+            $diaSemana = 'monday';
+        }else if(date('N') == 2){
+            $diaSemana = 'tuesday';
+        }else if(date('N') == 3){
+            $diaSemana = 'wednesday';
+        }else if (date('N') == 4 ) {
+            $diaSemana = 'thursday';
+        }else if (date('N')==5){
+            $diaSemana = 'friday';
+        }else if(date('N') == 6){
+            $diasemana = 'saturday';
+        }else if(date('N') == 7){
+            $diaSemana = 'sunday';
+        }
 
-        echo $dataset;
+        while($tupla = mysqli_fetch_assoc($dataset))
+        {
+            if($tupla[$diaSemana.'Entry'] == null)
+            {
+                $this->execquery("update weekinfo set ".$diaSemana."Entry = NOW() where salary =".$tupla["salary"]);
+
+            }else
+            {
+                $this->execquery("update weekinfo set ".$diaSemana."Exit = NOW() where salary =".$tupla["salary"]);
+            }
+        }
+       
     }
     else
     {
@@ -309,11 +327,155 @@ public function insertISR($salary){
     return $dataset;
 }
 
+
+public function checkerInsert($days, $sunday, $worker, $workerID, $enterprise, $tardies )
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "update salary set 
+                        checkerDays = $days,
+                        sunday = $sunday
+                        where 
+                        worker in (select code from worker where checkerName = '$worker' and checkerID = $workerID and enterprise = $enterprise)
+                        and
+                        finished = 0;    ";
+
+        $consultaTardies = "update weekinfo set
+                            tardies = $tardies
+                            where salary in (select code from salary where worker in (select code from worker where checkerName = '$worker' and checkerID = $workerID and enterprise = $enterprise) and finished = 0)";
+        $dataset = $this->execquery($consulta);
+        $this->execquery($consultaTardies);
+        echo  $consulta;
+    }else
+    {
+        echo "algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+    
 }
 
+public function getCheckerInfo($worker)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "select s.checkerDays, s.sunday, w.tardies
+        from salary as s
+        inner join weekinfo as w on s.code = w.salary
+        where w.salary = (select code from salary where worker = $worker and finished = 0)";
+        $dataset = $this->execquery($consulta);
+        //echo $consulta;
+    }else
+    {
+        echo "algo salio mal";
+        $dataset = "error";
+    }
+    return $dataset;
+}
 
+public function updateCheckerInfo($days,  $sunday, $tardies, $worker)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "update salary set 
+                    checkerDays = $days,
+                    sunday = $sunday
+                    where worker  = $worker and finished = 0";
+        echo $consulta."<br>";
+        $this->execquery($consulta);
+        $consulta2 = "update weekinfo set
+                        tardies = $tardies where salary in (select code from salary where worker=$worker and finished=0)";
+        echo $consulta2."<br>";
+        $this->execquery($consulta2);
+    }
+}
 
+public function getWeekInfo($worker)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "Select * from weekinfo where salary in (select code from salary where worker = $worker and finished = 0)";
+        
+        $dataset = $this->execQuery($consulta);
+    }else
+    {
+        $dataset = "error";
+    }
+    return $dataset;
+}
 
+public function insertEntries($monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, $worker)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "update weekinfo set
+                    mondayEntry = '$monday',
+                    tuesdayEntry = '$tuesday',
+                    wednesdayEntry = '$wednesday',
+                    thursdayEntry = '$thursday',
+                    fridayEntry = '$friday',
+                    saturdayEntry = '$saturday',
+                    sundayEntry = '$sunday'
+                    where salary in 
+                    (select code from salary where worker = $worker and finished = 0)";
+                    $this->execQuery( $consulta );
+        echo $consulta;
+    }
+}
 
+public function insertExits($monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday, $worker)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "update weekinfo set
+                    mondayExit = '$monday',
+                    tuesdayExit = '$tuesday',
+                    wednesdayExit = '$wednesday',
+                    thursdayExit = '$thursday',
+                    fridayExit = '$friday',
+                    saturdayExit = '$saturday',
+                    sundayExit = '$sunday'
+                    where salary in 
+                    (select code from salary where worker = $worker and finished = 0)";
+                    $this->execQuery( $consulta );
+        echo $consulta;
+    }
+}
 
+public function getWeekInfoAll()
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "Select * from weekinfo where salary in (select code from salary where finished = 0)";
+        
+        $dataset = $this->execQuery($consulta);
+    }else
+    {
+        $dataset = "error";
+    }
+    return $dataset;
+}
+
+public function closeWeek($days, $worker, $enterprise)
+{
+    $result = $this->connect();
+    if($result)
+    {
+        $consulta = "update salary set
+                    days = 2*(checkerDays + $days)
+                    where worker = $worker and finished=0";
+        echo $consulta;
+        
+        $this->execquery($consulta);
+        $this->execQuery('CALL actualizarSalarios('.$enterprise.');');
+    }
+}
+}
 ?>

@@ -119,6 +119,26 @@
                         <p>Historial de Pagos</p>
                     </div>
                 </div>
+            </a>
+            <a class="enlaceCard" href="../../lectorHuellas/lectorHuellas.php">
+                <div class="card"> 
+                    <div class="circle-img2">
+                        <img src="../../img/iconosfinales/subir.png" alt="Imagen historialPagos">
+                    </div>
+                    <div class="card-text">
+                        <p>Subir asistencia</p>
+                    </div>
+                </div>
+            </a>       
+            <a class="enlaceCard" href="../../lectorHuellas/confirmarAsistencia.php">
+                <div class="card"> 
+                    <div class="circle-img2">
+                        <img src="../../img/iconosfinales/asistencia.png" alt="Imagen historialPagos">
+                    </div>
+                    <div class="card-text">
+                        <p>Confirmar Asistencia</p>
+                    </div>
+                </div>
             </a>    
     </div>
         

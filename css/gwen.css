@@ -713,3 +713,27 @@ body {
     cursor: pointer;
     width: 60%;
 }
+
+
+.boton-personalizado {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #0b5b96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+  }
+  
+  .boton-personalizado input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }

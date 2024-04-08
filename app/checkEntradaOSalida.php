@@ -23,7 +23,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1){
     while($tupla = mysqli_fetch_assoc($data))
     {
         echo"sexo";
-        $empleado->entryInsert($tupla['code'],$tupla['enterprise'],$tupla['profile']);
+        $empleado->entryInsert($tupla['code']);
     }
     
     $hoy = date("w");
