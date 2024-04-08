@@ -64,12 +64,9 @@
         <h1>Lista de Usuarios Registrados</h1>
     <table class="table table-striped table-hover">
         <?php
-        include('../../data/Worker.php');
-        $myconsulta = new Worker();
-        $datasetWorkersWithUsers = $myconsulta->getAllWorkerWithUsers();
-
-        if ($datasetWorkersWithUsers != "error") {
-            // Imprimir los títulos de la tabla
+        $url =('../../data/json/worker.json');
+        $json = file_get_contents($url);
+        $array = json_decode($json, true);
             echo '<tr class="font-weight-bold primary table-primary">';
             echo '<th>Nombre</th>';
             echo '<th>Apellido Paterno</th>';
@@ -78,32 +75,27 @@
             echo '<th>NSS</th>';
             echo '<th>CURP</th>';
             echo '<th>Número de Teléfono</th>';
-            echo '<th>Correo</th>';
-            echo '<th>Contraseña</th>';
+            echo '<th>Fecha de Entrada</th>';
             echo '<th>Acciones</th>';
             echo '</tr>';
-            
-            // Imprimir los datos de la consulta de trabajadores y usuarios
-            while ($tupla = mysqli_fetch_assoc($datasetWorkersWithUsers)) {
-                echo '<tr>';
-                echo "<td>" . $tupla['name'] . "</td>";
-                echo "<td>" . $tupla['lastName'] . "</td>";
-                echo "<td>" . $tupla['lastName2'] . "</td>";
-                echo "<td>" . $tupla['RFC'] . "</td>";
-                echo "<td>" . $tupla['NSS'] . "</td>";
-                echo "<td>" . $tupla['CURP'] . "</td>";
-                echo "<td>" . $tupla['number'] . "</td>";
-                echo "<td>" . $tupla['email'] . "</td>"; // Nueva columna para el correo
-                echo "<td>" . $tupla['password'] . "</td>"; // Nueva columna para la contraseña
-                echo "<td>";
-                echo "<a href='../../app/actualizar.php?id=" . $tupla["code"] . "'>Actualizar</a> | ";
-                echo "<a href='../../app/eliminar.php?id=" . $tupla["code"] . "'>Eliminar</a>";
-                echo "</td>";
-                echo '</tr>';
+            foreach($array as $workers){
+                foreach($workers as $datos){
+                    echo '<tr>';
+                        echo "<td>" .$datos['name']. "</td>"; 
+                        echo "<td>" .$datos['lastName']. "</td>";
+                        echo "<td>" .$datos['lastName']. "</td>";
+                        echo "<td>" .$datos['RFC']. "</td>";
+                        echo "<td>" .$datos['NSS']. "</td>";
+                        echo "<td>" .$datos['CURP']. "</td>";
+                        echo "<td>" .$datos['number']. "</td>";
+                        echo "<td>" .$datos['entryDate']. "</td>"; 
+                    echo "<td>";
+                    echo "<a href='../../app/actualizar.php?id=" . $datos["code"] . "'>Actualizar</a> | ";
+                    echo "<a href='../../app/eliminar.php?id=" . $datos["code"] . "'>Eliminar</a>";
+                    echo "</td>";
+                    echo '</tr>';
+                }
             }
-        } else {
-            echo "Algo pasó en la consulta";
-        }
         ?>
     </table>
 </body>
