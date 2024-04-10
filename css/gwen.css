@@ -714,26 +714,189 @@ body {
     width: 60%;
 }
 
+/*---------------APIVIDEOS--------------------*/
+.logo img{
+    width: 30px;
+    height: auto;
+    margin-top: 10px;
+}
+.navbarVideos a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
 
-.boton-personalizado {
-    position: relative;
-    display: inline-block;
+/* .nav-bar a {
+    text-decoration: none; /* Elimina el subrayado del enlace 
+    color: #fff; /* Cambia el color del texto a blanco 
+} */
+
+.nav-bar{
+    width: auto;
+    height: 70px;
+    display: flex;
+    background: #0b5b96;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-radius: 0px 0px 0px 0px;
+    margin: 0 auto;
+    margin-top: auto;
+    color: #fff;
+}
+.barra-vid{
+    margin-top: auto;
+}
+
+.barra-vid.logo{
+    display: none;
+}
+.barra-vid ul{
+   display:flex; 
+}
+
+.barra-vid ul li a{
+    color: #fff;
+    display: block;
+    font-weight: 600;
+    padding: 8px 18px;
+    transition: 0.2s;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.barra-vid ul li a:hover{
+    background: rgb(8, 123, 205);
+}
+
+.barra-video ul li a.active{
+    background: #675cff;
+    color: #fff;
+}
+
+.hamburger{
+    display: none;
+    height: fit-content;
     cursor: pointer;
-    padding: 10px 20px;
-    background-color: #0b5b96;
-    color: white;
-    border: none;
+    padding: 3px 8px;
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-  }
-  
-  .boton-personalizado input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-  }
+    transition: 0.2s;
+}
+
+.hamburger:hover{
+    background: #f6f4ff;
+}
+
+.hamburger div{
+    width: 30px;
+    height: 2px;
+    margin: 6px 0;
+    background: #212526;
+}
+
+@media only screen and (max-width: 1100px){
+    .help{
+        width: auto;
+        padding: 0 20px;
+    }
+    .barra-vid{
+        position: absolute;
+        left: -300px;
+        top: 0;
+        z-index: 999;
+        width: 280px;
+        height: 90vh;
+        background-color: rgba(11, 91, 150);
+        transition: 0.2s;
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.05);
+        /* border-radius: 5%; */
+        border-radius: 0px 10px 20px 0px;
+        margin-top: 10.6%;
+
+    }
+
+    #nav_check:checked ~ .barra-vid{
+        left: 0;
+    }
+    .barra-vid .logo{
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    .barra-vid ul li a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    .barra-vid ul{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+
+    .hamburger{
+        display: block;
+        
+    }
+}
+
+.text-center2{
+    color: #0a7ffc;
+    font-size: 70%;
+    margin-top: 1.5%;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: #fff;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.container h1.helpers {
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+
+/* Aqui ira el diseño para el despliegue de los videos.*/
+
+.Videos {
+    margin-top: 3%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+/* Aqui ira el estilo para el ampliador de contenido. */
+
+.buscar {
+    margin-top: 2%;
+    text-align: center; /* Centra el contenido del div */
+}
+
+.buscar input[type="number"] {
+    width: 170px; /* Ajusta el ancho del campo de entrada */
+    padding: 4px; /* Agrega relleno alrededor del campo de entrada */
+    font-size: 15px; /* Tamaño de fuente */
+}
+
+.buscar input[type="number"]::placeholder {
+    
+    color: #999; /* Color del texto del placeholder */
+}
+
+/*-----------------CIERRE DE ESTILOS PARA APIVIDEOS-------------------*/
