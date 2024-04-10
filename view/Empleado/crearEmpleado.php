@@ -108,8 +108,19 @@ include('../../app/sesion.php');
             <div class="formRow">
                 <label class="lblinput" for="pass">Contrasena:</label>
                 <input class="input" type="password" id="pass" name="pass" required>
-            </div>        
-  
+            </div>       
+
+                    <div class="formRow">
+                        <label class="lblinput" for="nombreChecador">Nombre en el Checador:</label>
+                        <input class="input" type="text" id="nombreChecador" name="nombreChecador" maxlength="15"
+                            placeholder="Ingrese el Nombre en el checador" required>
+                    </div> 
+
+                    <div class="formRow">
+                        <label class="lblinput" for="checkerID">ID en el checador:</label>
+                        <input class="input" type="number" id="checkerID" name="checkerID" required>
+                    </div>   
+
                     <div class="formRow">
                         <label class="lblinput" for="perfiles">Perfiles</label>
                         <select class="form-select" name="perfiles">
@@ -126,7 +137,8 @@ include('../../app/sesion.php');
                           }
                         ?>
                         </select>
-                    </div>                                           
+                    </div>      
+
                     <div class="formRow">
                     <?php if (!empty($error_message)) { ?>
                             <div class="error"><?php echo $error_message; ?></div>
@@ -134,7 +146,7 @@ include('../../app/sesion.php');
                         <br>
                         <br>
                         <button class="boton1" type="Submit" value="Enviar">Registrar</button>
-                    </div>                
+                    </div>
                 </form>
             </div>
 

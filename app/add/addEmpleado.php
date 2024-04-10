@@ -24,10 +24,13 @@ $myWorker->setNSS($_POST ['nss']);
 $myWorker->setCurp($_POST ['curp']);
 $myWorker->setNumber($_POST ['phone']);
 $myWorker->setProfile($_POST['perfiles']);
+$myWorker->setCheckerName($_POST['nombreChecador']);
+$myWorker->setCheckerID($_POST['checkerID']);
 $newid = $myWorker->setWorker();
 $myWorker->setCorreo($_POST['mail']);
 $myWorker->setContrasena($_POST['pass']);
 $myWorker->registrarCuenta($newid);
+
 
 
 header('Location: ../../view/Empleado/crearEmpleado.php');

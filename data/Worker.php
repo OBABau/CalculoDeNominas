@@ -15,6 +15,8 @@ class Worker extends ConexionDB{
     private $correo;
     private $contrasena;
     private $profile;
+    private $checkerName;
+    private $checkerID;
 
     //metodos
     public function setCorreo($correo) {
@@ -56,8 +58,16 @@ class Worker extends ConexionDB{
         $this->number = $number;
     }
 
+    public function setCheckerName($checkerName){
+        $this->checkerName = $checkerName;
+    }
+
+    public function setCheckerID($checkerID){
+        $this->checkerID = $checkerID;
+    }
+
     public function setWorker(){
-        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate, enterprise, user, profile) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW(), ".$_SESSION['code'].", null, ".$this->profile.")";
+        $query = "INSERT INTO worker(name, lastName, lastName2, RFC, NSS, CURP, number, entryDate, enterprise, user, profile, checkerName, checkerID) VALUES ('".$this->name."', '".$this->lastName."', '".$this->lastName2."', '".$this->RFC."', '".$this->NSS."', '".$this->CURP."', '".$this->number."', NOW(), ".$_SESSION['code'].", null, ".$this->profile.", '".$this->checkerName."', ".$this->checkerID.")";
 
         $result = $this->connect();
          if($result){
@@ -91,18 +101,6 @@ class Worker extends ConexionDB{
             return "error";
         }
     }
-    
-
-
-
-
-
-
-
-
-
-
-
 
     public function registrarCuenta($workerId) {
         // Prepara la consulta SQL para insertar la cuenta del usuario
@@ -143,7 +141,6 @@ class Worker extends ConexionDB{
     }
 
 
-
     public function getAllWorkerWithUsers()
     {
         $result = $this->connect();
@@ -167,18 +164,6 @@ class Worker extends ConexionDB{
             return "error";
         }
     }
-    
-
-
-
-
-
-
-
-
-
-
-
 
     public function updateActiveStatus($id, $status)
     {
@@ -193,9 +178,5 @@ class Worker extends ConexionDB{
         return $dataset;
     }
     
-
-
-
-
 }//fin de la clase
 ?>
