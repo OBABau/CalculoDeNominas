@@ -13,7 +13,9 @@
 
     <link rel="icon" type="image/x-icon" href="../img/img/logo.png">
     <title>Iniciar Sesion</title>
-</head>
+
+    <script src='https://www.google.com/recaptcha/api.js' async defer ></script>
+    </head>
 
 <body>    
     <nav class="navbar">
@@ -53,11 +55,14 @@
                         <i class="fa fa-key"></i>
                         <input class="input" type="password" id="password" name="password" maxlength="16"
                             placeholder="Ingrese su Contraseña">
-                    </div>
-                
+                    
+
                     <div class="formRow">
-                        <button class="boton1" type="Submit" name="Iniciar Sesion">Iniciar Sesión</button>
-                    </div>
+                        </div>
+                            <div class="g-recaptcha" data-sitekey="6LcKoLMpAAAAAHHMZAqrTsxiCIwV69m88DUoQchD">
+                        </div>
+                        <button class="boton1" type="submit" name="Iniciar Sesion" required>Iniciar Sesión</button>
+                    </div>                    
                 </form>
             </div>
 
