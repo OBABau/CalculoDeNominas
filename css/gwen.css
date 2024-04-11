@@ -907,3 +907,38 @@ body {
 }
 
 /*-----------------CIERRE DE ESTILOS PARA APIVIDEOS-------------------*/
+
+.boton-personalizado {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .boton-personalizado input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  #nombre-archivo {
+    margin-right: 10px;
+  }
+  
+  /* Estilos adicionales para el botón si es necesario */
+  .boton-personalizado span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Estilos adicionales cuando se pasa el cursor sobre el div */
+  .boton-personalizado:hover {
+    background-color: #e0e0e0;
+  }
+  
