@@ -129,7 +129,7 @@ include('app/sesion.php');
                             </div>
                             <br>
                             <h1 class="text-center font-weight-bold mt-4 titulo10">¿Necesitas más información?</h>
-                            <p class="text-center2"><a href="view/Videos/videosHelp.php">¡Visita nuestra sección de videos acerca de nosotros para resolver tus dudas!</a></p>
+                            <p class="text-center2a"><a href="view/Videos/videosHelp.php">¡Visita nuestra sección de videos acerca de nosotros para resolver tus dudas!</a></p>
                             ';
                         }
                         else{

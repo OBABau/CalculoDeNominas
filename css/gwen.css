@@ -850,6 +850,13 @@ body {
     margin-top: 1.5%;
 }
 
+.text-center2a{
+    color: #0a7ffc;
+    font-size: 70%;
+    margin-top: 1.5%;
+    text-decoration: underline;
+}
+
 
 .container {
     display: flex;
