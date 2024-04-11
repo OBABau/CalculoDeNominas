@@ -60,7 +60,7 @@ class Payment extends ConexionDB {
             // Construir la consulta SQL con las nuevas columnas
             $query = "INSERT INTO payments (name, cardNumber, cvv, expirationDate, user_id, startContract, finalContract, contractType) VALUES ('$this->name', '$this->cardNumber', '$this->cvv', '$this->expirationDate', '$userId', '$currentDate', '$endDate', '$contractType')";
             $result = $this->connect();
-    
+            echo $query;
             if ($result) {
                 echo "Todo bien";
                 $newid = $this->execinsert($query);
