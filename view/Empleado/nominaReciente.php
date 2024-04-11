@@ -153,7 +153,7 @@
                 echo "Sueldo ordinario: $".$tupla3['total'];
                 $totalP += $tupla3['total'];
                 echo "<br>";
-                $septimoDia = number_format($tupla3['total']/6, 2);
+                $septimoDia = number_format($tupla3['total']/6);
                 echo "Septimo dia: $".$septimoDia;
                 $totalP += $septimoDia;
                 echo "<br>";
@@ -303,7 +303,7 @@
                     $impuestoMarginal = $diferencia*0.35;
                     $ISR = $impuestoMarginal + 27150.83;
                 }
-                $ISR2 = number_format($ISR, 3);
+                $ISR2 = number_format($ISR);
                 echo "ISR: $".$ISR2;
                 $totalD += $ISR2;
                 //insert del ISR a BD
