@@ -74,7 +74,13 @@
                         $mensaje = isset($_GET['mensaje']) ? $_GET['mensaje'] : '';
 
                         if ($mensaje) {
-                        echo '<p class="bien">' . $mensaje . '</p>';
+                            if($mensaje == "Registro duplicado")
+                            {
+                                echo '<p class="error">' . $mensaje . '</p>';
+                            }else
+                            {
+                                echo '<p class="bien">' . $mensaje . '</p>';
+                            }
                         }
                     ?>                                                      
                     <div class="formRow2">

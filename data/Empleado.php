@@ -277,23 +277,35 @@ public function entryInsert( $worker){
 
         while($tupla = mysqli_fetch_assoc($dataset))
         {
-            if($tupla[$diaSemana.'Entry'] == null)
-            {
-                $this->execquery("update weekinfo set ".$diaSemana."Entry = NOW() where salary =".$tupla["salary"]);
+            $dbHour = $tupla[$diaSemana.'Entry'];
 
+                $currentTime = date('H:i:s');
+                
+                $dbHourTimestamp = strtotime($dbHour);
+                $currentTimeTimestamp = strtotime($currentTime);
+
+            if($tupla[$diaSemana.'Entry'] == null  || $dbHourTimestamp > $currentTimeTimestamp + (10 * 60))
+            {
+                if ($tupla[$diaSemana.'Entry'] == null) {
+                $this->execquery("update weekinfo set ".$diaSemana."Entry = NOW() where salary =".$tupla["salary"]);
+                $mensaje = "Registro de entrada exitoso";
+                }else
+                {
+                    $mensaje = "Registro duplicado";
+                }
             }else
             {
                 $this->execquery("update weekinfo set ".$diaSemana."Exit = NOW() where salary =".$tupla["salary"]);
+                $mensaje = "Registro de salida exitoso";
             }
         }
-       
     }
     else
     {
         echo"algo salio mal";
         $dataset = "error";
     }
-    return $dataset;
+    return $mensaje;
 }
 
 public function entryInsertSunday(){

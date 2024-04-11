@@ -23,7 +23,7 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1){
     while($tupla = mysqli_fetch_assoc($data))
     {
         echo"sexo";
-        $empleado->entryInsert($tupla['code']);
+        $mensaje = $empleado->entryInsert($tupla['code']);
     }
     
     $hoy = date("w");
@@ -34,7 +34,9 @@ if ($datasetEmployee != 'Error' && mysqli_num_rows($datasetEmployee) == 1){
     } else {
         echo "Hoy no es domingo.";
     }
-    header("location: ../view/registroEntrada.php?mensaje=Chequeo correcto.");
+
+
+    header("location: ../view/registroEntrada.php?mensaje=$mensaje");
 }else
 {
     header('Location: ../view/registroEntrada.php?error=1');

@@ -12,9 +12,9 @@ class ConexionDB{
 //constructor
 	public function __construct(){
 		$this->HOST="localhost";
-		$this->USER="root";
-		$this->PASS="";
-		$this->DB="calculo_de_nominas";
+		$this->USER="u611643065_user";
+		$this->PASS="ElEjeCentralDeLaTecnologia2024";
+		$this->DB="u611643065_BD";
 	}
 	public function getConnection() {
         return $this->connection;
