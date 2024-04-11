@@ -1,7 +1,7 @@
 <?php
 include('../app/sesion.php');
 include('../data/conexionDB.php');
-include('Payment.php');
+include('payment.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
