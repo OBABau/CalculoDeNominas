@@ -33,5 +33,5 @@ $myWorker->registrarCuenta($newid);
 
 
 
-header('Location: ../../view/Empleado/crearEmpleado.php');
+header('Location: ../../view/Empleado/crearEmpleado.php?success=1');
 ?>

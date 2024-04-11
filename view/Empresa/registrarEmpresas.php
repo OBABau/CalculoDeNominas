@@ -15,6 +15,7 @@
 
     <link rel="icon" type="image/x-icon" href="../../img/img/logo.png">
     <title>Registro de Empresas</title>
+    <script src='https://www.google.com/recaptcha/api.js' async defer ></script>
 </head>
 
 <body>
@@ -71,6 +72,9 @@
                         <?php } ?>
                     </div>
                     <div class="formRow">
+                    </div>
+                            <div class="g-recaptcha" data-sitekey="6LcKoLMpAAAAAHHMZAqrTsxiCIwV69m88DUoQchD">
+                        </div>
                         <button class="boton2" type="Submit" name="registrarEmpresa">Registrar Empresa</button>
                     </div>                    
                 </form>

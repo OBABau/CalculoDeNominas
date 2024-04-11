@@ -6,6 +6,32 @@ include("../../data/Empresa.php");
 
  $miEmpresa->setCorreo($_POST['correo']);
 // Verificar si el correo electrónico ya está en uso
+if(isset($_POST['correo'], $_POST['contrasena'], $_POST['g-recaptcha-response'])) {
+    $secret = '6LcKoLMpAAAAAGJSa-pSFr9qtI43qjUpv6GDaaHF';
+    $captcha_response = $_POST['g-recaptcha-response'];
+
+    // Verificar el captcha como se muestra en el ejemplo anterior
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        'secret' => $secret,
+        'response' => $captcha_response
+    ]));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $captcha_result = json_decode(curl_exec($ch), true);
+    curl_close($ch);
+
+    if ($captcha_result['success']) {
+        $_SESSION['login_attempts'] = 0;
+    } else {
+        header('Location: ../view/login.php');
+        exit();
+    }
+} else {
+    header('Location: ../view/login.php');
+    exit();
+}
 
 
 $consulta = $miEmpresa->checkCuenta();

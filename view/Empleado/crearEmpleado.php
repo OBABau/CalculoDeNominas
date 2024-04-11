@@ -47,7 +47,11 @@ include('../../app/sesion.php');
             // Verificar si hay un error de correo en uso
             if (isset($_GET['error']) && $_GET['error'] === 'email_en_uso') {
                 $error_message = '<p class="error">Este correo electrónico ya está en uso.</p>';
-            } 
+            }
+            
+            if (empty($_GET['error']) && isset($_GET['success'])) {
+                echo '<p class="bien">Registro exitoso</p>';
+            }
         ?>       
         <div class="login-container2">
             <div class="loginHeader">
@@ -119,7 +123,7 @@ include('../../app/sesion.php');
                     <div class="formRow">
                         <label class="lblinput" for="checkerID">ID en el checador:</label>
                         <input class="input" type="number" id="checkerID" name="checkerID" required>
-                    </div>   
+                    </div>
 
                     <div class="formRow">
                         <label class="lblinput" for="perfiles">Perfiles</label>

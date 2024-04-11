@@ -129,6 +129,8 @@
                 echo "<br>";
                 echo '<hr class="guion-under" style="border: none; height: 1px; color: #000; background-color: #000; margin: 0px; padding: 0px;">';
                 echo "<br>";
+                echo "Fecha de pago: ".$tupla3['payDate'];
+                echo "<br>";
                 echo "Nombre: ".$tupla['name']." ".$tupla["lastName"]." ".$tupla['lastName2'];
                 echo "<br>";
                 echo "CURP: ".$tupla['CURP'];
