@@ -86,6 +86,6 @@ if ($datasetEnterprise != 'Error' && mysqli_num_rows($datasetEnterprise) == 1) {
 }
 
 
-header('Location: view/login.php?error=1');
+header('Location: ../view/login.php?error=1');
 exit();
 ?>
