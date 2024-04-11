@@ -48,8 +48,8 @@ while($tupla = mysqli_fetch_assoc($consulta))
     
 
 }
-
-}
 $empleado->closeWeek($days, $tupla2['code'], $_SESSION['code']);
+}
+
 header('location: confirmarAsistencia.php?mensaje=Se registro exitosamente la asistencia de tus empleados');
 ?>

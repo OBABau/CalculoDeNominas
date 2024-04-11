@@ -474,7 +474,7 @@ public function closeWeek($days, $worker, $enterprise)
         echo $consulta;
         
         $this->execquery($consulta);
-        $this->execQuery('CALL actualizarSalarios('.$enterprise.');');
+        $this->execQuery('CALL actualizarSalarios('.$enterprise.', '.$worker.');');
     }
 }
 }

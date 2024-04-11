@@ -31,7 +31,7 @@ alter table `salary` add column checkerDays int not null
 
 DELIMITER $$
 
-CREATE PROCEDURE actualizarSalarios(int empresa)
+CREATE PROCEDURE actualizarSalarios(IN empresa INT)
 BEGIN
     -- Actualizar el campo total de la tabla salary para los empleados de la empresa específica
     UPDATE salary AS s
@@ -49,6 +49,4 @@ BEGIN
     FROM worker
     WHERE enterprise = empresa;
 END
-
-
-DELIMITER ;
+$$
