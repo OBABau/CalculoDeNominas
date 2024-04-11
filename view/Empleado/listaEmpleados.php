@@ -62,42 +62,47 @@
         <br>
 
         <h1>Lista de Usuarios Registrados</h1>
-    <table class="table table-striped table-hover">
-        <?php
-        $url =('../../data/json/worker.json');
-        $json = file_get_contents($url);
-        $array = json_decode($json, true);
-            echo '<tr class="font-weight-bold primary table-primary">';
-            echo '<th>Nombre</th>';
-            echo '<th>Apellido Paterno</th>';
-            echo '<th>Apellido Materno</th>';
-            echo '<th>RFC</th>';
-            echo '<th>NSS</th>';
-            echo '<th>CURP</th>';
-            echo '<th>Número de Teléfono</th>';
-            echo '<th>Fecha de Entrada</th>';
-            echo '<th>Acciones</th>';
+        <table class="table table-striped table-hover">
+    <tr class="font-weight-bold primary table-primary">
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>RFC</th>
+        <th>NSS</th>
+        <th>CURP</th>
+        <th>Número de Teléfono</th>
+        <th>Fecha de Entrada</th>
+        <th>Acciones</th>
+    </tr>
+    <?php
+    $url = '../../api/api.php';
+    $json = file_get_contents($url);
+    $array = json_decode($json, true);
+
+    if ($array) {
+        foreach ($array as $datos) {
+            echo '<tr>';
+            echo "<td>" . $datos['name'] . "</td>";
+            echo "<td>" . $datos['lastName'] . "</td>";
+            echo "<td>" . $datos['lastName2'] . "</td>"; // Agregado el campo 'lastName2'
+            echo "<td>" . $datos['RFC'] . "</td>";
+            echo "<td>" . $datos['NSS'] . "</td>";
+            echo "<td>" . $datos['CURP'] . "</td>";
+            echo "<td>" . $datos['number'] . "</td>";
+            echo "<td>" . $datos['entryDate'] . "</td>";
+            echo "<td>";
+            echo "<a href='../../app/actualizar.php?id=" . $datos["code"] . "'>Actualizar</a> | ";
+            echo "<a href='../../app/eliminar.php?id=" . $datos["code"] . "'>Eliminar</a>";
+            echo "</td>";
             echo '</tr>';
-            foreach($array as $workers){
-                foreach($workers as $datos){
-                    echo '<tr>';
-                        echo "<td>" .$datos['name']. "</td>"; 
-                        echo "<td>" .$datos['lastName']. "</td>";
-                        echo "<td>" .$datos['lastName']. "</td>";
-                        echo "<td>" .$datos['RFC']. "</td>";
-                        echo "<td>" .$datos['NSS']. "</td>";
-                        echo "<td>" .$datos['CURP']. "</td>";
-                        echo "<td>" .$datos['number']. "</td>";
-                        echo "<td>" .$datos['entryDate']. "</td>"; 
-                    echo "<td>";
-                    echo "<a href='../../app/actualizar.php?id=" . $datos["code"] . "'>Actualizar</a> | ";
-                    echo "<a href='../../app/eliminar.php?id=" . $datos["code"] . "'>Eliminar</a>";
-                    echo "</td>";
-                    echo '</tr>';
-                }
-            }
-        ?>
-    </table>
+        }
+    } else {
+        echo "<tr><td colspan='9'>No se encontraron registros de empleados.</td></tr>";
+    }
+    ?>
+</table>
+
+
 </body>
 
 </html>
